@@ -11,6 +11,6 @@ let package = Package(
         .target(name: "Curricula"),
         .target(name: "CurriculaPilot", dependencies: ["Curricula"], resources: [.process("Resources")]),
         .executableTarget(name: "CurriculaCLI", dependencies: ["Curricula", "CurriculaPilot"]),
-        .testTarget(name: "CurriculaTests", dependencies: ["Curricula", "CurriculaPilot"])
+        .testTarget(name: "CurriculaTests", dependencies: ["Curricula", "CurriculaPilot"], resources: [.process("Fixtures")])
     ]
 )

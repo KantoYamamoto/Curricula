@@ -1,6 +1,6 @@
 # 交換契約 0.1.0
 
-2026-09-28。設計資料v0.3を使った初回実装の契約。現物例は [pilot-0.1.0.json](../data/releases/pilot-0.1.0.json)。JSONの正式なキーは [Model.swift](../Sources/Curricula/Model.swift) の公開値型に対応し、互換性を意図せず変更しない。JSON Schemaによる網羅的な構文検証は未導入。
+2026-09-28。設計資料v0.3を使った初回実装の契約。現物例は [cross-subject-0.1.0.json](../data/releases/cross-subject-0.1.0.json)。初回版 [pilot-0.1.0.json](../data/releases/pilot-0.1.0.json) も保存する。JSONの正式なキーは [Model.swift](../Sources/Curricula/Model.swift) の公開値型に対応し、互換性を意図せず変更しない。JSON Schemaによる網羅的な構文検証は未導入。
 
 ## 版と正規形
 
@@ -51,3 +51,9 @@
 contextId指定時は完全一致。省略時は文脈を保持して全件を返す。指定時に文脈なしのalignmentを混ぜない。空一覧は200、未知の版・ID・文脈は404と区別する。重複/空/未知の絞り込みは400。POST/PUT/PATCH/DELETEは405。
 
 画面は選択版をリンクへ引き継ぎ、各API応答の版を照合する。取得中・再試行可能な取得失敗・空結果を区別する。目次の編成はAPIから取得する。未調査は能力の状態、部分対応は関係、合成例は由来から表示する。
+
+## 構造検証例の追加（契約0.1.0を維持）
+
+cross-subject-0.1.0 / examples-0.1.0 / examples-0.2.0は同じ契約を使う別データ版。既存pilot-0.1.0の内容を変更しない。読み取り画面は版のoverviewに含まれる目次を選び、`outline`クエリで目次IDを指定できる。版の切替時は対象・節・文脈の選択をリセットする。
+
+`Tests/CurriculaTests/Fixtures/unsupported.json`の資料種別・改訂対応・AND/ORは契約外の候補であり、現行JSON/APIが保持・取得できるという意味ではない。[入力と期待結果](sample-catalog.md)を参照。DB移行ではこのようなフィールドの欠落を検出する読込境界を用意する。

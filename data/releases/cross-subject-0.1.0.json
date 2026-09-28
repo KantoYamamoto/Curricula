@@ -1,0 +1,2924 @@
+{
+  "contexts" : [
+    {
+      "conditions" : "根拠は選定した原典項目とその上位見出し。",
+      "frameworkID" : "fw.cross-data",
+      "id" : "ctx.cross-data",
+      "label" : "算数・小3"
+    },
+    {
+      "conditions" : "根拠は選定した原典項目とその上位見出し。",
+      "frameworkID" : "fw.cross-ethics",
+      "id" : "ctx.cross-ethics",
+      "label" : "道徳・小5〜6"
+    },
+    {
+      "conditions" : "根拠は選定した原典項目とその上位見出し。",
+      "frameworkID" : "fw.cross-history",
+      "id" : "ctx.cross-history",
+      "label" : "社会・中学校歴史的分野"
+    },
+    {
+      "conditions" : "根拠は選定した原典項目とその上位見出し。",
+      "frameworkID" : "fw.cross-information",
+      "id" : "ctx.cross-information",
+      "label" : "情報Ⅰ・高校"
+    },
+    {
+      "conditions" : "根拠は選定した原典項目とその上位見出し。",
+      "frameworkID" : "fw.cross-japanese",
+      "id" : "ctx.cross-japanese-early",
+      "label" : "国語・小1〜2"
+    },
+    {
+      "conditions" : "根拠は選定した原典項目とその上位見出し。",
+      "frameworkID" : "fw.cross-japanese",
+      "id" : "ctx.cross-japanese-middle",
+      "label" : "国語・小3〜4"
+    },
+    {
+      "conditions" : "根拠は選定した原典項目とその上位見出し。",
+      "frameworkID" : "fw.cross-language",
+      "id" : "ctx.cross-language-listen",
+      "label" : "外国語・小5〜6"
+    },
+    {
+      "conditions" : "根拠は選定した原典項目とその上位見出し。",
+      "frameworkID" : "fw.cross-language",
+      "id" : "ctx.cross-language-write",
+      "label" : "外国語・小5〜6"
+    },
+    {
+      "conditions" : "根拠は選定した原典項目とその上位見出し。",
+      "frameworkID" : "fw.cross-music",
+      "id" : "ctx.cross-music",
+      "label" : "音楽・小5〜6"
+    },
+    {
+      "conditions" : "根拠は選定した原典項目とその上位見出し。",
+      "frameworkID" : "fw.cross-science",
+      "id" : "ctx.cross-science-inquiry",
+      "label" : "理科・小5"
+    },
+    {
+      "conditions" : "根拠は選定した原典項目とその上位見出し。",
+      "frameworkID" : "fw.cross-science",
+      "id" : "ctx.cross-science-knowledge",
+      "label" : "理科・小5"
+    }
+  ],
+  "entities" : [
+    {
+      "conditions" : "小3。身の回りの事象について、日時や場所など、整理する観点に着目する。",
+      "criteria" : [
+        "観点に沿って分類整理し、表に表したり読んだりする。",
+        "表を用いて考察し、見いだしたことを表現する。"
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "cp.cross-data",
+      "kind" : "competency",
+      "label" : "データを分類して表に表し、考察を伝える",
+      "prerequisiteStatus" : "uninvestigated",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "根拠項目: 8250233411100000, 8250233412100000。原典の行為・条件を能力の記述へ分けた。達成観点は原典の要求に対応する確認事項。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "targetIDs" : [
+        "sm.data-organization"
+      ],
+      "text" : "データを分類して表に表し、考察を伝える"
+    },
+    {
+      "conditions" : "中学校歴史的分野。比較や関連、時代的背景、地域的環境、現在とのつながりに着目する。",
+      "criteria" : [
+        "地域の文化財や諸資料を活用する。",
+        "歴史的な特徴を多面的・多角的に考察し、表現する。"
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "cp.cross-history",
+      "kind" : "competency",
+      "label" : "文化財や諸資料から地域の歴史的な特徴を考察する",
+      "prerequisiteStatus" : "uninvestigated",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "根拠項目: 8322203122100000。原典の行為・条件を能力の記述へ分けた。達成観点は原典の要求に対応する確認事項。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-83v11"
+        ]
+      },
+      "targetIDs" : [
+        "sm.local-history"
+      ],
+      "text" : "文化財や諸資料から地域の歴史的な特徴を考察する"
+    },
+    {
+      "conditions" : "高校情報Ⅰ。目的に応じた適切な表現方法を選び、コンピュータや情報通信ネットワークを活用する。",
+      "criteria" : [
+        "アルゴリズムを考え、適切な方法で表現し、プログラミングで活用する。"
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "cp.cross-information-build",
+      "kind" : "competency",
+      "label" : "目的に応じたアルゴリズムを表現して実装する",
+      "prerequisiteStatus" : "uninvestigated",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "根拠項目: 84I1503322000000。原典の行為・条件を能力の記述へ分けた。達成観点は原典の要求に対応する確認事項。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-84v10"
+        ]
+      },
+      "targetIDs" : [
+        "sm.algorithm-process"
+      ],
+      "text" : "目的に応じたアルゴリズムを表現して実装する"
+    },
+    {
+      "conditions" : "高校情報Ⅰ。目的に応じたアルゴリズムの表現・プログラミングの過程を対象とする。",
+      "criteria" : [
+        "取り組んだ過程を評価し、改善する。"
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "cp.cross-information-improve",
+      "kind" : "competency",
+      "label" : "実装した過程を評価し改善する",
+      "prerequisiteStatus" : "uninvestigated",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "根拠項目: 84I1503322000000。原典の行為・条件を能力の記述へ分けた。達成観点は原典の要求に対応する確認事項。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-84v10"
+        ]
+      },
+      "targetIDs" : [
+        "sm.algorithm-process"
+      ],
+      "text" : "実装した過程を評価し改善する"
+    },
+    {
+      "conditions" : "小1〜2の読むこと。場面の様子や登場人物の行動に着目する。",
+      "criteria" : [
+        "場面や行動を手掛かりに、内容の大体を述べる。"
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "cp.cross-japanese-early",
+      "kind" : "competency",
+      "label" : "物語の場面や登場人物の行動から内容の大体を捉える",
+      "prerequisiteStatus" : "uninvestigated",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "根拠項目: 82102A3231200000。原典の行為・条件を能力の記述へ分けた。達成観点は原典の要求に対応する確認事項。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "targetIDs" : [
+        "sm.character-reading"
+      ],
+      "text" : "物語の場面や登場人物の行動から内容の大体を捉える"
+    },
+    {
+      "conditions" : "小3〜4の読むこと。文章中の叙述を基に捉える。",
+      "criteria" : [
+        "登場人物の行動や気持ちを、対応する叙述と結び付けて述べる。"
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "cp.cross-japanese-middle",
+      "kind" : "competency",
+      "label" : "叙述を基に登場人物の行動や気持ちを捉える",
+      "prerequisiteStatus" : "uninvestigated",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "根拠項目: 82102C3231200000。原典の行為・条件を能力の記述へ分けた。達成観点は原典の要求に対応する確認事項。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "targetIDs" : [
+        "sm.character-reading"
+      ],
+      "text" : "叙述を基に登場人物の行動や気持ちを捉える"
+    },
+    {
+      "conditions" : "小5〜6。ゆっくりはっきりと話される、自分のことや身近で簡単な事柄。",
+      "criteria" : [
+        "提示された簡単な語句や基本的な表現を聞き取る。"
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "cp.cross-language-listen",
+      "kind" : "competency",
+      "label" : "身近な英語の語句や基本的表現を聞き取る",
+      "prerequisiteStatus" : "uninvestigated",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "根拠項目: 82H12D2110000000。原典の行為・条件を能力の記述へ分けた。達成観点は原典の要求に対応する確認事項。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "targetIDs" : [
+        "sm.familiar-language"
+      ],
+      "text" : "身近な英語の語句や基本的表現を聞き取る"
+    },
+    {
+      "conditions" : "小5〜6。自分のことや身近で簡単な事柄。例文を参考にし、音声で十分に慣れ親しんだ語句や基本的表現を用いる。",
+      "criteria" : [
+        "指定された条件で、自分のことや身近な事柄を書く。"
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "cp.cross-language-write",
+      "kind" : "competency",
+      "label" : "例文を参考に身近な事柄を英語で書く",
+      "prerequisiteStatus" : "uninvestigated",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "根拠項目: 82H12D2520000000。原典の行為・条件を能力の記述へ分けた。達成観点は原典の要求に対応する確認事項。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "targetIDs" : [
+        "sm.familiar-language"
+      ],
+      "text" : "例文を参考に身近な事柄を英語で書く"
+    },
+    {
+      "conditions" : "小5〜6の器楽活動。親項目の『思いや意図に合った表現』を目的とする。",
+      "criteria" : [
+        "各声部の楽器の音、全体の響き、伴奏を聴きながら、音を合わせて演奏する。"
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "cp.cross-music",
+      "kind" : "competency",
+      "label" : "各声部や伴奏を聴き、音を合わせて演奏する",
+      "prerequisiteStatus" : "uninvestigated",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "根拠項目: 82802D3123000000, 82802D3123300000。原典の行為・条件を能力の記述へ分けた。達成観点は原典の要求に対応する確認事項。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "targetIDs" : [
+        "sm.ensemble"
+      ],
+      "text" : "各声部や伴奏を聴き、音を合わせて演奏する"
+    },
+    {
+      "conditions" : "小5。振り子が1往復する時間に関係する条件について予想や仮説を立てる。親項目の条件制御を保持。",
+      "criteria" : [
+        "調べる条件とそろえる条件を示し、予想や仮説を確かめる方法を表現する。"
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "cp.cross-science-inquiry",
+      "kind" : "competency",
+      "label" : "予想や仮説に基づき振り子の調べ方を考える",
+      "prerequisiteStatus" : "uninvestigated",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "根拠項目: 8260253120000000, 8260253122000000。原典の行為・条件を能力の記述へ分けた。達成観点は原典の要求に対応する確認事項。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "targetIDs" : [
+        "sm.control-conditions",
+        "sm.pendulum"
+      ],
+      "text" : "予想や仮説に基づき振り子の調べ方を考える"
+    },
+    {
+      "conditions" : "小5の振り子の観察・実験。親項目に従い、おもりの重さや長さなどの条件を制御して調べる。",
+      "criteria" : [
+        "1往復の時間がおもりの重さなどによって変わらず、長さによって変わることを説明する。"
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "cp.cross-science-knowledge",
+      "kind" : "competency",
+      "label" : "振り子の1往復の時間と条件の関係を説明する",
+      "prerequisiteStatus" : "uninvestigated",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "根拠項目: 8260253120000000, 8260253121100000。原典の行為・条件を能力の記述へ分けた。達成観点は原典の要求に対応する確認事項。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "targetIDs" : [
+        "sm.pendulum"
+      ],
+      "text" : "振り子の1往復の時間と条件の関係を説明する"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "8210000000000000"
+      },
+      "frameworkID" : "fw.cross-japanese",
+      "id" : "fi.8210000000000000",
+      "kind" : "frameworkItem",
+      "label" : "第１節　国　　　語",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 95; No 93",
+      "targetIDs" : [
+
+      ],
+      "text" : "第１節　国　　　語"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "8210200000000000"
+      },
+      "frameworkID" : "fw.cross-japanese",
+      "id" : "fi.8210200000000000",
+      "kind" : "frameworkItem",
+      "label" : "第２　各学年の目標及び内容　　",
+      "parentID" : "fi.8210000000000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 100; No 98",
+      "targetIDs" : [
+
+      ],
+      "text" : "第２　各学年の目標及び内容　　"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "82102A0000000000"
+      },
+      "frameworkID" : "fw.cross-japanese",
+      "id" : "fi.82102a0000000000",
+      "kind" : "frameworkItem",
+      "label" : "〔第１学年及び第２学年〕",
+      "parentID" : "fi.8210200000000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 101; No 99",
+      "targetIDs" : [
+
+      ],
+      "text" : "〔第１学年及び第２学年〕"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "82102A3000000000"
+      },
+      "frameworkID" : "fw.cross-japanese",
+      "id" : "fi.82102a3000000000",
+      "kind" : "frameworkItem",
+      "label" : "２　内　容",
+      "parentID" : "fi.82102a0000000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 106; No 104",
+      "targetIDs" : [
+
+      ],
+      "text" : "２　内　容"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "82102A3200000000"
+      },
+      "frameworkID" : "fw.cross-japanese",
+      "id" : "fi.82102a3200000000",
+      "kind" : "frameworkItem",
+      "label" : "〔思考力，判断力，表現力等〕",
+      "parentID" : "fi.82102a3000000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 127; No 125",
+      "targetIDs" : [
+
+      ],
+      "text" : "〔思考力，判断力，表現力等〕"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "82102A3230000000"
+      },
+      "frameworkID" : "fw.cross-japanese",
+      "id" : "fi.82102a3230000000",
+      "kind" : "frameworkItem",
+      "label" : "Ｃ　読むこと",
+      "parentID" : "fi.82102a3200000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 149; No 147",
+      "targetIDs" : [
+
+      ],
+      "text" : "Ｃ　読むこと"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "82102A3231000000"
+      },
+      "frameworkID" : "fw.cross-japanese",
+      "id" : "fi.82102a3231000000",
+      "kind" : "frameworkItem",
+      "label" : "(1) 読むことに関する次の事項を身に付けることができるよう指導する。",
+      "parentID" : "fi.82102a3230000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 150; No 148",
+      "targetIDs" : [
+
+      ],
+      "text" : "(1) 読むことに関する次の事項を身に付けることができるよう指導する。"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "82102A3231200000"
+      },
+      "frameworkID" : "fw.cross-japanese",
+      "id" : "fi.82102a3231200000",
+      "kind" : "frameworkItem",
+      "label" : "イ　場面の様子や登場人物の行動など，内容の大体を捉えること。",
+      "parentID" : "fi.82102a3231000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 152; No 150",
+      "targetIDs" : [
+
+      ],
+      "text" : "イ　場面の様子や登場人物の行動など，内容の大体を捉えること。"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "82102C0000000000"
+      },
+      "frameworkID" : "fw.cross-japanese",
+      "id" : "fi.82102c0000000000",
+      "kind" : "frameworkItem",
+      "label" : "〔第３学年及び第４学年〕",
+      "parentID" : "fi.8210200000000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 161; No 159",
+      "targetIDs" : [
+
+      ],
+      "text" : "〔第３学年及び第４学年〕"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "82102C3000000000"
+      },
+      "frameworkID" : "fw.cross-japanese",
+      "id" : "fi.82102c3000000000",
+      "kind" : "frameworkItem",
+      "label" : "２　内　容",
+      "parentID" : "fi.82102c0000000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 166; No 164",
+      "targetIDs" : [
+
+      ],
+      "text" : "２　内　容"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "82102C3200000000"
+      },
+      "frameworkID" : "fw.cross-japanese",
+      "id" : "fi.82102c3200000000",
+      "kind" : "frameworkItem",
+      "label" : "〔思考力，判断力，表現力等〕",
+      "parentID" : "fi.82102c3000000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 189; No 187",
+      "targetIDs" : [
+
+      ],
+      "text" : "〔思考力，判断力，表現力等〕"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "82102C3230000000"
+      },
+      "frameworkID" : "fw.cross-japanese",
+      "id" : "fi.82102c3230000000",
+      "kind" : "frameworkItem",
+      "label" : "Ｃ　読むこと",
+      "parentID" : "fi.82102c3200000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 212; No 210",
+      "targetIDs" : [
+
+      ],
+      "text" : "Ｃ　読むこと"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "82102C3231000000"
+      },
+      "frameworkID" : "fw.cross-japanese",
+      "id" : "fi.82102c3231000000",
+      "kind" : "frameworkItem",
+      "label" : "(1) 読むことに関する次の事項を身に付けることができるよう指導する。",
+      "parentID" : "fi.82102c3230000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 213; No 211",
+      "targetIDs" : [
+
+      ],
+      "text" : "(1) 読むことに関する次の事項を身に付けることができるよう指導する。"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "82102C3231200000"
+      },
+      "frameworkID" : "fw.cross-japanese",
+      "id" : "fi.82102c3231200000",
+      "kind" : "frameworkItem",
+      "label" : "イ　登場人物の行動や気持ちなどについて，叙述を基に捉えること。",
+      "parentID" : "fi.82102c3231000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 215; No 213",
+      "targetIDs" : [
+
+      ],
+      "text" : "イ　登場人物の行動や気持ちなどについて，叙述を基に捉えること。"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "8250000000000000"
+      },
+      "frameworkID" : "fw.cross-data",
+      "id" : "fi.8250000000000000",
+      "kind" : "frameworkItem",
+      "label" : "第 ３ 節　算　　数",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 1658; No 1656",
+      "targetIDs" : [
+
+      ],
+      "text" : "第 ３ 節　算　　数"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "8250200000000000"
+      },
+      "frameworkID" : "fw.cross-data",
+      "id" : "fi.8250200000000000",
+      "kind" : "frameworkItem",
+      "label" : "第２　各学年の目標及び内容",
+      "parentID" : "fi.8250000000000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 1663; No 1661",
+      "targetIDs" : [
+
+      ],
+      "text" : "第２　各学年の目標及び内容"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "8250230000000000"
+      },
+      "frameworkID" : "fw.cross-data",
+      "id" : "fi.8250230000000000",
+      "kind" : "frameworkItem",
+      "label" : "〔第３学年〕",
+      "parentID" : "fi.8250200000000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 1812; No 1810",
+      "targetIDs" : [
+
+      ],
+      "text" : "〔第３学年〕"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "8250233000000000"
+      },
+      "frameworkID" : "fw.cross-data",
+      "id" : "fi.8250233000000000",
+      "kind" : "frameworkItem",
+      "label" : "２　内　容",
+      "parentID" : "fi.8250230000000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 1817; No 1815",
+      "targetIDs" : [
+
+      ],
+      "text" : "２　内　容"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "8250233400000000"
+      },
+      "frameworkID" : "fw.cross-data",
+      "id" : "fi.8250233400000000",
+      "kind" : "frameworkItem",
+      "label" : "Ｄ　データの活用",
+      "parentID" : "fi.8250233000000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 1894; No 1892",
+      "targetIDs" : [
+
+      ],
+      "text" : "Ｄ　データの活用"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "8250233410000000"
+      },
+      "frameworkID" : "fw.cross-data",
+      "id" : "fi.8250233410000000",
+      "kind" : "frameworkItem",
+      "label" : "(1) データの分析に関わる数学的活動を通して，次の事項を身に付けることができるよう指導する。",
+      "parentID" : "fi.8250233400000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 1895; No 1893",
+      "targetIDs" : [
+
+      ],
+      "text" : "(1) データの分析に関わる数学的活動を通して，次の事項を身に付けることができるよう指導する。"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "8250233411000000"
+      },
+      "frameworkID" : "fw.cross-data",
+      "id" : "fi.8250233411000000",
+      "kind" : "frameworkItem",
+      "label" : "ア　次のような知識及び技能を身に付けること。",
+      "parentID" : "fi.8250233410000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 1896; No 1894",
+      "targetIDs" : [
+
+      ],
+      "text" : "ア　次のような知識及び技能を身に付けること。"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "8250233411100000"
+      },
+      "frameworkID" : "fw.cross-data",
+      "id" : "fi.8250233411100000",
+      "kind" : "frameworkItem",
+      "label" : "(ｱ) 日時の観点や場所の観点などからデータを分類整理し，表に表したり読んだりすること。",
+      "parentID" : "fi.8250233411000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 1897; No 1895",
+      "targetIDs" : [
+
+      ],
+      "text" : "(ｱ) 日時の観点や場所の観点などからデータを分類整理し，表に表したり読んだりすること。"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "8250233412000000"
+      },
+      "frameworkID" : "fw.cross-data",
+      "id" : "fi.8250233412000000",
+      "kind" : "frameworkItem",
+      "label" : "イ　次のような思考力，判断力，表現力等を身に付けること。",
+      "parentID" : "fi.8250233410000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 1899; No 1897",
+      "targetIDs" : [
+
+      ],
+      "text" : "イ　次のような思考力，判断力，表現力等を身に付けること。"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "8250233412100000"
+      },
+      "frameworkID" : "fw.cross-data",
+      "id" : "fi.8250233412100000",
+      "kind" : "frameworkItem",
+      "label" : "(ｱ) データを整理する観点に着目し，身の回りの事象について表やグラフを用いて考察して，見いだしたことを表現すること。",
+      "parentID" : "fi.8250233412000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 1900; No 1898",
+      "targetIDs" : [
+
+      ],
+      "text" : "(ｱ) データを整理する観点に着目し，身の回りの事象について表やグラフを用いて考察して，見いだしたことを表現すること。"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "82600L0000000000"
+      },
+      "frameworkID" : "fw.cross-science",
+      "id" : "fi.82600l0000000000",
+      "kind" : "frameworkItem",
+      "label" : "第４節　理　　　科",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 2290; No 2288",
+      "targetIDs" : [
+
+      ],
+      "text" : "第４節　理　　　科"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "8260250000000000"
+      },
+      "frameworkID" : "fw.cross-science",
+      "id" : "fi.8260250000000000",
+      "kind" : "frameworkItem",
+      "label" : "〔第５学年〕",
+      "parentID" : "fi.82602l0000000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 2412; No 2410",
+      "targetIDs" : [
+
+      ],
+      "text" : "〔第５学年〕"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "8260253000000000"
+      },
+      "frameworkID" : "fw.cross-science",
+      "id" : "fi.8260253000000000",
+      "kind" : "frameworkItem",
+      "label" : "２　内　容",
+      "parentID" : "fi.8260250000000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 2422; No 2420",
+      "targetIDs" : [
+
+      ],
+      "text" : "２　内　容"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "8260253100000000"
+      },
+      "frameworkID" : "fw.cross-science",
+      "id" : "fi.8260253100000000",
+      "kind" : "frameworkItem",
+      "label" : "Ａ　物質・エネルギー",
+      "parentID" : "fi.8260253000000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 2423; No 2421",
+      "targetIDs" : [
+
+      ],
+      "text" : "Ａ　物質・エネルギー"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "8260253120000000"
+      },
+      "frameworkID" : "fw.cross-science",
+      "id" : "fi.8260253120000000",
+      "kind" : "frameworkItem",
+      "label" : "(2) 振り子の運動\n振り子の運動の規則性について，振り子が１往復する時間に着目して，おもりの重さや振り子の長さなどの条件を制御しながら調べる活動を通して，次の事項を身に付けることができるよう指導する。",
+      "parentID" : "fi.8260253100000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 2430; No 2428",
+      "targetIDs" : [
+
+      ],
+      "text" : "(2) 振り子の運動\n振り子の運動の規則性について，振り子が１往復する時間に着目して，おもりの重さや振り子の長さなどの条件を制御しながら調べる活動を通して，次の事項を身に付けることができるよう指導する。"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "8260253121000000"
+      },
+      "frameworkID" : "fw.cross-science",
+      "id" : "fi.8260253121000000",
+      "kind" : "frameworkItem",
+      "label" : "ア　次のことを理解するとともに，観察，実験などに関する技能を身に付けること。",
+      "parentID" : "fi.8260253120000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 2431; No 2429",
+      "targetIDs" : [
+
+      ],
+      "text" : "ア　次のことを理解するとともに，観察，実験などに関する技能を身に付けること。"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "8260253121100000"
+      },
+      "frameworkID" : "fw.cross-science",
+      "id" : "fi.8260253121100000",
+      "kind" : "frameworkItem",
+      "label" : "(ｱ) 振り子が１往復する時間は，おもりの重さなどによっては変わらないが，振り子の長さによって変わること。",
+      "parentID" : "fi.8260253121000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 2432; No 2430",
+      "targetIDs" : [
+
+      ],
+      "text" : "(ｱ) 振り子が１往復する時間は，おもりの重さなどによっては変わらないが，振り子の長さによって変わること。"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "8260253122000000"
+      },
+      "frameworkID" : "fw.cross-science",
+      "id" : "fi.8260253122000000",
+      "kind" : "frameworkItem",
+      "label" : "イ　振り子の運動の規則性について追究する中で，振り子が１往復する時間に関係する条件についての予想や仮説を基に，解決の方法を発想し，表現すること。",
+      "parentID" : "fi.8260253120000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 2433; No 2431",
+      "targetIDs" : [
+
+      ],
+      "text" : "イ　振り子の運動の規則性について追究する中で，振り子が１往復する時間に関係する条件についての予想や仮説を基に，解決の方法を発想し，表現すること。"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "82602L0000000000"
+      },
+      "frameworkID" : "fw.cross-science",
+      "id" : "fi.82602l0000000000",
+      "kind" : "frameworkItem",
+      "label" : "第２　各学年の目標及び内容　　",
+      "parentID" : "fi.82600l0000000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 2295; No 2293",
+      "targetIDs" : [
+
+      ],
+      "text" : "第２　各学年の目標及び内容　　"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "8280000000000000"
+      },
+      "frameworkID" : "fw.cross-music",
+      "id" : "fi.8280000000000000",
+      "kind" : "frameworkItem",
+      "label" : "第６節　音　　　楽",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 2600; No 2598",
+      "targetIDs" : [
+
+      ],
+      "text" : "第６節　音　　　楽"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "8280200000000000"
+      },
+      "frameworkID" : "fw.cross-music",
+      "id" : "fi.8280200000000000",
+      "kind" : "frameworkItem",
+      "label" : "第２　各学年の目標及び内容　　",
+      "parentID" : "fi.8280000000000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 2605; No 2603",
+      "targetIDs" : [
+
+      ],
+      "text" : "第２　各学年の目標及び内容　　"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "82802D0000000000"
+      },
+      "frameworkID" : "fw.cross-music",
+      "id" : "fi.82802d0000000000",
+      "kind" : "frameworkItem",
+      "label" : "〔第５学年及び第６学年〕",
+      "parentID" : "fi.8280200000000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 2726; No 2724",
+      "targetIDs" : [
+
+      ],
+      "text" : "〔第５学年及び第６学年〕"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "82802D3000000000"
+      },
+      "frameworkID" : "fw.cross-music",
+      "id" : "fi.82802d3000000000",
+      "kind" : "frameworkItem",
+      "label" : "２　内　容",
+      "parentID" : "fi.82802d0000000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 2731; No 2729",
+      "targetIDs" : [
+
+      ],
+      "text" : "２　内　容"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "82802D3100000000"
+      },
+      "frameworkID" : "fw.cross-music",
+      "id" : "fi.82802d3100000000",
+      "kind" : "frameworkItem",
+      "label" : "Ａ　表　現",
+      "parentID" : "fi.82802d3000000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 2732; No 2730",
+      "targetIDs" : [
+
+      ],
+      "text" : "Ａ　表　現"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "82802D3120000000"
+      },
+      "frameworkID" : "fw.cross-music",
+      "id" : "fi.82802d3120000000",
+      "kind" : "frameworkItem",
+      "label" : "(2) 器楽の活動を通して，次の事項を身に付けることができるよう指導する。",
+      "parentID" : "fi.82802d3100000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 2740; No 2738",
+      "targetIDs" : [
+
+      ],
+      "text" : "(2) 器楽の活動を通して，次の事項を身に付けることができるよう指導する。"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "82802D3123000000"
+      },
+      "frameworkID" : "fw.cross-music",
+      "id" : "fi.82802d3123000000",
+      "kind" : "frameworkItem",
+      "label" : "ウ　思いや意図に合った表現をするために必要な次の(ｱ)から(ｳ)までの技能を身に付けること。",
+      "parentID" : "fi.82802d3120000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 2745; No 2743",
+      "targetIDs" : [
+
+      ],
+      "text" : "ウ　思いや意図に合った表現をするために必要な次の(ｱ)から(ｳ)までの技能を身に付けること。"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "82802D3123300000"
+      },
+      "frameworkID" : "fw.cross-music",
+      "id" : "fi.82802d3123300000",
+      "kind" : "frameworkItem",
+      "label" : "(ｳ) 各声部の楽器の音や全体の響き，伴奏を聴いて，音を合わせて演奏する技能",
+      "parentID" : "fi.82802d3123000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 2748; No 2746",
+      "targetIDs" : [
+
+      ],
+      "text" : "(ｳ) 各声部の楽器の音や全体の響き，伴奏を聴いて，音を合わせて演奏する技能"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "82H00D0000000000"
+      },
+      "frameworkID" : "fw.cross-language",
+      "id" : "fi.82h00d0000000000",
+      "kind" : "frameworkItem",
+      "label" : "第10節　外国語",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 3279; No 3277",
+      "targetIDs" : [
+
+      ],
+      "text" : "第10節　外国語"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "82H02D0000000000"
+      },
+      "frameworkID" : "fw.cross-language",
+      "id" : "fi.82h02d0000000000",
+      "kind" : "frameworkItem",
+      "label" : "第２　各言語の目標及び内容等",
+      "parentID" : "fi.82h00d0000000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 3284; No 3282",
+      "targetIDs" : [
+
+      ],
+      "text" : "第２　各言語の目標及び内容等"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "82H12D0000000000"
+      },
+      "frameworkID" : "fw.cross-language",
+      "id" : "fi.82h12d0000000000",
+      "kind" : "frameworkItem",
+      "label" : "英語",
+      "parentID" : "fi.82h02d0000000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 3285; No 3283",
+      "targetIDs" : [
+
+      ],
+      "text" : "英語"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "82H12D2000000000"
+      },
+      "frameworkID" : "fw.cross-language",
+      "id" : "fi.82h12d2000000000",
+      "kind" : "frameworkItem",
+      "label" : "１　目　標\n英語学習の特質を踏まえ，以下に示す，聞くこと，読むこと，話すこと［やり取り］，話すこと［発表］，書くことの五つの領域別に設定する目標の実現を目指した指導を通して，第１の(1)及び(2)に示す資質・能力を一体的に育成するとともに，その過程を通して，第１の(3)に示す資質・能力を育成する。",
+      "parentID" : "fi.82h12d0000000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 3286; No 3284",
+      "targetIDs" : [
+
+      ],
+      "text" : "１　目　標\n英語学習の特質を踏まえ，以下に示す，聞くこと，読むこと，話すこと［やり取り］，話すこと［発表］，書くことの五つの領域別に設定する目標の実現を目指した指導を通して，第１の(1)及び(2)に示す資質・能力を一体的に育成するとともに，その過程を通して，第１の(3)に示す資質・能力を育成する。"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "82H12D2100000000"
+      },
+      "frameworkID" : "fw.cross-language",
+      "id" : "fi.82h12d2100000000",
+      "kind" : "frameworkItem",
+      "label" : "(1) 聞くこと",
+      "parentID" : "fi.82h12d2000000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 3287; No 3285",
+      "targetIDs" : [
+
+      ],
+      "text" : "(1) 聞くこと"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "82H12D2110000000"
+      },
+      "frameworkID" : "fw.cross-language",
+      "id" : "fi.82h12d2110000000",
+      "kind" : "frameworkItem",
+      "label" : "ア  ゆっくりはっきりと話されれば，自分のことや身近で簡単な事柄について，簡単な語句や基本的な表現を聞き取ることができるようにする。",
+      "parentID" : "fi.82h12d2100000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 3288; No 3286",
+      "targetIDs" : [
+
+      ],
+      "text" : "ア  ゆっくりはっきりと話されれば，自分のことや身近で簡単な事柄について，簡単な語句や基本的な表現を聞き取ることができるようにする。"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "82H12D2500000000"
+      },
+      "frameworkID" : "fw.cross-language",
+      "id" : "fi.82h12d2500000000",
+      "kind" : "frameworkItem",
+      "label" : "(5) 書くこと",
+      "parentID" : "fi.82h12d2000000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 3302; No 3300",
+      "targetIDs" : [
+
+      ],
+      "text" : "(5) 書くこと"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "82H12D2520000000"
+      },
+      "frameworkID" : "fw.cross-language",
+      "id" : "fi.82h12d2520000000",
+      "kind" : "frameworkItem",
+      "label" : "イ  自分のことや身近で簡単な事柄について，例文を参考に，音声で十分に慣れ親しんだ簡単な語句や基本的な表現を用いて書くことができるようにする。",
+      "parentID" : "fi.82h12d2500000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 3304; No 3302",
+      "targetIDs" : [
+
+      ],
+      "text" : "イ  自分のことや身近で簡単な事柄について，例文を参考に，音声で十分に慣れ親しんだ簡単な語句や基本的な表現を用いて書くことができるようにする。"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "82K0000000000000"
+      },
+      "frameworkID" : "fw.cross-ethics",
+      "id" : "fi.82k0000000000000",
+      "kind" : "frameworkItem",
+      "label" : "第３章　特別の教科　道徳",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 3436; No 3434",
+      "targetIDs" : [
+
+      ],
+      "text" : "第３章　特別の教科　道徳"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "82K0400000000000"
+      },
+      "frameworkID" : "fw.cross-ethics",
+      "id" : "fi.82k0400000000000",
+      "kind" : "frameworkItem",
+      "label" : "第２　内　容\n学校の教育活動全体を通じて行う道徳教育の要である道徳科においては，以下に示す項目について扱う。",
+      "parentID" : "fi.82k0000000000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 3438; No 3436",
+      "targetIDs" : [
+
+      ],
+      "text" : "第２　内　容\n学校の教育活動全体を通じて行う道徳教育の要である道徳科においては，以下に示す項目について扱う。"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "82K0400200000000"
+      },
+      "frameworkID" : "fw.cross-ethics",
+      "id" : "fi.82k0400200000000",
+      "kind" : "frameworkItem",
+      "label" : "Ｂ　主として人との関わりに関すること",
+      "parentID" : "fi.82k0400000000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 3462; No 3460",
+      "targetIDs" : [
+
+      ],
+      "text" : "Ｂ　主として人との関わりに関すること"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "82K0400210000000"
+      },
+      "frameworkID" : "fw.cross-ethics",
+      "id" : "fi.82k0400210000000",
+      "kind" : "frameworkItem",
+      "label" : "［親切，思いやり］",
+      "parentID" : "fi.82k0400200000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 3463; No 3461",
+      "targetIDs" : [
+
+      ],
+      "text" : "［親切，思いやり］"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "82K04D0213000000"
+      },
+      "frameworkID" : "fw.cross-ethics",
+      "id" : "fi.82k04d0213000000",
+      "kind" : "frameworkItem",
+      "label" : "〔第５学年及び第６学年〕 \n誰に対しても思いやりの心をもち，相手の立場に立って親切にすること。",
+      "parentID" : "fi.82k0400210000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 3466; No 3464",
+      "targetIDs" : [
+
+      ],
+      "text" : "〔第５学年及び第６学年〕 \n誰に対しても思いやりの心をもち，相手の立場に立って親切にすること。"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "8320000000000000"
+      },
+      "frameworkID" : "fw.cross-history",
+      "id" : "fi.8320000000000000",
+      "kind" : "frameworkItem",
+      "label" : "第２節　社会",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-83v11"
+        ]
+      },
+      "sourceLocator" : "CSV record 302; No 300",
+      "targetIDs" : [
+
+      ],
+      "text" : "第２節　社会"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "8320200000000000"
+      },
+      "frameworkID" : "fw.cross-history",
+      "id" : "fi.8320200000000000",
+      "kind" : "frameworkItem",
+      "label" : "第２　各分野の目標及び内容",
+      "parentID" : "fi.8320000000000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-83v11"
+        ]
+      },
+      "sourceLocator" : "CSV record 307; No 305",
+      "targetIDs" : [
+
+      ],
+      "text" : "第２　各分野の目標及び内容"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "8322200000000000"
+      },
+      "frameworkID" : "fw.cross-history",
+      "id" : "fi.8322200000000000",
+      "kind" : "frameworkItem",
+      "label" : "〔歴史的分野〕",
+      "parentID" : "fi.8320200000000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-83v11"
+        ]
+      },
+      "sourceLocator" : "CSV record 416; No 414",
+      "targetIDs" : [
+
+      ],
+      "text" : "〔歴史的分野〕"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "8322203000000000"
+      },
+      "frameworkID" : "fw.cross-history",
+      "id" : "fi.8322203000000000",
+      "kind" : "frameworkItem",
+      "label" : "２　内容",
+      "parentID" : "fi.8322200000000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-83v11"
+        ]
+      },
+      "sourceLocator" : "CSV record 421; No 419",
+      "targetIDs" : [
+
+      ],
+      "text" : "２　内容"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "8322203100000000"
+      },
+      "frameworkID" : "fw.cross-history",
+      "id" : "fi.8322203100000000",
+      "kind" : "frameworkItem",
+      "label" : "Ａ　歴史との対話",
+      "parentID" : "fi.8322203000000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-83v11"
+        ]
+      },
+      "sourceLocator" : "CSV record 422; No 420",
+      "targetIDs" : [
+
+      ],
+      "text" : "Ａ　歴史との対話"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "8322203120000000"
+      },
+      "frameworkID" : "fw.cross-history",
+      "id" : "fi.8322203120000000",
+      "kind" : "frameworkItem",
+      "label" : "(2) 身近な地域の歴史\n課題を追究したり解決したりする活動を通して，次の事項を身に付けることができるよう指導する。",
+      "parentID" : "fi.8322203100000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-83v11"
+        ]
+      },
+      "sourceLocator" : "CSV record 429; No 427",
+      "targetIDs" : [
+
+      ],
+      "text" : "(2) 身近な地域の歴史\n課題を追究したり解決したりする活動を通して，次の事項を身に付けることができるよう指導する。"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "8322203122000000"
+      },
+      "frameworkID" : "fw.cross-history",
+      "id" : "fi.8322203122000000",
+      "kind" : "frameworkItem",
+      "label" : "イ　次のような思考力，判断力，表現力等を身に付けること。",
+      "parentID" : "fi.8322203120000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-83v11"
+        ]
+      },
+      "sourceLocator" : "CSV record 432; No 430",
+      "targetIDs" : [
+
+      ],
+      "text" : "イ　次のような思考力，判断力，表現力等を身に付けること。"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "8322203122100000"
+      },
+      "frameworkID" : "fw.cross-history",
+      "id" : "fi.8322203122100000",
+      "kind" : "frameworkItem",
+      "label" : "(ｱ) 比較や関連，時代的な背景や地域的な環境，歴史と私たちとのつながりなどに着目して，地域に残る文化財や諸資料を活用して，身近な地域の歴史的な特徴を多面的・多角的に考察し，表現すること。",
+      "parentID" : "fi.8322203122000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-83v11"
+        ]
+      },
+      "sourceLocator" : "CSV record 433; No 431",
+      "targetIDs" : [
+
+      ],
+      "text" : "(ｱ) 比較や関連，時代的な背景や地域的な環境，歴史と私たちとのつながりなどに着目して，地域に残る文化財や諸資料を活用して，身近な地域の歴史的な特徴を多面的・多角的に考察し，表現すること。"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "84I0000000000000"
+      },
+      "frameworkID" : "fw.cross-information",
+      "id" : "fi.84i0000000000000",
+      "kind" : "frameworkItem",
+      "label" : "第10節　情　　　報",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-84v10"
+        ]
+      },
+      "sourceLocator" : "CSV record 3255; No 3253",
+      "targetIDs" : [
+
+      ],
+      "text" : "第10節　情　　　報"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "84I0500000000000"
+      },
+      "frameworkID" : "fw.cross-information",
+      "id" : "fi.84i0500000000000",
+      "kind" : "frameworkItem",
+      "label" : "第２款　各　科　目",
+      "parentID" : "fi.84i0000000000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-84v10"
+        ]
+      },
+      "sourceLocator" : "CSV record 3260; No 3258",
+      "targetIDs" : [
+
+      ],
+      "text" : "第２款　各　科　目"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "84I1500000000000"
+      },
+      "frameworkID" : "fw.cross-information",
+      "id" : "fi.84i1500000000000",
+      "kind" : "frameworkItem",
+      "label" : "第１　情報Ⅰ",
+      "parentID" : "fi.84i0500000000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-84v10"
+        ]
+      },
+      "sourceLocator" : "CSV record 3261; No 3259",
+      "targetIDs" : [
+
+      ],
+      "text" : "第１　情報Ⅰ"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "84I1503000000000"
+      },
+      "frameworkID" : "fw.cross-information",
+      "id" : "fi.84i1503000000000",
+      "kind" : "frameworkItem",
+      "label" : "２　内　容",
+      "parentID" : "fi.84i1500000000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-84v10"
+        ]
+      },
+      "sourceLocator" : "CSV record 3266; No 3264",
+      "targetIDs" : [
+
+      ],
+      "text" : "２　内　容"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "84I1503300000000"
+      },
+      "frameworkID" : "fw.cross-information",
+      "id" : "fi.84i1503300000000",
+      "kind" : "frameworkItem",
+      "label" : "(3) コンピュータとプログラミング\nコンピュータで情報が処理される仕組みに着目し，プログラミングやシミュレーションによって問題を発見・解決する活動を通して，次の事項を身に付けることができるよう指導する。",
+      "parentID" : "fi.84i1503000000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-84v10"
+        ]
+      },
+      "sourceLocator" : "CSV record 3285; No 3283",
+      "targetIDs" : [
+
+      ],
+      "text" : "(3) コンピュータとプログラミング\nコンピュータで情報が処理される仕組みに着目し，プログラミングやシミュレーションによって問題を発見・解決する活動を通して，次の事項を身に付けることができるよう指導する。"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "84I1503320000000"
+      },
+      "frameworkID" : "fw.cross-information",
+      "id" : "fi.84i1503320000000",
+      "kind" : "frameworkItem",
+      "label" : "イ　次のような思考力，判断力，表現力等を身に付けること。",
+      "parentID" : "fi.84i1503300000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-84v10"
+        ]
+      },
+      "sourceLocator" : "CSV record 3290; No 3288",
+      "targetIDs" : [
+
+      ],
+      "text" : "イ　次のような思考力，判断力，表現力等を身に付けること。"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "84I1503322000000"
+      },
+      "frameworkID" : "fw.cross-information",
+      "id" : "fi.84i1503322000000",
+      "kind" : "frameworkItem",
+      "label" : "(ｲ) 目的に応じたアルゴリズムを考え適切な方法で表現し，プログラミングによりコンピュータや情報通信ネットワークを活用するとともに，その過程を評価し改善すること。",
+      "parentID" : "fi.84i1503320000000",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "文部科学省のコード表から当該行をそのまま抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-84v10"
+        ]
+      },
+      "sourceLocator" : "CSV record 3292; No 3290",
+      "targetIDs" : [
+
+      ],
+      "text" : "(ｲ) 目的に応じたアルゴリズムを考え適切な方法で表現し，プログラミングによりコンピュータや情報通信ネットワークを活用するとともに，その過程を評価し改善すること。"
+    },
+    {
+      "category" : "curricula-v1:procedure",
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "sm.algorithm-process",
+      "kind" : "subjectMatter",
+      "label" : "アルゴリズムと改善過程",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "根拠項目: 84I1503322000000。原典で扱う対象を、能力と分けて整理。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-84v10"
+        ]
+      },
+      "targetIDs" : [
+
+      ],
+      "text" : "目的に応じたアルゴリズムの表現、プログラミング、その過程の評価と改善。"
+    },
+    {
+      "category" : "curricula-v1:concept",
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "sm.character-reading",
+      "kind" : "subjectMatter",
+      "label" : "登場人物の行動と気持ち",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "根拠項目: 82102A3231200000, 82102C3231200000。原典で扱う対象を、能力と分けて整理。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "targetIDs" : [
+
+      ],
+      "text" : "物語の場面、登場人物の行動や気持ちを読む対象として扱う。"
+    },
+    {
+      "category" : "curricula-v1:value",
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "sm.consideration",
+      "kind" : "subjectMatter",
+      "label" : "親切・思いやり",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "根拠項目: 82K04D0213000000。原典で扱う対象を、能力と分けて整理。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "targetIDs" : [
+
+      ],
+      "text" : "相手の立場に立って親切にすること。"
+    },
+    {
+      "category" : "curricula-v1:procedure",
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "sm.control-conditions",
+      "kind" : "subjectMatter",
+      "label" : "条件を制御して調べる方法",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "根拠項目: 8260253120000000, 8260253122000000。原典で扱う対象を、能力と分けて整理。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "targetIDs" : [
+
+      ],
+      "text" : "予想や仮説を基に、調べる条件とそろえる条件を考えて方法を組み立てる。"
+    },
+    {
+      "category" : "curricula-v1:representation",
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "sm.data-organization",
+      "kind" : "subjectMatter",
+      "label" : "データの分類と表現",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "根拠項目: 8250233411100000, 8250233412100000。原典で扱う対象を、能力と分けて整理。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "targetIDs" : [
+
+      ],
+      "text" : "日時や場所などの観点で整理したデータと、その表やグラフによる表現。"
+    },
+    {
+      "category" : "curricula-v1:musicalExpression",
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "sm.ensemble",
+      "kind" : "subjectMatter",
+      "label" : "各声部と全体の響き",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "根拠項目: 82802D3123300000。原典で扱う対象を、能力と分けて整理。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "targetIDs" : [
+
+      ],
+      "text" : "各声部の楽器の音、全体の響き、伴奏と、自分の演奏との関わり。"
+    },
+    {
+      "category" : "curricula-v1:concept",
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "sm.familiar-language",
+      "kind" : "subjectMatter",
+      "label" : "身近な事柄を表す英語",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "根拠項目: 82H12D2110000000, 82H12D2520000000。原典で扱う対象を、能力と分けて整理。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "targetIDs" : [
+
+      ],
+      "text" : "自分のことや身近で簡単な事柄を表す、簡単な語句や基本的な表現。"
+    },
+    {
+      "category" : "curricula-v1:concept",
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "sm.local-history",
+      "kind" : "subjectMatter",
+      "label" : "地域の歴史と資料",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "根拠項目: 8322203122100000。原典で扱う対象を、能力と分けて整理。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-83v11"
+        ]
+      },
+      "targetIDs" : [
+
+      ],
+      "text" : "地域に残る文化財や諸資料と、地域の歴史的な特徴。"
+    },
+    {
+      "category" : "curricula-v1:concept",
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "sm.pendulum",
+      "kind" : "subjectMatter",
+      "label" : "振り子の運動",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "根拠項目: 8260253120000000, 8260253121100000。原典で扱う対象を、能力と分けて整理。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "targetIDs" : [
+
+      ],
+      "text" : "振り子が1往復する時間と、おもりの重さや振り子の長さなどの条件との関係。"
+    }
+  ],
+  "frameworks" : [
+    {
+      "id" : "fw.cross-data",
+      "issuer" : "文部科学省",
+      "label" : "算数（小学校）",
+      "origin" : "original",
+      "sourceIDs" : [
+        "src.mext-82v12"
+      ],
+      "version" : "2017"
+    },
+    {
+      "id" : "fw.cross-ethics",
+      "issuer" : "文部科学省",
+      "label" : "道徳（小学校）",
+      "origin" : "original",
+      "sourceIDs" : [
+        "src.mext-82v12"
+      ],
+      "version" : "2017"
+    },
+    {
+      "id" : "fw.cross-history",
+      "issuer" : "文部科学省",
+      "label" : "社会（中学校）",
+      "origin" : "original",
+      "sourceIDs" : [
+        "src.mext-83v11"
+      ],
+      "version" : "2017"
+    },
+    {
+      "id" : "fw.cross-information",
+      "issuer" : "文部科学省",
+      "label" : "情報Ⅰ（高校）",
+      "origin" : "original",
+      "sourceIDs" : [
+        "src.mext-84v10"
+      ],
+      "version" : "2018"
+    },
+    {
+      "id" : "fw.cross-japanese",
+      "issuer" : "文部科学省",
+      "label" : "国語（小学校）",
+      "origin" : "original",
+      "sourceIDs" : [
+        "src.mext-82v12"
+      ],
+      "version" : "2017"
+    },
+    {
+      "id" : "fw.cross-language",
+      "issuer" : "文部科学省",
+      "label" : "外国語（小学校）",
+      "origin" : "original",
+      "sourceIDs" : [
+        "src.mext-82v12"
+      ],
+      "version" : "2017"
+    },
+    {
+      "id" : "fw.cross-music",
+      "issuer" : "文部科学省",
+      "label" : "音楽（小学校）",
+      "origin" : "original",
+      "sourceIDs" : [
+        "src.mext-82v12"
+      ],
+      "version" : "2017"
+    },
+    {
+      "id" : "fw.cross-science",
+      "issuer" : "文部科学省",
+      "label" : "理科（小学校）",
+      "origin" : "original",
+      "sourceIDs" : [
+        "src.mext-82v12"
+      ],
+      "version" : "2017"
+    }
+  ],
+  "limitations" : [
+    "選定した8教科・11例を収録。親子階層は教科見出しから選定細目まで。",
+    "前提関係は今回の収録対象外。原典の掲載順から必須前提を生成しない。",
+    "学年帯や活動の条件は原文・文脈で保持。専用フィールドによる学年検索・活動実行・採点は未実装。"
+  ],
+  "readingOutlines" : [
+    {
+      "id" : "reading.cross-subject",
+      "label" : "教科をまたいで学びを読む",
+      "sections" : [
+        {
+          "entityIDs" : [
+            "fi.82102a3231200000",
+            "sm.character-reading",
+            "cp.cross-japanese-early"
+          ],
+          "id" : "section.cross-japanese-early",
+          "label" : "国語：物語の内容を捉える"
+        },
+        {
+          "entityIDs" : [
+            "fi.82102c3231200000",
+            "sm.character-reading",
+            "cp.cross-japanese-middle"
+          ],
+          "id" : "section.cross-japanese-middle",
+          "label" : "国語：叙述を基に行動・気持ちを捉える"
+        },
+        {
+          "entityIDs" : [
+            "fi.8260253121100000",
+            "sm.pendulum",
+            "cp.cross-science-knowledge"
+          ],
+          "id" : "section.cross-science-knowledge",
+          "label" : "理科：振り子の規則性"
+        },
+        {
+          "entityIDs" : [
+            "fi.8260253122000000",
+            "sm.control-conditions",
+            "cp.cross-science-inquiry"
+          ],
+          "id" : "section.cross-science-inquiry",
+          "label" : "理科：条件を制御した調べ方"
+        },
+        {
+          "entityIDs" : [
+            "fi.8322203122100000",
+            "sm.local-history",
+            "cp.cross-history"
+          ],
+          "id" : "section.cross-history",
+          "label" : "社会：地域の歴史を資料から考察する"
+        },
+        {
+          "entityIDs" : [
+            "fi.82h12d2110000000",
+            "sm.familiar-language",
+            "cp.cross-language-listen"
+          ],
+          "id" : "section.cross-language-listen",
+          "label" : "外国語：条件付きの聞き取り"
+        },
+        {
+          "entityIDs" : [
+            "fi.82h12d2520000000",
+            "sm.familiar-language",
+            "cp.cross-language-write"
+          ],
+          "id" : "section.cross-language-write",
+          "label" : "外国語：例文を参考に書く"
+        },
+        {
+          "entityIDs" : [
+            "fi.82802d3123300000",
+            "sm.ensemble",
+            "cp.cross-music"
+          ],
+          "id" : "section.cross-music",
+          "label" : "音楽：音を合わせて演奏する"
+        },
+        {
+          "entityIDs" : [
+            "fi.82k04d0213000000",
+            "sm.consideration"
+          ],
+          "id" : "section.cross-ethics",
+          "label" : "道徳：親切・思いやり"
+        },
+        {
+          "entityIDs" : [
+            "fi.8250233411100000",
+            "fi.8250233412100000",
+            "sm.data-organization",
+            "cp.cross-data"
+          ],
+          "id" : "section.cross-data",
+          "label" : "算数：データの分類・表現"
+        },
+        {
+          "entityIDs" : [
+            "fi.84i1503322000000",
+            "sm.algorithm-process",
+            "cp.cross-information-build",
+            "cp.cross-information-improve"
+          ],
+          "id" : "section.cross-information",
+          "label" : "情報Ⅰ：アルゴリズムと評価・改善"
+        }
+      ]
+    }
+  ],
+  "relations" : [
+    {
+      "contextID" : "ctx.cross-data",
+      "coverage" : "full",
+      "excluded" : [
+
+      ],
+      "from" : "fi.8250233411100000",
+      "id" : "al.cross-data-0",
+      "kind" : "alignment",
+      "predicate" : "covers",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "根拠項目: 8250233411100000。分類整理と表の読み書きは全て含む。別細目の考察も同じ能力へ対応付ける。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "to" : "cp.cross-data"
+    },
+    {
+      "contextID" : "ctx.cross-data",
+      "coverage" : "partial",
+      "excluded" : [
+        "グラフを用いた考察"
+      ],
+      "from" : "fi.8250233412100000",
+      "id" : "al.cross-data-1",
+      "kind" : "alignment",
+      "predicate" : "covers",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "根拠項目: 8250233412100000。細目の一部を扱い、対象外を明示。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "to" : "cp.cross-data"
+    },
+    {
+      "contextID" : "ctx.cross-ethics",
+      "coverage" : "partial",
+      "excluded" : [
+        "思いやりの心をもち、実際に親切にする態度・行動全体"
+      ],
+      "from" : "fi.82k04d0213000000",
+      "id" : "al.cross-ethics-target",
+      "kind" : "alignment",
+      "predicate" : "covers",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "根拠項目: 82K04D0213000000。学ぶ対象の意味だけを対応させ、態度・行動の要求は原文で保持する。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "to" : "sm.consideration"
+    },
+    {
+      "contextID" : "ctx.cross-history",
+      "coverage" : "full",
+      "excluded" : [
+
+      ],
+      "from" : "fi.8322203122100000",
+      "id" : "al.cross-history-0",
+      "kind" : "alignment",
+      "predicate" : "covers",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "根拠項目: 8322203122100000。この細目の要求を能力の行為・条件・観点に対応付ける。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-83v11"
+        ]
+      },
+      "to" : "cp.cross-history"
+    },
+    {
+      "contextID" : "ctx.cross-information",
+      "coverage" : "partial",
+      "excluded" : [
+        "過程の評価と改善"
+      ],
+      "from" : "fi.84i1503322000000",
+      "id" : "al.cross-information-build-0",
+      "kind" : "alignment",
+      "predicate" : "covers",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "根拠項目: 84I1503322000000。細目の一部を扱い、対象外を明示。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-84v10"
+        ]
+      },
+      "to" : "cp.cross-information-build"
+    },
+    {
+      "contextID" : "ctx.cross-information",
+      "coverage" : "partial",
+      "excluded" : [
+        "アルゴリズムの設計・表現・実装そのもの"
+      ],
+      "from" : "fi.84i1503322000000",
+      "id" : "al.cross-information-improve-0",
+      "kind" : "alignment",
+      "predicate" : "covers",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "根拠項目: 84I1503322000000。細目の一部を扱い、対象外を明示。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-84v10"
+        ]
+      },
+      "to" : "cp.cross-information-improve"
+    },
+    {
+      "contextID" : "ctx.cross-japanese-early",
+      "coverage" : "full",
+      "excluded" : [
+
+      ],
+      "from" : "fi.82102a3231200000",
+      "id" : "al.cross-japanese-early-0",
+      "kind" : "alignment",
+      "predicate" : "covers",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "根拠項目: 82102A3231200000。この細目の要求を能力の行為・条件・観点に対応付ける。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "to" : "cp.cross-japanese-early"
+    },
+    {
+      "contextID" : "ctx.cross-japanese-middle",
+      "coverage" : "full",
+      "excluded" : [
+
+      ],
+      "from" : "fi.82102c3231200000",
+      "id" : "al.cross-japanese-middle-0",
+      "kind" : "alignment",
+      "predicate" : "covers",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "根拠項目: 82102C3231200000。この細目の要求を能力の行為・条件・観点に対応付ける。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "to" : "cp.cross-japanese-middle"
+    },
+    {
+      "contextID" : "ctx.cross-language-listen",
+      "coverage" : "full",
+      "excluded" : [
+
+      ],
+      "from" : "fi.82h12d2110000000",
+      "id" : "al.cross-language-listen-0",
+      "kind" : "alignment",
+      "predicate" : "covers",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "根拠項目: 82H12D2110000000。この細目の要求を能力の行為・条件・観点に対応付ける。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "to" : "cp.cross-language-listen"
+    },
+    {
+      "contextID" : "ctx.cross-language-write",
+      "coverage" : "full",
+      "excluded" : [
+
+      ],
+      "from" : "fi.82h12d2520000000",
+      "id" : "al.cross-language-write-0",
+      "kind" : "alignment",
+      "predicate" : "covers",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "根拠項目: 82H12D2520000000。この細目の要求を能力の行為・条件・観点に対応付ける。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "to" : "cp.cross-language-write"
+    },
+    {
+      "contextID" : "ctx.cross-music",
+      "coverage" : "full",
+      "excluded" : [
+
+      ],
+      "from" : "fi.82802d3123300000",
+      "id" : "al.cross-music-0",
+      "kind" : "alignment",
+      "predicate" : "covers",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "根拠項目: 82802D3123300000。この細目の要求を能力の行為・条件・観点に対応付ける。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "to" : "cp.cross-music"
+    },
+    {
+      "contextID" : "ctx.cross-science-inquiry",
+      "coverage" : "full",
+      "excluded" : [
+
+      ],
+      "from" : "fi.8260253122000000",
+      "id" : "al.cross-science-inquiry-0",
+      "kind" : "alignment",
+      "predicate" : "covers",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "根拠項目: 8260253122000000。この細目の要求を能力の行為・条件・観点に対応付ける。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "to" : "cp.cross-science-inquiry"
+    },
+    {
+      "contextID" : "ctx.cross-science-knowledge",
+      "coverage" : "full",
+      "excluded" : [
+
+      ],
+      "from" : "fi.8260253121100000",
+      "id" : "al.cross-science-knowledge-0",
+      "kind" : "alignment",
+      "predicate" : "covers",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "根拠項目: 8260253121100000。この細目の要求を能力の行為・条件・観点に対応付ける。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "to" : "cp.cross-science-knowledge"
+    }
+  ],
+  "release" : "cross-subject-0.1.0",
+  "schemaVersion" : "0.1.0",
+  "sources" : [
+    {
+      "distributionVersion" : "82V12",
+      "id" : "src.mext-82v12",
+      "promulgated" : "2017",
+      "publisher" : "文部科学省",
+      "retrievedOn" : "2026-09-28",
+      "sha256" : "6d9a6dadf1593e15bad7c4e480eeea8dd91866600be2a94965582c8c774d3d7f",
+      "title" : "小学校学習指導要領（平成29年告示）コード表",
+      "url" : "https://www.mext.go.jp/content/20230901-mxt_syoto01-000013115_73.csv",
+      "verification" : "公式配布CSVのコードと原文を保持。選定した階層は原典の見出し・配列に基づき明示。"
+    },
+    {
+      "distributionVersion" : "83V11",
+      "id" : "src.mext-83v11",
+      "promulgated" : "2017",
+      "publisher" : "文部科学省",
+      "retrievedOn" : "2026-09-28",
+      "sha256" : "b8b5ad6cb52e5cfe5e390312b732b1325fffc5044b20a25e666075c74a569311",
+      "title" : "中学校学習指導要領（平成29年告示）コード表",
+      "url" : "https://www.mext.go.jp/content/20230901-mxt_syoto01-000013115_37.csv",
+      "verification" : "公式配布CSVのコードと原文を保持。選定した階層は原典の見出し・配列に基づき明示。"
+    },
+    {
+      "distributionVersion" : "84V10",
+      "id" : "src.mext-84v10",
+      "promulgated" : "2018",
+      "publisher" : "文部科学省",
+      "retrievedOn" : "2026-09-28",
+      "sha256" : "1073408f7b0396e79413be9f8a80a6ab3a79dcd063b7412929a4517b8b8bc67d",
+      "title" : "高等学校学習指導要領（平成30年告示及び一部改正）コード表",
+      "url" : "https://www.mext.go.jp/content/20230901-mxt_syoto01-000010374_01.csv",
+      "verification" : "公式配布CSVのコードと原文を保持。選定した階層は原典の見出し・配列に基づき明示。"
+    }
+  ]
+}

@@ -1,0 +1,980 @@
+{
+  "cases": [
+    {
+      "context": "国語・小1〜2",
+      "frameworkID": "fw.cross-japanese",
+      "id": "japanese-early",
+      "label": "国語：物語の内容を捉える",
+      "leafCodes": [
+        "82102A3231200000"
+      ],
+      "paths": [
+        [
+          "8210000000000000",
+          "8210200000000000",
+          "82102A0000000000",
+          "82102A3000000000",
+          "82102A3200000000",
+          "82102A3230000000",
+          "82102A3231000000",
+          "82102A3231200000"
+        ]
+      ],
+      "version": "82V12"
+    },
+    {
+      "context": "国語・小3〜4",
+      "frameworkID": "fw.cross-japanese",
+      "id": "japanese-middle",
+      "label": "国語：叙述を基に行動・気持ちを捉える",
+      "leafCodes": [
+        "82102C3231200000"
+      ],
+      "paths": [
+        [
+          "8210000000000000",
+          "8210200000000000",
+          "82102C0000000000",
+          "82102C3000000000",
+          "82102C3200000000",
+          "82102C3230000000",
+          "82102C3231000000",
+          "82102C3231200000"
+        ]
+      ],
+      "version": "82V12"
+    },
+    {
+      "context": "理科・小5",
+      "frameworkID": "fw.cross-science",
+      "id": "science-knowledge",
+      "label": "理科：振り子の規則性",
+      "leafCodes": [
+        "8260253121100000"
+      ],
+      "paths": [
+        [
+          "82600L0000000000",
+          "82602L0000000000",
+          "8260250000000000",
+          "8260253000000000",
+          "8260253100000000",
+          "8260253120000000",
+          "8260253121000000",
+          "8260253121100000"
+        ]
+      ],
+      "version": "82V12"
+    },
+    {
+      "context": "理科・小5",
+      "frameworkID": "fw.cross-science",
+      "id": "science-inquiry",
+      "label": "理科：条件を制御した調べ方",
+      "leafCodes": [
+        "8260253122000000"
+      ],
+      "paths": [
+        [
+          "82600L0000000000",
+          "82602L0000000000",
+          "8260250000000000",
+          "8260253000000000",
+          "8260253100000000",
+          "8260253120000000",
+          "8260253122000000"
+        ]
+      ],
+      "version": "82V12"
+    },
+    {
+      "context": "社会・中学校歴史的分野",
+      "frameworkID": "fw.cross-history",
+      "id": "history",
+      "label": "社会：地域の歴史を資料から考察する",
+      "leafCodes": [
+        "8322203122100000"
+      ],
+      "paths": [
+        [
+          "8320000000000000",
+          "8320200000000000",
+          "8322200000000000",
+          "8322203000000000",
+          "8322203100000000",
+          "8322203120000000",
+          "8322203122000000",
+          "8322203122100000"
+        ]
+      ],
+      "version": "83V11"
+    },
+    {
+      "context": "外国語・小5〜6",
+      "frameworkID": "fw.cross-language",
+      "id": "language-listen",
+      "label": "外国語：条件付きの聞き取り",
+      "leafCodes": [
+        "82H12D2110000000"
+      ],
+      "paths": [
+        [
+          "82H00D0000000000",
+          "82H02D0000000000",
+          "82H12D0000000000",
+          "82H12D2000000000",
+          "82H12D2100000000",
+          "82H12D2110000000"
+        ]
+      ],
+      "version": "82V12"
+    },
+    {
+      "context": "外国語・小5〜6",
+      "frameworkID": "fw.cross-language",
+      "id": "language-write",
+      "label": "外国語：例文を参考に書く",
+      "leafCodes": [
+        "82H12D2520000000"
+      ],
+      "paths": [
+        [
+          "82H00D0000000000",
+          "82H02D0000000000",
+          "82H12D0000000000",
+          "82H12D2000000000",
+          "82H12D2500000000",
+          "82H12D2520000000"
+        ]
+      ],
+      "version": "82V12"
+    },
+    {
+      "context": "音楽・小5〜6",
+      "frameworkID": "fw.cross-music",
+      "id": "music",
+      "label": "音楽：音を合わせて演奏する",
+      "leafCodes": [
+        "82802D3123300000"
+      ],
+      "paths": [
+        [
+          "8280000000000000",
+          "8280200000000000",
+          "82802D0000000000",
+          "82802D3000000000",
+          "82802D3100000000",
+          "82802D3120000000",
+          "82802D3123000000",
+          "82802D3123300000"
+        ]
+      ],
+      "version": "82V12"
+    },
+    {
+      "context": "道徳・小5〜6",
+      "frameworkID": "fw.cross-ethics",
+      "id": "ethics",
+      "label": "道徳：親切・思いやり",
+      "leafCodes": [
+        "82K04D0213000000"
+      ],
+      "paths": [
+        [
+          "82K0000000000000",
+          "82K0400000000000",
+          "82K0400200000000",
+          "82K0400210000000",
+          "82K04D0213000000"
+        ]
+      ],
+      "version": "82V12"
+    },
+    {
+      "context": "算数・小3",
+      "frameworkID": "fw.cross-data",
+      "id": "data",
+      "label": "算数：データの分類・表現",
+      "leafCodes": [
+        "8250233411100000",
+        "8250233412100000"
+      ],
+      "paths": [
+        [
+          "8250000000000000",
+          "8250200000000000",
+          "8250230000000000",
+          "8250233000000000",
+          "8250233400000000",
+          "8250233410000000",
+          "8250233411000000",
+          "8250233411100000"
+        ],
+        [
+          "8250000000000000",
+          "8250200000000000",
+          "8250230000000000",
+          "8250233000000000",
+          "8250233400000000",
+          "8250233410000000",
+          "8250233412000000",
+          "8250233412100000"
+        ]
+      ],
+      "version": "82V12"
+    },
+    {
+      "context": "情報Ⅰ・高校",
+      "frameworkID": "fw.cross-information",
+      "id": "information",
+      "label": "情報Ⅰ：アルゴリズムと評価・改善",
+      "leafCodes": [
+        "84I1503322000000"
+      ],
+      "paths": [
+        [
+          "84I0000000000000",
+          "84I0500000000000",
+          "84I1500000000000",
+          "84I1503000000000",
+          "84I1503300000000",
+          "84I1503320000000",
+          "84I1503322000000"
+        ]
+      ],
+      "version": "84V10"
+    }
+  ],
+  "frameworks": [
+    {
+      "id": "fw.cross-japanese",
+      "issuer": "文部科学省",
+      "label": "国語（小学校）",
+      "origin": "original",
+      "sourceIDs": [
+        "src.mext-82v12"
+      ],
+      "version": "2017"
+    },
+    {
+      "id": "fw.cross-science",
+      "issuer": "文部科学省",
+      "label": "理科（小学校）",
+      "origin": "original",
+      "sourceIDs": [
+        "src.mext-82v12"
+      ],
+      "version": "2017"
+    },
+    {
+      "id": "fw.cross-history",
+      "issuer": "文部科学省",
+      "label": "社会（中学校）",
+      "origin": "original",
+      "sourceIDs": [
+        "src.mext-83v11"
+      ],
+      "version": "2017"
+    },
+    {
+      "id": "fw.cross-language",
+      "issuer": "文部科学省",
+      "label": "外国語（小学校）",
+      "origin": "original",
+      "sourceIDs": [
+        "src.mext-82v12"
+      ],
+      "version": "2017"
+    },
+    {
+      "id": "fw.cross-music",
+      "issuer": "文部科学省",
+      "label": "音楽（小学校）",
+      "origin": "original",
+      "sourceIDs": [
+        "src.mext-82v12"
+      ],
+      "version": "2017"
+    },
+    {
+      "id": "fw.cross-ethics",
+      "issuer": "文部科学省",
+      "label": "道徳（小学校）",
+      "origin": "original",
+      "sourceIDs": [
+        "src.mext-82v12"
+      ],
+      "version": "2017"
+    },
+    {
+      "id": "fw.cross-data",
+      "issuer": "文部科学省",
+      "label": "算数（小学校）",
+      "origin": "original",
+      "sourceIDs": [
+        "src.mext-82v12"
+      ],
+      "version": "2017"
+    },
+    {
+      "id": "fw.cross-information",
+      "issuer": "文部科学省",
+      "label": "情報Ⅰ（高校）",
+      "origin": "original",
+      "sourceIDs": [
+        "src.mext-84v10"
+      ],
+      "version": "2018"
+    }
+  ],
+  "items": [
+    {
+      "code": "8210000000000000",
+      "frameworkID": "fw.cross-japanese",
+      "locator": "CSV record 95; No 93",
+      "sourceID": "src.mext-82v12",
+      "subject": "国語",
+      "text": "第１節　国　　　語"
+    },
+    {
+      "code": "8210200000000000",
+      "frameworkID": "fw.cross-japanese",
+      "locator": "CSV record 100; No 98",
+      "parentCode": "8210000000000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "国語",
+      "text": "第２　各学年の目標及び内容　　"
+    },
+    {
+      "code": "82102A0000000000",
+      "frameworkID": "fw.cross-japanese",
+      "locator": "CSV record 101; No 99",
+      "parentCode": "8210200000000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "国語",
+      "text": "〔第１学年及び第２学年〕"
+    },
+    {
+      "code": "82102A3000000000",
+      "frameworkID": "fw.cross-japanese",
+      "locator": "CSV record 106; No 104",
+      "parentCode": "82102A0000000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "国語",
+      "text": "２　内　容"
+    },
+    {
+      "code": "82102A3200000000",
+      "frameworkID": "fw.cross-japanese",
+      "locator": "CSV record 127; No 125",
+      "parentCode": "82102A3000000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "国語",
+      "text": "〔思考力，判断力，表現力等〕"
+    },
+    {
+      "code": "82102A3230000000",
+      "frameworkID": "fw.cross-japanese",
+      "locator": "CSV record 149; No 147",
+      "parentCode": "82102A3200000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "国語",
+      "text": "Ｃ　読むこと"
+    },
+    {
+      "code": "82102A3231000000",
+      "frameworkID": "fw.cross-japanese",
+      "locator": "CSV record 150; No 148",
+      "parentCode": "82102A3230000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "国語",
+      "text": "(1) 読むことに関する次の事項を身に付けることができるよう指導する。"
+    },
+    {
+      "code": "82102A3231200000",
+      "frameworkID": "fw.cross-japanese",
+      "locator": "CSV record 152; No 150",
+      "parentCode": "82102A3231000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "国語",
+      "text": "イ　場面の様子や登場人物の行動など，内容の大体を捉えること。"
+    },
+    {
+      "code": "82102C0000000000",
+      "frameworkID": "fw.cross-japanese",
+      "locator": "CSV record 161; No 159",
+      "parentCode": "8210200000000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "国語",
+      "text": "〔第３学年及び第４学年〕"
+    },
+    {
+      "code": "82102C3000000000",
+      "frameworkID": "fw.cross-japanese",
+      "locator": "CSV record 166; No 164",
+      "parentCode": "82102C0000000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "国語",
+      "text": "２　内　容"
+    },
+    {
+      "code": "82102C3200000000",
+      "frameworkID": "fw.cross-japanese",
+      "locator": "CSV record 189; No 187",
+      "parentCode": "82102C3000000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "国語",
+      "text": "〔思考力，判断力，表現力等〕"
+    },
+    {
+      "code": "82102C3230000000",
+      "frameworkID": "fw.cross-japanese",
+      "locator": "CSV record 212; No 210",
+      "parentCode": "82102C3200000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "国語",
+      "text": "Ｃ　読むこと"
+    },
+    {
+      "code": "82102C3231000000",
+      "frameworkID": "fw.cross-japanese",
+      "locator": "CSV record 213; No 211",
+      "parentCode": "82102C3230000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "国語",
+      "text": "(1) 読むことに関する次の事項を身に付けることができるよう指導する。"
+    },
+    {
+      "code": "82102C3231200000",
+      "frameworkID": "fw.cross-japanese",
+      "locator": "CSV record 215; No 213",
+      "parentCode": "82102C3231000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "国語",
+      "text": "イ　登場人物の行動や気持ちなどについて，叙述を基に捉えること。"
+    },
+    {
+      "code": "8250000000000000",
+      "frameworkID": "fw.cross-data",
+      "locator": "CSV record 1658; No 1656",
+      "sourceID": "src.mext-82v12",
+      "subject": "算数",
+      "text": "第 ３ 節　算　　数"
+    },
+    {
+      "code": "8250200000000000",
+      "frameworkID": "fw.cross-data",
+      "locator": "CSV record 1663; No 1661",
+      "parentCode": "8250000000000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "算数",
+      "text": "第２　各学年の目標及び内容"
+    },
+    {
+      "code": "8250230000000000",
+      "frameworkID": "fw.cross-data",
+      "locator": "CSV record 1812; No 1810",
+      "parentCode": "8250200000000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "算数",
+      "text": "〔第３学年〕"
+    },
+    {
+      "code": "8250233000000000",
+      "frameworkID": "fw.cross-data",
+      "locator": "CSV record 1817; No 1815",
+      "parentCode": "8250230000000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "算数",
+      "text": "２　内　容"
+    },
+    {
+      "code": "8250233400000000",
+      "frameworkID": "fw.cross-data",
+      "locator": "CSV record 1894; No 1892",
+      "parentCode": "8250233000000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "算数",
+      "text": "Ｄ　データの活用"
+    },
+    {
+      "code": "8250233410000000",
+      "frameworkID": "fw.cross-data",
+      "locator": "CSV record 1895; No 1893",
+      "parentCode": "8250233400000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "算数",
+      "text": "(1) データの分析に関わる数学的活動を通して，次の事項を身に付けることができるよう指導する。"
+    },
+    {
+      "code": "8250233411000000",
+      "frameworkID": "fw.cross-data",
+      "locator": "CSV record 1896; No 1894",
+      "parentCode": "8250233410000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "算数",
+      "text": "ア　次のような知識及び技能を身に付けること。"
+    },
+    {
+      "code": "8250233411100000",
+      "frameworkID": "fw.cross-data",
+      "locator": "CSV record 1897; No 1895",
+      "parentCode": "8250233411000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "算数",
+      "text": "(ｱ) 日時の観点や場所の観点などからデータを分類整理し，表に表したり読んだりすること。"
+    },
+    {
+      "code": "8250233412000000",
+      "frameworkID": "fw.cross-data",
+      "locator": "CSV record 1899; No 1897",
+      "parentCode": "8250233410000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "算数",
+      "text": "イ　次のような思考力，判断力，表現力等を身に付けること。"
+    },
+    {
+      "code": "8250233412100000",
+      "frameworkID": "fw.cross-data",
+      "locator": "CSV record 1900; No 1898",
+      "parentCode": "8250233412000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "算数",
+      "text": "(ｱ) データを整理する観点に着目し，身の回りの事象について表やグラフを用いて考察して，見いだしたことを表現すること。"
+    },
+    {
+      "code": "82600L0000000000",
+      "frameworkID": "fw.cross-science",
+      "locator": "CSV record 2290; No 2288",
+      "sourceID": "src.mext-82v12",
+      "subject": "理科",
+      "text": "第４節　理　　　科"
+    },
+    {
+      "code": "8260250000000000",
+      "frameworkID": "fw.cross-science",
+      "locator": "CSV record 2412; No 2410",
+      "parentCode": "82602L0000000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "理科",
+      "text": "〔第５学年〕"
+    },
+    {
+      "code": "8260253000000000",
+      "frameworkID": "fw.cross-science",
+      "locator": "CSV record 2422; No 2420",
+      "parentCode": "8260250000000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "理科",
+      "text": "２　内　容"
+    },
+    {
+      "code": "8260253100000000",
+      "frameworkID": "fw.cross-science",
+      "locator": "CSV record 2423; No 2421",
+      "parentCode": "8260253000000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "理科",
+      "text": "Ａ　物質・エネルギー"
+    },
+    {
+      "code": "8260253120000000",
+      "frameworkID": "fw.cross-science",
+      "locator": "CSV record 2430; No 2428",
+      "parentCode": "8260253100000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "理科",
+      "text": "(2) 振り子の運動\n振り子の運動の規則性について，振り子が１往復する時間に着目して，おもりの重さや振り子の長さなどの条件を制御しながら調べる活動を通して，次の事項を身に付けることができるよう指導する。"
+    },
+    {
+      "code": "8260253121000000",
+      "frameworkID": "fw.cross-science",
+      "locator": "CSV record 2431; No 2429",
+      "parentCode": "8260253120000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "理科",
+      "text": "ア　次のことを理解するとともに，観察，実験などに関する技能を身に付けること。"
+    },
+    {
+      "code": "8260253121100000",
+      "frameworkID": "fw.cross-science",
+      "locator": "CSV record 2432; No 2430",
+      "parentCode": "8260253121000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "理科",
+      "text": "(ｱ) 振り子が１往復する時間は，おもりの重さなどによっては変わらないが，振り子の長さによって変わること。"
+    },
+    {
+      "code": "8260253122000000",
+      "frameworkID": "fw.cross-science",
+      "locator": "CSV record 2433; No 2431",
+      "parentCode": "8260253120000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "理科",
+      "text": "イ　振り子の運動の規則性について追究する中で，振り子が１往復する時間に関係する条件についての予想や仮説を基に，解決の方法を発想し，表現すること。"
+    },
+    {
+      "code": "82602L0000000000",
+      "frameworkID": "fw.cross-science",
+      "locator": "CSV record 2295; No 2293",
+      "parentCode": "82600L0000000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "理科",
+      "text": "第２　各学年の目標及び内容　　"
+    },
+    {
+      "code": "8280000000000000",
+      "frameworkID": "fw.cross-music",
+      "locator": "CSV record 2600; No 2598",
+      "sourceID": "src.mext-82v12",
+      "subject": "音楽",
+      "text": "第６節　音　　　楽"
+    },
+    {
+      "code": "8280200000000000",
+      "frameworkID": "fw.cross-music",
+      "locator": "CSV record 2605; No 2603",
+      "parentCode": "8280000000000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "音楽",
+      "text": "第２　各学年の目標及び内容　　"
+    },
+    {
+      "code": "82802D0000000000",
+      "frameworkID": "fw.cross-music",
+      "locator": "CSV record 2726; No 2724",
+      "parentCode": "8280200000000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "音楽",
+      "text": "〔第５学年及び第６学年〕"
+    },
+    {
+      "code": "82802D3000000000",
+      "frameworkID": "fw.cross-music",
+      "locator": "CSV record 2731; No 2729",
+      "parentCode": "82802D0000000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "音楽",
+      "text": "２　内　容"
+    },
+    {
+      "code": "82802D3100000000",
+      "frameworkID": "fw.cross-music",
+      "locator": "CSV record 2732; No 2730",
+      "parentCode": "82802D3000000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "音楽",
+      "text": "Ａ　表　現"
+    },
+    {
+      "code": "82802D3120000000",
+      "frameworkID": "fw.cross-music",
+      "locator": "CSV record 2740; No 2738",
+      "parentCode": "82802D3100000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "音楽",
+      "text": "(2) 器楽の活動を通して，次の事項を身に付けることができるよう指導する。"
+    },
+    {
+      "code": "82802D3123000000",
+      "frameworkID": "fw.cross-music",
+      "locator": "CSV record 2745; No 2743",
+      "parentCode": "82802D3120000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "音楽",
+      "text": "ウ　思いや意図に合った表現をするために必要な次の(ｱ)から(ｳ)までの技能を身に付けること。"
+    },
+    {
+      "code": "82802D3123300000",
+      "frameworkID": "fw.cross-music",
+      "locator": "CSV record 2748; No 2746",
+      "parentCode": "82802D3123000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "音楽",
+      "text": "(ｳ) 各声部の楽器の音や全体の響き，伴奏を聴いて，音を合わせて演奏する技能"
+    },
+    {
+      "code": "82H00D0000000000",
+      "frameworkID": "fw.cross-language",
+      "locator": "CSV record 3279; No 3277",
+      "sourceID": "src.mext-82v12",
+      "subject": "外国語",
+      "text": "第10節　外国語"
+    },
+    {
+      "code": "82H02D0000000000",
+      "frameworkID": "fw.cross-language",
+      "locator": "CSV record 3284; No 3282",
+      "parentCode": "82H00D0000000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "外国語",
+      "text": "第２　各言語の目標及び内容等"
+    },
+    {
+      "code": "82H12D0000000000",
+      "frameworkID": "fw.cross-language",
+      "locator": "CSV record 3285; No 3283",
+      "parentCode": "82H02D0000000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "外国語",
+      "text": "英語"
+    },
+    {
+      "code": "82H12D2000000000",
+      "frameworkID": "fw.cross-language",
+      "locator": "CSV record 3286; No 3284",
+      "parentCode": "82H12D0000000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "外国語",
+      "text": "１　目　標\n英語学習の特質を踏まえ，以下に示す，聞くこと，読むこと，話すこと［やり取り］，話すこと［発表］，書くことの五つの領域別に設定する目標の実現を目指した指導を通して，第１の(1)及び(2)に示す資質・能力を一体的に育成するとともに，その過程を通して，第１の(3)に示す資質・能力を育成する。"
+    },
+    {
+      "code": "82H12D2100000000",
+      "frameworkID": "fw.cross-language",
+      "locator": "CSV record 3287; No 3285",
+      "parentCode": "82H12D2000000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "外国語",
+      "text": "(1) 聞くこと"
+    },
+    {
+      "code": "82H12D2110000000",
+      "frameworkID": "fw.cross-language",
+      "locator": "CSV record 3288; No 3286",
+      "parentCode": "82H12D2100000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "外国語",
+      "text": "ア  ゆっくりはっきりと話されれば，自分のことや身近で簡単な事柄について，簡単な語句や基本的な表現を聞き取ることができるようにする。"
+    },
+    {
+      "code": "82H12D2500000000",
+      "frameworkID": "fw.cross-language",
+      "locator": "CSV record 3302; No 3300",
+      "parentCode": "82H12D2000000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "外国語",
+      "text": "(5) 書くこと"
+    },
+    {
+      "code": "82H12D2520000000",
+      "frameworkID": "fw.cross-language",
+      "locator": "CSV record 3304; No 3302",
+      "parentCode": "82H12D2500000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "外国語",
+      "text": "イ  自分のことや身近で簡単な事柄について，例文を参考に，音声で十分に慣れ親しんだ簡単な語句や基本的な表現を用いて書くことができるようにする。"
+    },
+    {
+      "code": "82K0000000000000",
+      "frameworkID": "fw.cross-ethics",
+      "locator": "CSV record 3436; No 3434",
+      "sourceID": "src.mext-82v12",
+      "subject": "特別の教科　道徳",
+      "text": "第３章　特別の教科　道徳"
+    },
+    {
+      "code": "82K0400000000000",
+      "frameworkID": "fw.cross-ethics",
+      "locator": "CSV record 3438; No 3436",
+      "parentCode": "82K0000000000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "特別の教科　道徳",
+      "text": "第２　内　容\n学校の教育活動全体を通じて行う道徳教育の要である道徳科においては，以下に示す項目について扱う。"
+    },
+    {
+      "code": "82K0400200000000",
+      "frameworkID": "fw.cross-ethics",
+      "locator": "CSV record 3462; No 3460",
+      "parentCode": "82K0400000000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "特別の教科　道徳",
+      "text": "Ｂ　主として人との関わりに関すること"
+    },
+    {
+      "code": "82K0400210000000",
+      "frameworkID": "fw.cross-ethics",
+      "locator": "CSV record 3463; No 3461",
+      "parentCode": "82K0400200000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "特別の教科　道徳",
+      "text": "［親切，思いやり］"
+    },
+    {
+      "code": "82K04D0213000000",
+      "frameworkID": "fw.cross-ethics",
+      "locator": "CSV record 3466; No 3464",
+      "parentCode": "82K0400210000000",
+      "sourceID": "src.mext-82v12",
+      "subject": "特別の教科　道徳",
+      "text": "〔第５学年及び第６学年〕 \n誰に対しても思いやりの心をもち，相手の立場に立って親切にすること。"
+    },
+    {
+      "code": "8320000000000000",
+      "frameworkID": "fw.cross-history",
+      "locator": "CSV record 302; No 300",
+      "sourceID": "src.mext-83v11",
+      "subject": "社会",
+      "text": "第２節　社会"
+    },
+    {
+      "code": "8320200000000000",
+      "frameworkID": "fw.cross-history",
+      "locator": "CSV record 307; No 305",
+      "parentCode": "8320000000000000",
+      "sourceID": "src.mext-83v11",
+      "subject": "社会",
+      "text": "第２　各分野の目標及び内容"
+    },
+    {
+      "code": "8322200000000000",
+      "frameworkID": "fw.cross-history",
+      "locator": "CSV record 416; No 414",
+      "parentCode": "8320200000000000",
+      "sourceID": "src.mext-83v11",
+      "subject": "社会",
+      "text": "〔歴史的分野〕"
+    },
+    {
+      "code": "8322203000000000",
+      "frameworkID": "fw.cross-history",
+      "locator": "CSV record 421; No 419",
+      "parentCode": "8322200000000000",
+      "sourceID": "src.mext-83v11",
+      "subject": "社会",
+      "text": "２　内容"
+    },
+    {
+      "code": "8322203100000000",
+      "frameworkID": "fw.cross-history",
+      "locator": "CSV record 422; No 420",
+      "parentCode": "8322203000000000",
+      "sourceID": "src.mext-83v11",
+      "subject": "社会",
+      "text": "Ａ　歴史との対話"
+    },
+    {
+      "code": "8322203120000000",
+      "frameworkID": "fw.cross-history",
+      "locator": "CSV record 429; No 427",
+      "parentCode": "8322203100000000",
+      "sourceID": "src.mext-83v11",
+      "subject": "社会",
+      "text": "(2) 身近な地域の歴史\n課題を追究したり解決したりする活動を通して，次の事項を身に付けることができるよう指導する。"
+    },
+    {
+      "code": "8322203122000000",
+      "frameworkID": "fw.cross-history",
+      "locator": "CSV record 432; No 430",
+      "parentCode": "8322203120000000",
+      "sourceID": "src.mext-83v11",
+      "subject": "社会",
+      "text": "イ　次のような思考力，判断力，表現力等を身に付けること。"
+    },
+    {
+      "code": "8322203122100000",
+      "frameworkID": "fw.cross-history",
+      "locator": "CSV record 433; No 431",
+      "parentCode": "8322203122000000",
+      "sourceID": "src.mext-83v11",
+      "subject": "社会",
+      "text": "(ｱ) 比較や関連，時代的な背景や地域的な環境，歴史と私たちとのつながりなどに着目して，地域に残る文化財や諸資料を活用して，身近な地域の歴史的な特徴を多面的・多角的に考察し，表現すること。"
+    },
+    {
+      "code": "84I0000000000000",
+      "frameworkID": "fw.cross-information",
+      "locator": "CSV record 3255; No 3253",
+      "sourceID": "src.mext-84v10",
+      "subject": "情報",
+      "text": "第10節　情　　　報"
+    },
+    {
+      "code": "84I0500000000000",
+      "frameworkID": "fw.cross-information",
+      "locator": "CSV record 3260; No 3258",
+      "parentCode": "84I0000000000000",
+      "sourceID": "src.mext-84v10",
+      "subject": "情報",
+      "text": "第２款　各　科　目"
+    },
+    {
+      "code": "84I1500000000000",
+      "frameworkID": "fw.cross-information",
+      "locator": "CSV record 3261; No 3259",
+      "parentCode": "84I0500000000000",
+      "sourceID": "src.mext-84v10",
+      "subject": "情報",
+      "text": "第１　情報Ⅰ"
+    },
+    {
+      "code": "84I1503000000000",
+      "frameworkID": "fw.cross-information",
+      "locator": "CSV record 3266; No 3264",
+      "parentCode": "84I1500000000000",
+      "sourceID": "src.mext-84v10",
+      "subject": "情報",
+      "text": "２　内　容"
+    },
+    {
+      "code": "84I1503300000000",
+      "frameworkID": "fw.cross-information",
+      "locator": "CSV record 3285; No 3283",
+      "parentCode": "84I1503000000000",
+      "sourceID": "src.mext-84v10",
+      "subject": "情報",
+      "text": "(3) コンピュータとプログラミング\nコンピュータで情報が処理される仕組みに着目し，プログラミングやシミュレーションによって問題を発見・解決する活動を通して，次の事項を身に付けることができるよう指導する。"
+    },
+    {
+      "code": "84I1503320000000",
+      "frameworkID": "fw.cross-information",
+      "locator": "CSV record 3290; No 3288",
+      "parentCode": "84I1503300000000",
+      "sourceID": "src.mext-84v10",
+      "subject": "情報",
+      "text": "イ　次のような思考力，判断力，表現力等を身に付けること。"
+    },
+    {
+      "code": "84I1503322000000",
+      "frameworkID": "fw.cross-information",
+      "locator": "CSV record 3292; No 3290",
+      "parentCode": "84I1503320000000",
+      "sourceID": "src.mext-84v10",
+      "subject": "情報",
+      "text": "(ｲ) 目的に応じたアルゴリズムを考え適切な方法で表現し，プログラミングによりコンピュータや情報通信ネットワークを活用するとともに，その過程を評価し改善すること。"
+    }
+  ],
+  "sources": [
+    {
+      "distributionVersion": "82V12",
+      "id": "src.mext-82v12",
+      "promulgated": "2017",
+      "publisher": "文部科学省",
+      "retrievedOn": "2026-09-28",
+      "sha256": "6d9a6dadf1593e15bad7c4e480eeea8dd91866600be2a94965582c8c774d3d7f",
+      "title": "小学校学習指導要領（平成29年告示）コード表",
+      "url": "https://www.mext.go.jp/content/20230901-mxt_syoto01-000013115_73.csv",
+      "verification": "公式配布CSVのコードと原文を保持。選定した階層は原典の見出し・配列に基づき明示。"
+    },
+    {
+      "distributionVersion": "83V11",
+      "id": "src.mext-83v11",
+      "promulgated": "2017",
+      "publisher": "文部科学省",
+      "retrievedOn": "2026-09-28",
+      "sha256": "b8b5ad6cb52e5cfe5e390312b732b1325fffc5044b20a25e666075c74a569311",
+      "title": "中学校学習指導要領（平成29年告示）コード表",
+      "url": "https://www.mext.go.jp/content/20230901-mxt_syoto01-000013115_37.csv",
+      "verification": "公式配布CSVのコードと原文を保持。選定した階層は原典の見出し・配列に基づき明示。"
+    },
+    {
+      "distributionVersion": "84V10",
+      "id": "src.mext-84v10",
+      "promulgated": "2018",
+      "publisher": "文部科学省",
+      "retrievedOn": "2026-09-28",
+      "sha256": "1073408f7b0396e79413be9f8a80a6ab3a79dcd063b7412929a4517b8b8bc67d",
+      "title": "高等学校学習指導要領（平成30年告示及び一部改正）コード表",
+      "url": "https://www.mext.go.jp/content/20230901-mxt_syoto01-000010374_01.csv",
+      "verification": "公式配布CSVのコードと原文を保持。選定した階層は原典の見出し・配列に基づき明示。"
+    }
+  ]
+}

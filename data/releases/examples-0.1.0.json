@@ -1,0 +1,1623 @@
+{
+  "contexts" : [
+    {
+      "conditions" : "相手・目的を指定した架空の探究活動。",
+      "frameworkID" : "fw.inquiry",
+      "id" : "ctx.inquiry",
+      "label" : "史料比較・説明活動"
+    },
+    {
+      "conditions" : "単価120円、正の整数の個数。",
+      "frameworkID" : "fw.elementary-2017",
+      "id" : "ctx.positive",
+      "label" : "正の数量・単価による経路"
+    },
+    {
+      "conditions" : "実数上の関数。全国の必修要求を示す例ではない。",
+      "frameworkID" : "fw.high-school-sample",
+      "id" : "ctx.school-functions",
+      "label" : "高校・関数を比較する経路"
+    },
+    {
+      "conditions" : "実数上の y=-2x。",
+      "frameworkID" : "fw.secondary-2017",
+      "id" : "ctx.signed",
+      "label" : "符号を含む比例"
+    },
+    {
+      "conditions" : "架空の履修規則と学習経路。",
+      "frameworkID" : "fw.university-a",
+      "id" : "ctx.university-a",
+      "label" : "A大学・2026年度・定義から計算へ"
+    },
+    {
+      "conditions" : "A大学とは別経路。",
+      "frameworkID" : "fw.university-b",
+      "id" : "ctx.university-b",
+      "label" : "B大学・2027年度・計算例から定義へ"
+    }
+  ],
+  "entities" : [
+    {
+      "conditions" : "単価120円で追加料金・割引がない場合と、固定送料がある場合を比べる。",
+      "criteria" : [
+        "固定送料がある代金全体には、そのまま比例を適用しない。"
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "cp.apply",
+      "kind" : "competency",
+      "label" : "比例とみなす条件を確認し数量を求める",
+      "prerequisiteStatus" : "uninvestigated",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "v0.3の小標本を検証するためのAI下書き。教育上の妥当性は未レビュー。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "targetIDs" : [
+        "sm.proportion"
+      ],
+      "text" : "比例とみなす条件を確認し数量を求める"
+    },
+    {
+      "conditions" : "構造検証のため一桁の正の整数に範囲を限定する。",
+      "criteria" : [
+        "指定した積を求める。"
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "cp.boundary",
+      "kind" : "competency",
+      "label" : "正の整数の積を求める（調査境界の例）",
+      "prerequisiteStatus" : "scopedBoundary",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "構造検証用の合成例。相手・目的・条件・達成観点を保存する。自動採点を前提にしない。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "targetIDs" : [
+        "sm.multiplication"
+      ],
+      "text" : "正の整数の積を求める（調査境界の例）"
+    },
+    {
+      "conditions" : "実数上の f(x)=2x と g(x)=2x+1。",
+      "criteria" : [
+        "原点の像と一定の差に注目し、同じ関数ではないと説明する。"
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "cp.compare-functions",
+      "kind" : "competency",
+      "label" : "比例と一次関数を比較する",
+      "prerequisiteStatus" : "uninvestigated",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "構造検証用の合成例。相手・目的・条件・達成観点を保存する。自動採点を前提にしない。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "targetIDs" : [
+        "sm.affine",
+        "sm.proportion"
+      ],
+      "text" : "比例と一次関数を比較する"
+    },
+    {
+      "conditions" : "架空の史料を複数提示する討論場面。",
+      "criteria" : [
+        "各立場の根拠と限界を示す。単一の正解文は要求しない。"
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "cp.discuss",
+      "kind" : "competency",
+      "label" : "根拠を挙げて二つの解釈を比較する",
+      "prerequisiteStatus" : "uninvestigated",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "構造検証専用の架空例。実在する機関の到達目標ではない。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "targetIDs" : [
+        "sm.interpretation-a",
+        "sm.interpretation-b"
+      ],
+      "text" : "目的と相手に応じて比較を説明する。"
+    },
+    {
+      "conditions" : "一定の単価120円。正の整数の個数。",
+      "criteria" : [
+        "個数を2倍にすると代金も2倍になる理由を説明する。"
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "cp.explain",
+      "kind" : "competency",
+      "label" : "比例の関係を数量の変化で説明する",
+      "prerequisiteStatus" : "uninvestigated",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "v0.3の小標本を検証するためのAI下書き。教育上の妥当性は未レビュー。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "targetIDs" : [
+        "sm.proportion"
+      ],
+      "text" : "比例の関係を数量の変化で説明する"
+    },
+    {
+      "conditions" : "学校を知る同級生、校門から図書室への道順、英語。",
+      "criteria" : [
+        "既知の目印を使い、必要な順序を説明する。"
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "cp.language-peer",
+      "kind" : "competency",
+      "label" : "外国語で同級生に道順を説明する",
+      "prerequisiteStatus" : "uninvestigated",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "構造検証用の合成例。相手・目的・条件・達成観点を保存する。自動採点を前提にしない。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "targetIDs" : [
+        "sm.audience-explanation"
+      ],
+      "text" : "外国語で同級生に道順を説明する"
+    },
+    {
+      "conditions" : "学校を初めて訪れる人、校門から図書室への道順、英語。",
+      "criteria" : [
+        "校内の略称を説明し、理解を確かめる。",
+        "複数の適切な表現を認める。"
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "cp.language-visitor",
+      "kind" : "competency",
+      "label" : "外国語で初訪問者に道順を説明する",
+      "prerequisiteStatus" : "uninvestigated",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "構造検証用の合成例。相手・目的・条件・達成観点を保存する。自動採点を前提にしない。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "targetIDs" : [
+        "sm.audience-explanation"
+      ],
+      "text" : "外国語で初訪問者に道順を説明する"
+    },
+    {
+      "conditions" : "y=120x、xは正の整数。個数の間を連続量とみなさない。",
+      "criteria" : [
+        "式・表・点の座標で同じ対応を示す。"
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "cp.link-positive",
+      "kind" : "competency",
+      "label" : "正の数量の比例を表・式・グラフで関連付ける",
+      "prerequisiteStatus" : "uninvestigated",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "v0.3の小標本を検証するためのAI下書き。教育上の妥当性は未レビュー。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "targetIDs" : [
+        "sm.proportion"
+      ],
+      "text" : "正の数量の比例を表・式・グラフで関連付ける"
+    },
+    {
+      "conditions" : "y=-2x、実数の定義域。標本x=-1,0,1。",
+      "criteria" : [
+        "(-1,2),(0,0),(1,-2)を対応付け、全体のグラフが原点を通る直線であると説明する。"
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "cp.link-signed",
+      "kind" : "competency",
+      "label" : "負の値も含む比例を表・式・座標で関連付ける",
+      "prerequisiteStatus" : "uninvestigated",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "v0.3の小標本を検証するためのAI下書き。教育上の妥当性は未レビュー。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "targetIDs" : [
+        "sm.proportion"
+      ],
+      "text" : "負の値も含む比例を表・式・座標で関連付ける"
+    },
+    {
+      "conditions" : "y=120x、xは1,2,3。xは個数、yは円。",
+      "criteria" : [
+        "対応するyを120,240,360と表に記す。"
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "cp.make-table",
+      "kind" : "competency",
+      "label" : "比例の式から表を作る",
+      "prerequisiteStatus" : "uninvestigated",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "v0.3の小標本を検証するためのAI下書き。教育上の妥当性は未レビュー。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "targetIDs" : [
+        "sm.proportion"
+      ],
+      "text" : "比例の式から表を作る"
+    },
+    {
+      "conditions" : "実ベクトル空間、加法とスカラー倍の保存。",
+      "criteria" : [
+        "二つの保存条件を述べる。"
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "cp.map-definition",
+      "kind" : "competency",
+      "label" : "線形写像の定義を説明する",
+      "prerequisiteStatus" : "uninvestigated",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "構造検証用の合成例。相手・目的・条件・達成観点を保存する。自動採点を前提にしない。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "targetIDs" : [
+        "sm.linear-map"
+      ],
+      "text" : "線形写像の定義を説明する"
+    },
+    {
+      "conditions" : "R→Rの f(x)=3x。",
+      "criteria" : [
+        "加法とスカラー倍を保存することを式で確かめる。"
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "cp.map-example",
+      "kind" : "competency",
+      "label" : "具体的な写像を調べる",
+      "prerequisiteStatus" : "uninvestigated",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "構造検証用の合成例。相手・目的・条件・達成観点を保存する。自動採点を前提にしない。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "targetIDs" : [
+        "sm.linear-map"
+      ],
+      "text" : "具体的な写像を調べる"
+    },
+    {
+      "conditions" : "理想気体を仮定した計算と実測のずれについて話し合う。",
+      "criteria" : [
+        "近似モデルと無条件の法則を区別する。"
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "cp.model-limits",
+      "kind" : "competency",
+      "label" : "モデルの適用条件を説明する",
+      "prerequisiteStatus" : "uninvestigated",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "構造検証用の合成例。相手・目的・条件・達成観点を保存する。自動採点を前提にしない。 近似条件の根拠: OpenStax, University Physics Volume 2, §2.1 https://openstax.org/books/university-physics-volume-2/pages/2-1-molecular-model-of-an-ideal-gas",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "targetIDs" : [
+        "sm.gas-model"
+      ],
+      "text" : "モデルの適用条件を説明する"
+    },
+    {
+      "conditions" : "単価120円、正の整数の個数。割引はない。",
+      "criteria" : [
+        "3個の代金を360円と求め、単位を示す。"
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "cp.multiply",
+      "kind" : "competency",
+      "label" : "一定の単価と個数から代金を求める",
+      "prerequisiteStatus" : "uninvestigated",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "v0.3の小標本を検証するためのAI下書き。教育上の妥当性は未レビュー。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "targetIDs" : [
+        "sm.multiplication"
+      ],
+      "text" : "一定の単価と個数から代金を求める"
+    },
+    {
+      "conditions" : "実数上で規則y=2x+1が与えられている。",
+      "criteria" : [
+        "x=0でy=1となるためy=axでは表せないと説明する。",
+        "有限個の観測だけで全定義域の比例を証明したとしない。"
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "cp.nonexample",
+      "kind" : "competency",
+      "label" : "比例しない関係を反例で説明する",
+      "prerequisiteStatus" : "uninvestigated",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "v0.3の小標本を検証するためのAI下書き。教育上の妥当性は未レビュー。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "targetIDs" : [
+        "sm.proportion"
+      ],
+      "text" : "比例しない関係を反例で説明する"
+    },
+    {
+      "conditions" : "比例関係が与えられた正の数量。個数と代金の単位を明示。",
+      "criteria" : [
+        "3個に対応する360円を読み、量を取り違えない。"
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "cp.read-table",
+      "kind" : "competency",
+      "label" : "比例する二量の表から対応する値を読む",
+      "prerequisiteStatus" : "uninvestigated",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "v0.3の小標本を検証するためのAI下書き。教育上の妥当性は未レビュー。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "targetIDs" : [
+        "sm.proportion",
+        "sm.table"
+      ],
+      "text" : "比例する二量の表から対応する値を読む"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "8250263311100000"
+      },
+      "frameworkID" : "fw.elementary-2017",
+      "id" : "fi.8250263311100000",
+      "kind" : "frameworkItem",
+      "label" : "(ｱ) 比例の関係の意味や性質を理解すること。",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "公式コード表の当該行を改変せず抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-82v12"
+        ]
+      },
+      "sourceLocator" : "CSV record 2225; No 2223",
+      "targetIDs" : [
+
+      ],
+      "text" : "(ｱ) 比例の関係の意味や性質を理解すること。"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "8350213311200000"
+      },
+      "frameworkID" : "fw.secondary-2017",
+      "id" : "fi.8350213311200000",
+      "kind" : "frameworkItem",
+      "label" : "(ｲ) 比例，反比例について理解すること。",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "公式コード表の当該行を改変せず抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-83v11"
+        ]
+      },
+      "sourceLocator" : "CSV record 679; No 677",
+      "targetIDs" : [
+
+      ],
+      "text" : "(ｲ) 比例，反比例について理解すること。"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "8350213311400000"
+      },
+      "frameworkID" : "fw.secondary-2017",
+      "id" : "fi.8350213311400000",
+      "kind" : "frameworkItem",
+      "label" : "(ｴ) 比例，反比例を表，式，グラフなどに表すこと。",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "公式コード表の当該行を改変せず抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-83v11"
+        ]
+      },
+      "sourceLocator" : "CSV record 681; No 679",
+      "targetIDs" : [
+
+      ],
+      "text" : "(ｴ) 比例，反比例を表，式，グラフなどに表すこと。"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "mext:course-of-study" : "8350213312100000"
+      },
+      "frameworkID" : "fw.secondary-2017",
+      "id" : "fi.8350213312100000",
+      "kind" : "frameworkItem",
+      "label" : "(ｱ) 比例，反比例として捉えられる二つの数量について，表，式，グラフなどを用いて調べ，それらの変化や対応の特徴を見いだすこと。",
+      "provenance" : {
+        "origin" : "original",
+        "rationale" : "公式コード表の当該行を改変せず抽出。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+          "src.mext-83v11"
+        ]
+      },
+      "sourceLocator" : "CSV record 683; No 681",
+      "targetIDs" : [
+
+      ],
+      "text" : "(ｱ) 比例，反比例として捉えられる二つの数量について，表，式，グラフなどを用いて調べ，それらの変化や対応の特徴を見いだすこと。"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+
+      },
+      "frameworkID" : "fw.high-school-sample",
+      "id" : "fi.high-school-functions",
+      "kind" : "frameworkItem",
+      "label" : "関数の式と性質を比較する",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "構造検証用の合成例。実在機関の要求の引用ではない。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "targetIDs" : [
+
+      ],
+      "text" : "関数の式と性質を比較する"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+
+      },
+      "frameworkID" : "fw.inquiry",
+      "id" : "fi.inquiry-attitude",
+      "kind" : "frameworkItem",
+      "label" : "異なる立場に関心を持ち、根拠を吟味しながら学び続ける",
+      "parentID" : "fi.inquiry-root",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "構造検証用の合成例。実在機関の要求の引用ではない。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "targetIDs" : [
+
+      ],
+      "text" : "異なる立場に関心を持ち、根拠を吟味しながら学び続ける"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+
+      },
+      "frameworkID" : "fw.inquiry",
+      "id" : "fi.inquiry-root",
+      "kind" : "frameworkItem",
+      "label" : "探究と表現",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "構造検証用の合成例。実在機関の要求の引用ではない。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "targetIDs" : [
+
+      ],
+      "text" : "探究と表現"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+
+      },
+      "frameworkID" : "fw.inquiry",
+      "id" : "fi.language",
+      "kind" : "frameworkItem",
+      "label" : "目的と相手に応じて外国語で説明する",
+      "parentID" : "fi.inquiry-root",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "構造検証用の合成例。実在機関の要求の引用ではない。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "targetIDs" : [
+
+      ],
+      "text" : "目的と相手に応じて外国語で説明する"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+
+      },
+      "frameworkID" : "fw.university-a",
+      "id" : "fi.university-a",
+      "kind" : "frameworkItem",
+      "label" : "写像の性質を説明する（合成例）",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "構造検証専用の架空例。実在する機関の到達目標ではない。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "targetIDs" : [
+
+      ],
+      "text" : "架空の到達目標。"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+        "synthetic:university-b:2027" : "MAP-OLD"
+      },
+      "frameworkID" : "fw.university-b",
+      "id" : "fi.university-b-map",
+      "kind" : "frameworkItem",
+      "label" : "線形写像の具体例を説明する",
+      "parentID" : "fi.university-b-root",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "構造検証用の合成例。実在機関の要求の引用ではない。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "targetIDs" : [
+
+      ],
+      "text" : "線形写像の具体例を説明する"
+    },
+    {
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+
+      },
+      "frameworkID" : "fw.university-b",
+      "id" : "fi.university-b-root",
+      "kind" : "frameworkItem",
+      "label" : "数理と言語の教養",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "構造検証用の合成例。実在機関の要求の引用ではない。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "targetIDs" : [
+
+      ],
+      "text" : "数理と言語の教養"
+    },
+    {
+      "category" : "curricula-v1:concept",
+      "conditions" : "a≠0、x∈R。この例は b≠0 に限定し、線形写像と同一視しない。",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "sm.affine",
+      "kind" : "subjectMatter",
+      "label" : "一次関数",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "構造検証用の合成例。名称ではなく定義・条件・IDで区別する。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "targetIDs" : [
+
+      ],
+      "text" : "f(x)=ax+b で表される関数。"
+    },
+    {
+      "category" : "curricula-v1:communication",
+      "conditions" : "一つの正解文に固定しない。",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "sm.audience-explanation",
+      "kind" : "subjectMatter",
+      "label" : "相手に応じた説明",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "構造検証用の合成例。名称ではなく定義・条件・IDで区別する。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "targetIDs" : [
+
+      ],
+      "text" : "語彙・具体例・説明順を相手の知識と目的に応じて選ぶ。"
+    },
+    {
+      "category" : "curricula-v1:model",
+      "conditions" : "理想化された粒子像を仮定する。実在気体への近似の適否は条件の検討が必要。",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "sm.gas-model",
+      "kind" : "subjectMatter",
+      "label" : "理想気体モデル",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "構造検証用の合成例。名称ではなく定義・条件・IDで区別する。 モデルと近似条件の根拠: OpenStax, University Physics Volume 2, §2.1 https://openstax.org/books/university-physics-volume-2/pages/2-1-molecular-model-of-an-ideal-gas",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "targetIDs" : [
+
+      ],
+      "text" : "気体の状態を pV=nRT で記述するモデル。"
+    },
+    {
+      "category" : "curricula-v1:interpretation",
+      "conditions" : "構造検証用の立場A。史実の主張ではない。",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "sm.interpretation-a",
+      "kind" : "subjectMatter",
+      "label" : "歴史事象の解釈",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "構造検証専用の架空例。実在する機関の到達目標ではない。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "targetIDs" : [
+
+      ],
+      "text" : "経済条件を重視する架空の解釈。"
+    },
+    {
+      "category" : "curricula-v1:interpretation",
+      "conditions" : "構造検証用の立場B。Aと同名でも別対象。",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "sm.interpretation-b",
+      "kind" : "subjectMatter",
+      "label" : "歴史事象の解釈",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "構造検証専用の架空例。実在する機関の到達目標ではない。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "targetIDs" : [
+
+      ],
+      "text" : "制度の変化を重視する架空の解釈。"
+    },
+    {
+      "category" : "curricula-v1:concept",
+      "conditions" : "実ベクトル空間。R→Rの f(x)=ax は一例。b≠0 の ax+b と同一視しない。",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "sm.linear-map",
+      "kind" : "subjectMatter",
+      "label" : "線形写像",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "構造検証専用の架空例。実在する機関の到達目標ではない。 定義の根拠: W. Keith Nicholson, Linear Algebra with Applications, §2.6 https://math.libretexts.org/Bookshelves/Linear_Algebra/Linear_Algebra_with_Applications_(Nicholson)/02%3A_Matrix_Algebra/2.06%3A_Linear_Transformations",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "targetIDs" : [
+
+      ],
+      "text" : "加法とスカラー倍を保つ写像。"
+    },
+    {
+      "category" : "curricula-v1:procedure",
+      "conditions" : "今回は正の整数。小数・分数は未収録。",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "sm.multiplication",
+      "kind" : "subjectMatter",
+      "label" : "乗法と倍",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "v0.3の小標本を検証するためのAI下書き。教育上の妥当性は未レビュー。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "targetIDs" : [
+
+      ],
+      "text" : "一定の単価と個数から代金を求める場面で用いる乗法。"
+    },
+    {
+      "category" : "curricula-v1:definition",
+      "conditions" : "0を含まないという定義上の約束。",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "sm.naturals-positive",
+      "kind" : "subjectMatter",
+      "label" : "自然数",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "構造検証用の合成例。名称ではなく定義・条件・IDで区別する。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "targetIDs" : [
+
+      ],
+      "text" : "この立場では {1,2,3,…} と定める。"
+    },
+    {
+      "category" : "curricula-v1:definition",
+      "conditions" : "0を含むという定義上の約束。",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "sm.naturals-zero",
+      "kind" : "subjectMatter",
+      "label" : "自然数",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "構造検証用の合成例。名称ではなく定義・条件・IDで区別する。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "targetIDs" : [
+
+      ],
+      "text" : "この立場では {0,1,2,…} と定める。"
+    },
+    {
+      "category" : "curricula-v1:concept",
+      "conditions" : "この小標本では a ≠ 0。扱う数の範囲と単位は各能力で指定する。x = 0 では y/x を計算しない。",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "sm.proportion",
+      "kind" : "subjectMatter",
+      "label" : "比例関係",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "v0.3の小標本を検証するためのAI下書き。教育上の妥当性は未レビュー。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "targetIDs" : [
+
+      ],
+      "text" : "二つの数量x、yの関係が、一定の係数aを用いて y = ax と表される。"
+    },
+    {
+      "category" : "curricula-v1:theorem",
+      "conditions" : "ユークリッド平面の直角三角形、a,b,c>0。",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "sm.right-triangle",
+      "kind" : "subjectMatter",
+      "label" : "三平方の定理",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "構造検証用の合成例。名称ではなく定義・条件・IDで区別する。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "targetIDs" : [
+
+      ],
+      "text" : "直角を挟む辺をa,b、斜辺をcとすると a²+b²=c²。"
+    },
+    {
+      "category" : "curricula-v1:representation",
+      "conditions" : "",
+      "criteria" : [
+
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "sm.table",
+      "kind" : "subjectMatter",
+      "label" : "対応表",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "v0.3の小標本を検証するためのAI下書き。教育上の妥当性は未レビュー。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "targetIDs" : [
+
+      ],
+      "text" : "同じ組に属する二つの量を行または列で対応付けて示す表。"
+    }
+  ],
+  "frameworks" : [
+    {
+      "id" : "fw.elementary-2017",
+      "issuer" : "文部科学省",
+      "label" : "小学校算数・第6学年（抜粋）",
+      "origin" : "original",
+      "sourceIDs" : [
+        "src.mext-82v12"
+      ],
+      "version" : "2017"
+    },
+    {
+      "id" : "fw.high-school-sample",
+      "issuer" : "架空高校",
+      "label" : "高校・関数（合成例）",
+      "origin" : "synthetic",
+      "sourceIDs" : [
+
+      ],
+      "version" : "2026"
+    },
+    {
+      "id" : "fw.inquiry",
+      "issuer" : "架空の教材編集者",
+      "label" : "科学・歴史・語学の探究（合成例）",
+      "origin" : "synthetic",
+      "sourceIDs" : [
+
+      ],
+      "version" : "1"
+    },
+    {
+      "id" : "fw.secondary-2017",
+      "issuer" : "文部科学省",
+      "label" : "中学校数学・第1学年（抜粋）",
+      "origin" : "original",
+      "sourceIDs" : [
+        "src.mext-83v11"
+      ],
+      "version" : "2017"
+    },
+    {
+      "id" : "fw.university-a",
+      "issuer" : "架空大学A",
+      "label" : "架空大学A・教養課程",
+      "origin" : "synthetic",
+      "sourceIDs" : [
+
+      ],
+      "version" : "2026"
+    },
+    {
+      "id" : "fw.university-b",
+      "issuer" : "架空大学B",
+      "label" : "架空大学B・言語と数理",
+      "origin" : "synthetic",
+      "sourceIDs" : [
+
+      ],
+      "version" : "2027"
+    }
+  ],
+  "limitations" : [
+    "構造検証用。追加した学校・大学・科学・歴史・語学の例はすべて合成例。比例の公式4項目だけは出典付き原文。",
+    "資料種別と出典なしの合成資料、AND/OR、分割・定義変更の移行関係には中核モデルの不足がある。docs/sample-catalog.mdの期待結果を参照。",
+    "scopedBoundaryは今回の探索の停止点であり、前提が数学的に存在しないという意味ではない。",
+    "enrollmentの端点は能力であり、コース・単位・履修管理は未対応。"
+  ],
+  "readingOutlines" : [
+    {
+      "id" : "reading.structure",
+      "label" : "データ構造の小標本",
+      "sections" : [
+        {
+          "entityIDs" : [
+            "sm.proportion",
+            "cp.link-positive",
+            "cp.link-signed",
+            "cp.compare-functions"
+          ],
+          "id" : "sample.school",
+          "label" : "学校段階と対象の共有"
+        },
+        {
+          "entityIDs" : [
+            "fi.university-a",
+            "fi.university-b-map",
+            "cp.map-definition",
+            "cp.map-example"
+          ],
+          "id" : "sample.institution",
+          "label" : "機関・年度・学習経路"
+        },
+        {
+          "entityIDs" : [
+            "sm.naturals-zero",
+            "sm.naturals-positive",
+            "sm.affine",
+            "sm.linear-map"
+          ],
+          "id" : "sample.definitions",
+          "label" : "同名の定義と異なる条件"
+        },
+        {
+          "entityIDs" : [
+            "sm.gas-model",
+            "cp.model-limits",
+            "sm.right-triangle"
+          ],
+          "id" : "sample.science",
+          "label" : "近似モデルと定理"
+        },
+        {
+          "entityIDs" : [
+            "sm.interpretation-a",
+            "sm.interpretation-b",
+            "cp.discuss",
+            "cp.language-peer",
+            "cp.language-visitor",
+            "fi.inquiry-attitude"
+          ],
+          "id" : "sample.humanities",
+          "label" : "立場・語学・広い目標"
+        },
+        {
+          "entityIDs" : [
+            "cp.multiply",
+            "cp.boundary"
+          ],
+          "id" : "sample.boundary",
+          "label" : "未調査と調査境界"
+        }
+      ]
+    }
+  ],
+  "relations" : [
+    {
+      "contextID" : "ctx.inquiry",
+      "coverage" : "partial",
+      "excluded" : [
+        "継続して学ぶ姿勢の長期的な観察",
+        "関心や態度の全体"
+      ],
+      "from" : "fi.inquiry-attitude",
+      "id" : "al.attitude",
+      "kind" : "alignment",
+      "predicate" : "covers",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "構造検証用の合成例。この架空項目の明示した範囲だけに対応する。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "to" : "cp.discuss"
+    },
+    {
+      "coverage" : "partial",
+      "excluded" : [
+        "性質の体系的な説明と理解の評価は未収録"
+      ],
+      "from" : "fi.8250263311100000",
+      "id" : "al.elementary",
+      "kind" : "alignment",
+      "predicate" : "covers",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "v0.3の小標本を検証するためのAI下書き。教育上の妥当性は未レビュー。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "to" : "sm.proportion"
+    },
+    {
+      "coverage" : "partial",
+      "excluded" : [
+        "一般的な変化や対応の考察",
+        "反比例"
+      ],
+      "from" : "fi.8350213312100000",
+      "id" : "al.explain",
+      "kind" : "alignment",
+      "predicate" : "covers",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "v0.3の小標本を検証するためのAI下書き。教育上の妥当性は未レビュー。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "to" : "cp.explain"
+    },
+    {
+      "contextID" : "ctx.school-functions",
+      "coverage" : "full",
+      "excluded" : [
+
+      ],
+      "from" : "fi.high-school-functions",
+      "id" : "al.high-school",
+      "kind" : "alignment",
+      "predicate" : "covers",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "構造検証用の合成例。この架空項目の明示した範囲だけに対応する。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "to" : "cp.compare-functions"
+    },
+    {
+      "contextID" : "ctx.inquiry",
+      "coverage" : "partial",
+      "excluded" : [
+        "初訪問者への説明",
+        "道順以外の目的"
+      ],
+      "from" : "fi.language",
+      "id" : "al.language-peer",
+      "kind" : "alignment",
+      "predicate" : "covers",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "構造検証用の合成例。この架空項目の明示した範囲だけに対応する。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "to" : "cp.language-peer"
+    },
+    {
+      "contextID" : "ctx.inquiry",
+      "coverage" : "partial",
+      "excluded" : [
+        "同級生への説明",
+        "道順以外の目的"
+      ],
+      "from" : "fi.language",
+      "id" : "al.language-visitor",
+      "kind" : "alignment",
+      "predicate" : "covers",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "構造検証用の合成例。この架空項目の明示した範囲だけに対応する。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "to" : "cp.language-visitor"
+    },
+    {
+      "coverage" : "partial",
+      "excluded" : [
+        "反比例",
+        "負の数を含む範囲"
+      ],
+      "from" : "fi.8350213311400000",
+      "id" : "al.represent",
+      "kind" : "alignment",
+      "predicate" : "covers",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "v0.3の小標本を検証するためのAI下書き。教育上の妥当性は未レビュー。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "to" : "cp.link-positive"
+    },
+    {
+      "coverage" : "partial",
+      "excluded" : [
+        "反比例"
+      ],
+      "from" : "fi.8350213311200000",
+      "id" : "al.secondary",
+      "kind" : "alignment",
+      "predicate" : "covers",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "v0.3の小標本を検証するためのAI下書き。教育上の妥当性は未レビュー。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "to" : "sm.proportion"
+    },
+    {
+      "coverage" : "partial",
+      "excluded" : [
+        "反比例"
+      ],
+      "from" : "fi.8350213311400000",
+      "id" : "al.signed",
+      "kind" : "alignment",
+      "predicate" : "covers",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "v0.3の小標本を検証するためのAI下書き。教育上の妥当性は未レビュー。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "to" : "cp.link-signed"
+    },
+    {
+      "coverage" : "partial",
+      "excluded" : [
+        "証明の能力"
+      ],
+      "from" : "fi.university-a",
+      "id" : "al.university",
+      "kind" : "alignment",
+      "predicate" : "covers",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "構造検証専用の架空例。実在する機関の到達目標ではない。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "to" : "sm.linear-map"
+    },
+    {
+      "contextID" : "ctx.university-b",
+      "coverage" : "partial",
+      "excluded" : [
+        "具体例の説明能力そのもの"
+      ],
+      "from" : "fi.university-b-map",
+      "id" : "al.university-b",
+      "kind" : "alignment",
+      "predicate" : "covers",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "構造検証用の合成例。この架空項目の明示した範囲だけに対応する。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "to" : "sm.linear-map"
+    },
+    {
+      "contextID" : "ctx.university-a",
+      "excluded" : [
+
+      ],
+      "from" : "cp.map-definition",
+      "id" : "dep.a-definition-example",
+      "kind" : "dependency",
+      "predicate" : "prerequisite",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "構造検証用の合成例。明示した学習経路だけの前提。別経路には一般化しない。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "strength" : "required",
+      "to" : "cp.map-example"
+    },
+    {
+      "contextID" : "ctx.university-b",
+      "excluded" : [
+
+      ],
+      "from" : "cp.map-example",
+      "id" : "dep.b-example-definition",
+      "kind" : "dependency",
+      "predicate" : "prerequisite",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "構造検証用の合成例。明示した学習経路だけの前提。別経路には一般化しない。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "strength" : "required",
+      "to" : "cp.map-definition"
+    },
+    {
+      "contextID" : "ctx.inquiry",
+      "excluded" : [
+
+      ],
+      "from" : "cp.language-peer",
+      "id" : "dep.inquiry-peer-visitor",
+      "kind" : "dependency",
+      "predicate" : "prerequisite",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "構造検証用の合成例。明示した学習経路だけの前提。別経路には一般化しない。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "strength" : "recommended",
+      "to" : "cp.language-visitor"
+    },
+    {
+      "contextID" : "ctx.inquiry",
+      "excluded" : [
+
+      ],
+      "from" : "cp.language-visitor",
+      "id" : "dep.inquiry-visitor-peer",
+      "kind" : "dependency",
+      "predicate" : "prerequisite",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "構造検証用の合成例。明示した学習経路だけの前提。別経路には一般化しない。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "strength" : "recommended",
+      "to" : "cp.language-peer"
+    },
+    {
+      "contextID" : "ctx.positive",
+      "excluded" : [
+
+      ],
+      "from" : "cp.multiply",
+      "id" : "dep.multiply-table",
+      "kind" : "dependency",
+      "predicate" : "prerequisite",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "単価×個数で各値を計算する今回の経路に限定。学習順一般の主張ではない。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "strength" : "required",
+      "to" : "cp.make-table"
+    },
+    {
+      "contextID" : "ctx.positive",
+      "excluded" : [
+
+      ],
+      "from" : "cp.read-table",
+      "id" : "dep.table-link",
+      "kind" : "dependency",
+      "predicate" : "prerequisite",
+      "provenance" : {
+        "origin" : "editorial",
+        "rationale" : "v0.3の小標本を検証するためのAI下書き。教育上の妥当性は未レビュー。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "strength" : "recommended",
+      "to" : "cp.link-positive"
+    },
+    {
+      "contextID" : "ctx.university-a",
+      "excluded" : [
+
+      ],
+      "from" : "cp.map-example",
+      "id" : "enroll.a-example-definition",
+      "kind" : "enrollment",
+      "predicate" : "enrollmentRule",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "構造検証用の合成例。A機関の順序指定。学習上の必須前提とは主張しない。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "strength" : "required",
+      "to" : "cp.map-definition"
+    },
+    {
+      "excluded" : [
+
+      ],
+      "from" : "sm.affine",
+      "id" : "kr.affine-linear",
+      "kind" : "knowledge",
+      "predicate" : "contrasts",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "構造検証用の合成例。定数項b≠0の条件を消して統合しない。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "to" : "sm.linear-map"
+    },
+    {
+      "excluded" : [
+
+      ],
+      "from" : "sm.interpretation-a",
+      "id" : "kr.interpretations",
+      "kind" : "knowledge",
+      "predicate" : "contrasts",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "構造検証専用の架空例。実在する機関の到達目標ではない。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "to" : "sm.interpretation-b"
+    },
+    {
+      "excluded" : [
+
+      ],
+      "from" : "sm.naturals-zero",
+      "id" : "kr.natural-conventions",
+      "kind" : "knowledge",
+      "predicate" : "contrasts",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "構造検証用の合成例。用語が同じでも定義域の約束が異なる。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "to" : "sm.naturals-positive"
+    },
+    {
+      "excluded" : [
+
+      ],
+      "from" : "sm.proportion",
+      "id" : "kr.proportion-linear",
+      "kind" : "knowledge",
+      "predicate" : "related",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "構造検証専用の架空例。実在する機関の到達目標ではない。",
+        "reviewStatus" : "draft",
+        "sourceIDs" : [
+
+        ]
+      },
+      "to" : "sm.linear-map"
+    }
+  ],
+  "release" : "examples-0.1.0",
+  "schemaVersion" : "0.1.0",
+  "sources" : [
+    {
+      "distributionVersion" : "82V12",
+      "id" : "src.mext-82v12",
+      "promulgated" : "2017",
+      "publisher" : "文部科学省",
+      "retrievedOn" : "2026-09-28",
+      "sha256" : "6d9a6dadf1593e15bad7c4e480eeea8dd91866600be2a94965582c8c774d3d7f",
+      "title" : "小学校学習指導要領（平成29年告示）コード表",
+      "url" : "https://www.mext.go.jp/content/20230901-mxt_syoto01-000013115_73.csv",
+      "verification" : "公式配布CSVから抽出。本文PDF・訂正票・LODとの全文照合は未完了。"
+    },
+    {
+      "distributionVersion" : "83V11",
+      "id" : "src.mext-83v11",
+      "promulgated" : "2017",
+      "publisher" : "文部科学省",
+      "retrievedOn" : "2026-09-28",
+      "sha256" : "b8b5ad6cb52e5cfe5e390312b732b1325fffc5044b20a25e666075c74a569311",
+      "title" : "中学校学習指導要領（平成29年告示）コード表",
+      "url" : "https://www.mext.go.jp/content/20230901-mxt_syoto01-000013115_37.csv",
+      "verification" : "公式配布CSVから抽出。本文PDF・訂正票・LODとの全文照合は未完了。"
+    }
+  ]
+}

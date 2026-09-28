@@ -94,3 +94,57 @@ class APITests(unittest.TestCase):
             Path(folder, 'wrong.json').write_text(json.dumps(original))
             with self.assertRaises(ValueError):
                 Store(folder)
+
+    def test_structural_outlines_and_source_versions(self):
+        _, overview = self.get('/api/v1/releases/examples-0.1.0/overview')
+        self.assertEqual(overview['readingOutlines'][0]['id'], 'reading.structure')
+        self.assertEqual(len(overview['readingOutlines'][0]['sections']), 6)
+        _, body = self.get('/api/v1/releases/examples-0.1.0/frameworks/fw.university-b')
+        child = next(e for e in body['items'] if e['id'] == 'fi.university-b-map')
+        self.assertEqual(child['parentID'], 'fi.university-b-root')
+        _, a = self.get('/api/v1/releases/examples-0.1.0/sources/src.mext-82v12')
+        _, b = self.get('/api/v1/releases/examples-0.2.0/sources/src.mext-82v12')
+        self.assertEqual(a['data'], b['data'])
+
+    def test_split_snapshots_are_available_independently(self):
+        self.assertEqual(self.get('/api/v1/releases/examples-0.1.0/entities/fi.high-school-functions')[0], 200)
+        self.assertEqual(self.get('/api/v1/releases/examples-0.2.0/entities/fi.high-school-functions')[0], 404)
+        for identifier in ('fi.high-school-formula', 'fi.high-school-properties'):
+            self.assertEqual(self.get('/api/v1/releases/examples-0.2.0/entities/' + identifier)[0], 200)
+        _, old = self.get('/api/v1/releases/examples-0.1.0/entities/sm.affine')
+        _, new = self.get('/api/v1/releases/examples-0.2.0/entities/sm.affine')
+        self.assertEqual(old['data'], new['data'])
+
+    def test_opposite_paths_keep_their_context(self):
+        _, a = self.get('/api/v1/releases/examples-0.1.0/relations?entityId=cp.map-definition&contextId=ctx.university-a')
+        _, b = self.get('/api/v1/releases/examples-0.1.0/relations?entityId=cp.map-definition&contextId=ctx.university-b')
+        self.assertEqual({r['kind'] for r in a['relations']}, {'dependency', 'enrollment'})
+        self.assertEqual({r['contextID'] for r in a['relations']}, {'ctx.university-a'})
+        self.assertEqual({r['contextID'] for r in b['relations']}, {'ctx.university-b'})
+        self.assertEqual(b['relations'][0]['from'], 'cp.map-example')
+
+    def test_cross_subject_overview_and_original_hierarchy(self):
+        base = '/api/v1/releases/cross-subject-0.1.0/'
+        _, overview = self.get(base + 'overview')
+        self.assertEqual(len(overview['frameworks']), 8)
+        self.assertEqual(len(overview['readingOutlines'][0]['sections']), 11)
+        _, moral = self.get(base + 'frameworks/fw.cross-ethics')
+        leaf = next(e for e in moral['items'] if e['id'] == 'fi.82k04d0213000000')
+        self.assertEqual(leaf['parentID'], 'fi.82k0400210000000')
+        self.assertEqual(leaf['externalIDs']['mext:course-of-study'], '82K04D0213000000')
+        self.assertIn('誰に対しても', leaf['text'])
+        _, source = self.get(base + 'sources/src.mext-84v10')
+        self.assertEqual(source['data']['distributionVersion'], '84V10')
+        self.assertEqual(len(source['data']['sha256']), 64)
+
+    def test_cross_subject_conditions_partial_coverage_and_release_isolation(self):
+        base = '/api/v1/releases/cross-subject-0.1.0/'
+        _, write = self.get(base + 'entities/cp.cross-language-write')
+        self.assertIn('音声で十分に慣れ親しんだ', write['data']['conditions'])
+        _, relation = self.get(base + 'relations?entityId=fi.84i1503322000000')
+        self.assertEqual(len(relation['relations']), 2)
+        self.assertTrue(all(r['coverage'] == 'partial' and r['excluded'] for r in relation['relations']))
+        self.assertEqual(self.get(base + 'entities/sm.proportion')[0], 404)
+        self.assertEqual(self.get('/api/v1/releases/pilot-0.1.0/entities/sm.proportion')[0], 200)
+        _, releases = self.get('/api/v1/releases')
+        self.assertIn('cross-subject-0.1.0', {r['release'] for r in releases['releases']})

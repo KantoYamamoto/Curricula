@@ -1,0 +1,60 @@
+{
+  "sourceDocuments": [
+    {
+      "id": "src.synthetic-reference",
+      "title": "架空学会の参照基準",
+      "publisher": "架空学会",
+      "kind": "referenceStandard",
+      "origin": "synthetic",
+      "scope": "教養教育の検討に用いる助言。履修規則ではない。",
+      "distributionVersion": "2026",
+      "verification": "資料種別を検証するための合成資料。実在URL・告示年・取得日は非該当。"
+    },
+    {
+      "id": "src.synthetic-syllabus",
+      "title": "架空大学の授業シラバス",
+      "publisher": "架空大学B",
+      "kind": "syllabus",
+      "origin": "synthetic",
+      "scope": "2027年度の特定授業。全国の共通要件ではない。",
+      "distributionVersion": "2027",
+      "verification": "資料種別を検証するための合成資料。実在URL・告示年・取得日は非該当。"
+    }
+  ],
+  "alternativeDependency": {
+    "id": "probe.alternative",
+    "contextID": "ctx.university-a",
+    "to": "cp.map-definition",
+    "anyOf": [["cp.map-example"], ["cp.read-table", "cp.make-table"]],
+    "rationale": "具体的な写像を調べる経路 OR 表を読み作る二能力を合わせた経路。実際の教育上の十分条件ではない。"
+  },
+  "revisionMappings": [
+    {
+      "caseID": "A12",
+      "kind": "split",
+      "fromRelease": "examples-0.1.0",
+      "fromIDs": ["fi.high-school-functions"],
+      "toRelease": "examples-0.2.0",
+      "toIDs": ["fi.high-school-formula", "fi.high-school-properties"],
+      "rationale": "式と性質の要求を分割した架空改訂。自動的な完全同値対応とは扱わない。"
+    },
+    {
+      "caseID": "A14",
+      "kind": "externalCodeChange",
+      "fromRelease": "examples-0.1.0",
+      "fromIDs": ["fi.university-b-map"],
+      "toRelease": "examples-0.2.0",
+      "toIDs": ["fi.university-b-map"],
+      "rationale": "架空の機関コードだけが変わる。学ぶ対象sm.linear-mapのID・定義は変えない。"
+    },
+    {
+      "caseID": "A14",
+      "kind": "definitionChange",
+      "fromRelease": "examples-0.1.0",
+      "fromIDs": ["sm.affine"],
+      "toRelease": "examples-0.2.0",
+      "toIDs": ["sm.affine-expanded"],
+      "rationale": "係数の制約を変える意味変更。旧定義も残し、新IDにする。"
+    }
+  ]
+}
