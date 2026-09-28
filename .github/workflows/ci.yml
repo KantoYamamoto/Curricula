@@ -1,0 +1,14 @@
+name: Validate
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    container: swift:6.0.3
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Python
+        run: apt-get update && apt-get install -y python3 make
+      - name: Verify model, API, contract and reproducibility
+        run: make check

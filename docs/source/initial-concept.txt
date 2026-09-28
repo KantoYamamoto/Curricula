@@ -1,0 +1,815 @@
+整理し直すと、今の構想は大きく 4つのドメイン に分けるとかなり見通しがよくなります。
+
+そして命名については、「Test」という言葉をドメインモデルから追い出すのを推します。
+
+* 学習者の理解度を測るもの → Assessment
+* CIで教材の正しさを検査するもの → Validation
+* 実際のSwift Testingの @Test → あくまで実装手段
+
+に分けると混乱しません。
+
+⸻
+
+全体像
+
+Curriculum Domain
+「何を学ぶべきか」
+Knowledge Domain
+「学問上、何が存在してどう関係するか」
+Content Domain
+「どう教え、どう理解度を測るか」
+Learning Record Domain
+「このユーザーが何をどこまで習得したか」
+            ┌─────────────────────┐
+            │ Curriculum          │
+            │ 何を学ぶべきか      │
+            └──────────┬──────────┘
+                       │
+                       ▼
+            ┌─────────────────────┐
+            │ Knowledge           │
+            │ 何を知る/できるか   │
+            └──────────┬──────────┘
+                       │
+             ┌─────────┴─────────┐
+             ▼                   ▼
+       ┌───────────┐       ┌───────────┐
+       │ Content   │       │ Learning  │
+       │ 教材/評価 │       │ Record    │
+       └───────────┘       └───────────┘
+
+さらにCI用のValidationは、このドメイン群を外側から検査します。
+
+       Curriculum / Knowledge / Content
+                     │
+                     ▼
+                Validation
+              「壊れてない？」
+
+⸻
+
+1. Curriculum
+
+Curriculum
+
+学習指導要領そのもの。
+
+Curriculum
+
+例えば、
+
+文部科学省
+平成29年告示
+中学校学習指導要領
+
+を表す。
+
+持つもののイメージ：
+
+struct Curriculum {
+    let id: CurriculumID
+    let version: CurriculumVersion
+}
+
+これは「教材」ではありません。
+
+⸻
+
+2. CurriculumItem
+
+学習指導要領に書かれている個々の要求事項。
+
+例えば、
+
+一元一次方程式について理解し、それを用いて問題を解決する
+
+みたいな項目です。
+
+CurriculumItem
+
+概念的には、
+
+Curriculum
+└─ 中学校数学
+   └─ 第1学年
+      └─ A 数と式
+         └─ 一元一次方程式
+
+の一項目。
+
+役割は、
+
+国が何を要求しているか
+
+です。
+
+⸻
+
+3. SubjectMatter
+
+ここが「学ぶ対象」。
+
+SubjectMatter
+
+その中に5種類持つ。
+
+enum SubjectMatter {
+    case concept(Concept)
+    case statement(Statement)
+    case procedure(Procedure)
+    case model(Model)
+    case representation(Representation)
+}
+
+⸻
+
+Concept
+
+概念・対象そのもの。
+
+例えば、
+
+負の数
+方程式
+円
+確率
+原子
+化学平衡
+
+です。
+
+Concept(.linearEquation)
+Concept(.atom)
+
+「一次方程式を解ける」ではありません。
+
+それは後述するCompetency。
+
+⸻
+
+Statement
+
+正しいとされる命題・法則・公式・定理・定義。
+
+例えば、
+
+三平方の定理
+解の公式
+正弦定理
+ルシャトリエの原理
+ボイルの法則
+
+です。
+
+必要なら内部でさらに分類する。
+
+enum StatementKind {
+    case definition
+    case theorem
+    case formula
+    case law
+    case identity
+    case proposition
+}
+
+⸻
+
+Procedure
+
+何かを行うための方法・手続き。
+
+例えば、
+
+一次方程式を移項して解く方法
+因数分解する方法
+平方完成
+滴定操作
+場合の数を樹形図で数える方法
+
+です。
+
+Competencyと似ていますが違います。
+
+Procedure
+「平方完成という方法」
+Competency
+「平方完成を実行できる」
+
+⸻
+
+Model
+
+現象や対象を理解するためのモデル。
+
+特に理科で重要。
+
+例えば、
+
+粒子モデル
+原子モデル
+動的平衡モデル
+
+です。
+
+「実物そのもの」ではなく、
+
+何かを理解・説明するための抽象モデル
+
+を表します。
+
+⸻
+
+Representation
+
+SubjectMatterを表現する形式。
+
+例えば同じ比例でも、
+
+y = 3x
+表
+グラフ
+文章
+
+があります。
+
+これらを、
+
+Representation(.equation)
+Representation(.table)
+Representation(.graph)
+
+として扱う。
+
+図形・化学式・数直線なんかもここ。
+
+⸻
+
+4. KnowledgeRelation
+
+SubjectMatter同士の、学問上の関係。
+
+KnowledgeRelation
+
+例えば、
+
+円
+ ─representedBy→
+円の方程式
+
+とか、
+
+分子間力
+ ─influences→
+沸点
+
+とか、
+
+三平方の定理
+ ─usedBy→
+2点間距離公式
+
+です。
+
+重要なのは、
+
+「学習順序」とは違う
+
+こと。
+
+KnowledgeRelation(
+    from: .circleEquation,
+    to: .circle,
+    kind: .represents
+)
+
+⸻
+
+5. Competency
+
+現時点ではここがかなり重要です。
+
+学習者が獲得すべき能力。
+
+Competency
+
+基本的に、
+
+動詞 + 対象
+
+になります。
+
+例えば、
+
+正負の数を計算できる
+一次方程式を解ける
+一次方程式の解法を説明できる
+比例のグラフを読める
+三平方の定理を利用できる
+化学平衡を説明できる
+滴定を実施できる
+
+Swiftなら、
+
+Competency(
+    performance: .solve,
+    target: .linearEquation
+)
+
+みたいな感じ。
+
+⸻
+
+6. LearningDependency
+
+Competency同士の学習上の前提関係。
+
+LearningDependency
+
+例えば、
+
+正負の数を計算できる
+        │
+        │ prerequisite
+        ▼
+文字式を計算できる
+        │
+        ▼
+一次方程式を解ける
+
+です。
+
+これはKnowledgeRelationとは明確に違う。
+
+KnowledgeRelation
+→ 数学・科学の世界でどう関係するか
+LearningDependency
+→ 人間が学習するとき何を先に習得すべきか
+
+という分離です。
+
+⸻
+
+7. LearningUnit
+
+これは従来の「単元」に近い。
+
+ただし重要度はかなり下がりました。
+
+複数のSubjectMatter・Competency・教材をまとめた教育上のパッケージ。
+
+LearningUnit
+
+例えば、
+
+中1数学
+「一元一次方程式」
+
+なら、
+
+LearningUnit
+│
+├─ covers
+│  ├─ Equation
+│  ├─ Equality
+│  └─ LinearEquation
+│
+├─ develops
+│  ├─ UnderstandEquation
+│  ├─ SolveLinearEquation
+│  └─ ApplyLinearEquation
+│
+├─ resources
+│
+├─ activities
+│
+└─ assessments
+
+となる。
+
+つまり、
+
+教科書を編成するためのまとまり
+
+です。
+
+⸻
+
+8. Resource
+
+学習者に見せる教材。
+
+Resource
+
+例えば、
+
+解説文章
+例題
+図
+動画
+アニメーション
+数直線
+原子モデル図
+
+など。
+
+重要なのは、
+
+Concept
+≠ Resource
+
+ということ。
+
+例えば、
+
+Concept
+「原子」
+Resources
+├─ 原子とは何かという文章
+├─ 原子モデル図
+├─ 動画
+└─ 具体例
+
+と複数持てる。
+
+Wikipedia的共同編集との相性もここがいい。
+
+⸻
+
+9. LearningActivity
+
+学習者が実際に行う活動。
+
+LearningActivity
+
+例えば、
+
+練習
+実験
+観察
+作図
+ディスカッション
+探究
+制作
+
+です。
+
+enum LearningActivity {
+    case exercise
+    case experiment
+    case observation
+    case investigation
+    case discussion
+    case construction
+    case project
+}
+
+化学の実験をResourceに押し込まないためにも重要。
+
+Resource
+「実験手順を説明するページ」
+Activity
+「実際に実験する」
+
+です。
+
+⸻
+
+10. AssessmentItem
+
+ここから「ユーザーの理解度を測るもの」。
+
+AssessmentItem
+
+1問、または1つの評価課題。
+
+AssessmentItem
+
+例えば、
+
+3x + 5 = 20 を解きなさい
+
+です。
+
+AssessmentItem(
+    assesses: [.solveLinearEquation],
+    ...
+)
+
+という形で、
+
+何のCompetencyを測っているか
+
+を明示する。
+
+⸻
+
+11. Assessment
+
+複数のAssessmentItemをまとめた評価。
+
+ここが、
+
+* 小テスト
+* 単元テスト
+* 定期テスト
+* 模擬試験
+
+など。
+
+Assessment
+
+例えば、
+
+Assessment(.linearEquationQuiz) {
+    Items {
+        .q001
+        .q002
+        .q003
+    }
+}
+
+あるいは定期試験。
+
+Assessment(.midtermExam) {
+    Blueprint {
+        .signedNumbers(points: 30)
+        .algebraicExpressions(points: 30)
+        .linearEquations(points: 40)
+    }
+}
+
+⸻
+
+ここで「Test」を使わない
+
+この部分は全部、
+
+Assessment
+AssessmentItem
+
+に統一します。
+
+UIでも、
+
+小テスト
+定期テスト
+
+という日本語表示はしていい。
+
+でもコード上のユビキタス言語は、
+
+Assessment
+
+にする。
+
+⸻
+
+12. AssessmentSession
+
+ユーザーがAssessmentを一度受けた実行単位。
+
+AssessmentSession
+
+例えば、
+
+山田さんが
+2026/09/09 12:00に
+中1数学小テストを受けた
+
+という一回分。
+
+⸻
+
+13. Attempt
+
+ユーザーが1つのAssessmentItemに回答した記録。
+
+Attempt
+
+例えば、
+
+Question: q001
+Answer: 6
+Correct: false
+Time: 42 sec
+
+これが最も重要な生データです。
+
+⸻
+
+14. MasteryState
+
+Competencyに対する現在の習熟度推定。
+
+MasteryState
+
+例えば、
+
+一次方程式を理解する     92%
+一次方程式を解く         76%
+一次方程式を応用する     43%
+
+です。
+
+重要なのは、
+
+ConceptそのものではなくCompetencyに対して持つ
+
+こと。
+
+× 一次方程式を70%理解
+○ 一次方程式の意味を理解   90%
+○ 一次方程式を解く         75%
+○ 応用問題に利用する       45%
+
+の方が有用だからです。
+
+⸻
+
+CI側の用語を完全に分ける
+
+ここからが質問の後半。
+
+おすすめは、
+
+Validation
+
+に統一することです。
+
+Assessment
+→ 人を評価する
+Validation
+→ 教材・データを検査する
+
+これならかなり明確。
+
+⸻
+
+15. Validator
+
+教材やCurriculumの正しさを検査するコンポーネント。
+
+例えば、
+
+protocol Validator {
+    func validate(...) -> ValidationResult
+}
+
+具体的には、
+
+DependencyValidator
+AssessmentValidator
+CurriculumCoverageValidator
+ReferenceValidator
+AnswerValidator
+RepresentationValidator
+
+など。
+
+⸻
+
+16. ValidationRule
+
+CIで確認したい1つのルール。
+
+ValidationRule
+
+例えば、
+
+存在しないConceptを参照してはいけない
+LearningDependencyに循環があってはいけない
+問題の計算結果と解答が一致しなければならない
+100点満点でなければならない
+すべてのCurriculumItemに対応するCompetencyが必要
+
+です。
+
+⸻
+
+17. ValidationResult / ValidationIssue
+
+実行結果。
+
+ValidationResult
+ValidationIssue
+
+例えば、
+
+ERROR
+AssessmentItem q123
+Declared answer: 6
+Computed answer: 5
+
+です。
+
+⸻
+
+Swift Testingの@Testはどう扱うか
+
+実装では当然、
+
+@Test
+func assessmentAnswersAreValid() {
+    ...
+}
+
+と書いていい。
+
+ただしドメイン上は、
+
+これはTestではなく
+AssessmentAnswerValidation
+
+と考える。
+
+つまり、
+
+@Test
+func assessmentAnswerValidation() {
+    let result = AssessmentValidator(...)
+}
+
+という関係。
+
+@Testはテストフレームワークの用語であって、ユビキタス言語にはしない。
+
+⸻
+
+用語を並べるとこうなる
+
+用語	意味
+Curriculum	学習指導要領
+CurriculumItem	指導要領上の個別要求
+SubjectMatter	学習対象
+Concept	概念
+Statement	定義・公式・定理・法則等
+Procedure	方法・手続き
+Model	対象や現象を理解するモデル
+Representation	表・式・グラフ・図等の表現
+KnowledgeRelation	学問上の関係
+Competency	学習者が獲得する能力
+LearningDependency	学習上の前提関係
+LearningUnit	教材上の単元
+Resource	解説・図・動画等の教材
+LearningActivity	実験・練習・作図等
+AssessmentItem	理解度を測る1問/1課題
+Assessment	小テスト・定期試験など
+AssessmentSession	一回の受験
+Attempt	一問への回答記録
+MasteryState	Competencyの習熟度
+Validator	CI検査処理
+ValidationRule	CIで確認する規則
+ValidationResult	CI検査結果
+ValidationIssue	発見された問題
+
+⸻
+
+個人的にかなり推したい用語ルール
+
+コードベース全体で、
+
+Test
+
+という単語をSwift Testing以外では使わない。
+
+つまり、
+
+❌ UnitTest
+❌ QuizTest
+❌ KnowledgeTest
+❌ CurriculumTest
+
+ではなく、
+
+Assessment
+Validation
+
+で完全に分ける。
+
+概念的にも、
+
+                人間
+                 │
+                 ▼
+             Assessment
+        「習得できている？」
+                教材
+                 │
+                 ▼
+             Validation
+         「壊れていない？」
+
+という非常に明確な対称構造になります。
+
+さらに言えば、このプロジェクトの中核は最終的に、
+
+SubjectMatter
+「何を学ぶか」
+Competency
+「何ができるようになるか」
+Assessment
+「できるようになったか」
+Validation
+「教材自体は正しいか」
+
+の4語でかなり説明できると思います。

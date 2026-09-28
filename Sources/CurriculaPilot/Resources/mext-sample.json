@@ -1,0 +1,56 @@
+{
+  "items": [
+    {
+      "code": "8250263311100000",
+      "frameworkID": "fw.elementary-2017",
+      "locator": "CSV record 2225; No 2223",
+      "sourceID": "src.mext-82v12",
+      "text": "(ｱ) 比例の関係の意味や性質を理解すること。"
+    },
+    {
+      "code": "8350213311200000",
+      "frameworkID": "fw.secondary-2017",
+      "locator": "CSV record 679; No 677",
+      "sourceID": "src.mext-83v11",
+      "text": "(ｲ) 比例，反比例について理解すること。"
+    },
+    {
+      "code": "8350213311400000",
+      "frameworkID": "fw.secondary-2017",
+      "locator": "CSV record 681; No 679",
+      "sourceID": "src.mext-83v11",
+      "text": "(ｴ) 比例，反比例を表，式，グラフなどに表すこと。"
+    },
+    {
+      "code": "8350213312100000",
+      "frameworkID": "fw.secondary-2017",
+      "locator": "CSV record 683; No 681",
+      "sourceID": "src.mext-83v11",
+      "text": "(ｱ) 比例，反比例として捉えられる二つの数量について，表，式，グラフなどを用いて調べ，それらの変化や対応の特徴を見いだすこと。"
+    }
+  ],
+  "sources": [
+    {
+      "distributionVersion": "82V12",
+      "id": "src.mext-82v12",
+      "promulgated": "2017",
+      "publisher": "文部科学省",
+      "retrievedOn": "2026-09-28",
+      "sha256": "6d9a6dadf1593e15bad7c4e480eeea8dd91866600be2a94965582c8c774d3d7f",
+      "title": "小学校学習指導要領（平成29年告示）コード表",
+      "url": "https://www.mext.go.jp/content/20230901-mxt_syoto01-000013115_73.csv",
+      "verification": "公式配布CSVから抽出。本文PDF・訂正票・LODとの全文照合は未完了。"
+    },
+    {
+      "distributionVersion": "83V11",
+      "id": "src.mext-83v11",
+      "promulgated": "2017",
+      "publisher": "文部科学省",
+      "retrievedOn": "2026-09-28",
+      "sha256": "b8b5ad6cb52e5cfe5e390312b732b1325fffc5044b20a25e666075c74a569311",
+      "title": "中学校学習指導要領（平成29年告示）コード表",
+      "url": "https://www.mext.go.jp/content/20230901-mxt_syoto01-000013115_37.csv",
+      "verification": "公式配布CSVから抽出。本文PDF・訂正票・LODとの全文照合は未完了。"
+    }
+  ]
+}
