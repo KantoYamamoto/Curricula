@@ -9,7 +9,7 @@
 
 ## 起動する
 
-Swift 6.0以上、Python 3.10以上。外部パッケージは不要です。macOSのSwift 6.4 / Python 3.14で確認。Linux Swift 6.0.3はGitHub Actionsで検証します。
+Swift 6.0以上、Python 3.10以上。外部パッケージは不要です。macOSのSwift 6.4 / Python 3.14で確認。Linux Swift 6.0.3でも[GitHub Actionsの検証](https://github.com/KantoYamamoto/Curricula/actions/runs/36402160829)が成功しています。
 
 ```sh
 make check   # Swift・HTTP API・交換契約・出力の再現性を検証
