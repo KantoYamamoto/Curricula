@@ -164,12 +164,19 @@ public enum V2 {
         public var readingOutlines: [Outline] = []; public var changes: [Change] = []; public var limitations: [String] = []
         public init(release: String) { self.release = release }
         public var recordRefs: [Ref] {
-            taxons.map { .init($0.id, $0.revisionID) } + sources.map { .init($0.id, $0.revisionID) }
-            + frameworks.map { .init($0.id, $0.revisionID) } + contexts.map { .init($0.id, $0.revisionID) }
-            + entities.map(\.ref) + annotations.map { .init($0.id, $0.revisionID) }
-            + evidence.map { .init($0.id, $0.revisionID) } + relations.map { .init($0.id, $0.revisionID) }
-            + prerequisites.map { .init($0.id, $0.revisionID) } + readingOutlines.map { .init($0.id, $0.revisionID) }
-            + readingOutlines.flatMap { $0.sections.map { Ref($0.id, $0.revisionID) } } + changes.map { .init($0.id, $0.revisionID) }
+            var refs = taxons.map { Ref($0.id, $0.revisionID) }
+            refs.append(contentsOf: sources.map { Ref($0.id, $0.revisionID) })
+            refs.append(contentsOf: frameworks.map { Ref($0.id, $0.revisionID) })
+            refs.append(contentsOf: contexts.map { Ref($0.id, $0.revisionID) })
+            refs.append(contentsOf: entities.map(\.ref))
+            refs.append(contentsOf: annotations.map { Ref($0.id, $0.revisionID) })
+            refs.append(contentsOf: evidence.map { Ref($0.id, $0.revisionID) })
+            refs.append(contentsOf: relations.map { Ref($0.id, $0.revisionID) })
+            refs.append(contentsOf: prerequisites.map { Ref($0.id, $0.revisionID) })
+            refs.append(contentsOf: readingOutlines.map { Ref($0.id, $0.revisionID) })
+            refs.append(contentsOf: readingOutlines.flatMap { $0.sections.map { Ref($0.id, $0.revisionID) } })
+            refs.append(contentsOf: changes.map { Ref($0.id, $0.revisionID) })
+            return refs
         }
         public func canonicalJSON() throws -> Data {
             // Swift and external consumers share the same key ordering. Arrays with authored order retain it.
