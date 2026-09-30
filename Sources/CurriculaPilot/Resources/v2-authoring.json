@@ -1,0 +1,2321 @@
+{
+  "taxons": [
+    {
+      "key": "subject.japanese",
+      "kind": "subject",
+      "label": "国語"
+    },
+    {
+      "key": "subject.science",
+      "kind": "subject",
+      "label": "理科"
+    },
+    {
+      "key": "subject.history",
+      "kind": "subject",
+      "label": "社会"
+    },
+    {
+      "key": "subject.language",
+      "kind": "subject",
+      "label": "外国語"
+    },
+    {
+      "key": "subject.music",
+      "kind": "subject",
+      "label": "音楽"
+    },
+    {
+      "key": "subject.ethics",
+      "kind": "subject",
+      "label": "道徳"
+    },
+    {
+      "key": "subject.data",
+      "kind": "subject",
+      "label": "算数"
+    },
+    {
+      "key": "subject.information",
+      "kind": "subject",
+      "label": "情報"
+    },
+    {
+      "key": "course.history",
+      "kind": "course",
+      "label": "歴史的分野",
+      "parent": "subject.history"
+    },
+    {
+      "key": "course.information",
+      "kind": "course",
+      "label": "情報Ⅰ",
+      "parent": "subject.information"
+    },
+    {
+      "key": "course.language",
+      "kind": "course",
+      "label": "英語",
+      "parent": "subject.language"
+    }
+  ],
+  "frameworkEducation": {
+    "fw.cross-data": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "notSpecified",
+        "grades": [],
+        "subjectID": "subject.data"
+      }
+    ],
+    "fw.cross-ethics": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "notSpecified",
+        "grades": [],
+        "subjectID": "subject.ethics"
+      }
+    ],
+    "fw.cross-history": [
+      {
+        "stage": "lowerSecondary",
+        "gradeStatus": "notSpecified",
+        "grades": [],
+        "subjectID": "subject.history",
+        "courseID": "course.history"
+      }
+    ],
+    "fw.cross-information": [
+      {
+        "stage": "upperSecondary",
+        "gradeStatus": "notSpecified",
+        "grades": [],
+        "subjectID": "subject.information",
+        "courseID": "course.information"
+      }
+    ],
+    "fw.cross-japanese": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "notSpecified",
+        "grades": [],
+        "subjectID": "subject.japanese"
+      }
+    ],
+    "fw.cross-language": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "notSpecified",
+        "grades": [],
+        "subjectID": "subject.language"
+      }
+    ],
+    "fw.cross-music": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "notSpecified",
+        "grades": [],
+        "subjectID": "subject.music"
+      }
+    ],
+    "fw.cross-science": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "notSpecified",
+        "grades": [],
+        "subjectID": "subject.science"
+      }
+    ]
+  },
+  "contextEducation": {
+    "ctx.cross-japanese-early": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          1,
+          2
+        ],
+        "subjectID": "subject.japanese"
+      }
+    ],
+    "ctx.cross-japanese-middle": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          3,
+          4
+        ],
+        "subjectID": "subject.japanese"
+      }
+    ],
+    "ctx.cross-science-knowledge": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          5
+        ],
+        "subjectID": "subject.science"
+      }
+    ],
+    "ctx.cross-science-inquiry": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          5
+        ],
+        "subjectID": "subject.science"
+      }
+    ],
+    "ctx.cross-history": [
+      {
+        "stage": "lowerSecondary",
+        "gradeStatus": "notSpecified",
+        "grades": [],
+        "subjectID": "subject.history",
+        "courseID": "course.history"
+      }
+    ],
+    "ctx.cross-language-listen": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          5,
+          6
+        ],
+        "subjectID": "subject.language",
+        "courseID": "course.language"
+      }
+    ],
+    "ctx.cross-language-write": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          5,
+          6
+        ],
+        "subjectID": "subject.language",
+        "courseID": "course.language"
+      }
+    ],
+    "ctx.cross-music": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          5,
+          6
+        ],
+        "subjectID": "subject.music"
+      }
+    ],
+    "ctx.cross-ethics": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          5,
+          6
+        ],
+        "subjectID": "subject.ethics"
+      }
+    ],
+    "ctx.cross-data": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          3
+        ],
+        "subjectID": "subject.data"
+      }
+    ],
+    "ctx.cross-information": [
+      {
+        "stage": "upperSecondary",
+        "gradeStatus": "notSpecified",
+        "grades": [],
+        "subjectID": "subject.information",
+        "courseID": "course.information"
+      }
+    ]
+  },
+  "entityEducation": {
+    "cp.cross-data": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          3
+        ],
+        "subjectID": "subject.data"
+      }
+    ],
+    "cp.cross-history": [
+      {
+        "stage": "lowerSecondary",
+        "gradeStatus": "notSpecified",
+        "grades": [],
+        "subjectID": "subject.history",
+        "courseID": "course.history"
+      }
+    ],
+    "cp.cross-information-build": [
+      {
+        "stage": "upperSecondary",
+        "gradeStatus": "notSpecified",
+        "grades": [],
+        "subjectID": "subject.information",
+        "courseID": "course.information"
+      }
+    ],
+    "cp.cross-information-improve": [
+      {
+        "stage": "upperSecondary",
+        "gradeStatus": "notSpecified",
+        "grades": [],
+        "subjectID": "subject.information",
+        "courseID": "course.information"
+      }
+    ],
+    "cp.cross-japanese-early": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          1,
+          2
+        ],
+        "subjectID": "subject.japanese"
+      }
+    ],
+    "cp.cross-japanese-middle": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          3,
+          4
+        ],
+        "subjectID": "subject.japanese"
+      }
+    ],
+    "cp.cross-language-listen": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          5,
+          6
+        ],
+        "subjectID": "subject.language",
+        "courseID": "course.language"
+      }
+    ],
+    "cp.cross-language-write": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          5,
+          6
+        ],
+        "subjectID": "subject.language",
+        "courseID": "course.language"
+      }
+    ],
+    "cp.cross-music": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          5,
+          6
+        ],
+        "subjectID": "subject.music"
+      }
+    ],
+    "cp.cross-science-inquiry": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          5
+        ],
+        "subjectID": "subject.science"
+      }
+    ],
+    "cp.cross-science-knowledge": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          5
+        ],
+        "subjectID": "subject.science"
+      }
+    ],
+    "fi.8210000000000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "notSpecified",
+        "grades": [],
+        "subjectID": "subject.japanese"
+      }
+    ],
+    "fi.8210200000000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "notSpecified",
+        "grades": [],
+        "subjectID": "subject.japanese"
+      }
+    ],
+    "fi.82102a0000000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          1,
+          2
+        ],
+        "subjectID": "subject.japanese"
+      }
+    ],
+    "fi.82102a3000000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          1,
+          2
+        ],
+        "subjectID": "subject.japanese"
+      }
+    ],
+    "fi.82102a3200000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          1,
+          2
+        ],
+        "subjectID": "subject.japanese"
+      }
+    ],
+    "fi.82102a3230000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          1,
+          2
+        ],
+        "subjectID": "subject.japanese"
+      }
+    ],
+    "fi.82102a3231000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          1,
+          2
+        ],
+        "subjectID": "subject.japanese"
+      }
+    ],
+    "fi.82102a3231200000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          1,
+          2
+        ],
+        "subjectID": "subject.japanese"
+      }
+    ],
+    "fi.82102c0000000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          3,
+          4
+        ],
+        "subjectID": "subject.japanese"
+      }
+    ],
+    "fi.82102c3000000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          3,
+          4
+        ],
+        "subjectID": "subject.japanese"
+      }
+    ],
+    "fi.82102c3200000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          3,
+          4
+        ],
+        "subjectID": "subject.japanese"
+      }
+    ],
+    "fi.82102c3230000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          3,
+          4
+        ],
+        "subjectID": "subject.japanese"
+      }
+    ],
+    "fi.82102c3231000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          3,
+          4
+        ],
+        "subjectID": "subject.japanese"
+      }
+    ],
+    "fi.82102c3231200000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          3,
+          4
+        ],
+        "subjectID": "subject.japanese"
+      }
+    ],
+    "fi.8250000000000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "notSpecified",
+        "grades": [],
+        "subjectID": "subject.data"
+      }
+    ],
+    "fi.8250200000000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "notSpecified",
+        "grades": [],
+        "subjectID": "subject.data"
+      }
+    ],
+    "fi.8250230000000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          3
+        ],
+        "subjectID": "subject.data"
+      }
+    ],
+    "fi.8250233000000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          3
+        ],
+        "subjectID": "subject.data"
+      }
+    ],
+    "fi.8250233400000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          3
+        ],
+        "subjectID": "subject.data"
+      }
+    ],
+    "fi.8250233410000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          3
+        ],
+        "subjectID": "subject.data"
+      }
+    ],
+    "fi.8250233411000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          3
+        ],
+        "subjectID": "subject.data"
+      }
+    ],
+    "fi.8250233411100000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          3
+        ],
+        "subjectID": "subject.data"
+      }
+    ],
+    "fi.8250233412000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          3
+        ],
+        "subjectID": "subject.data"
+      }
+    ],
+    "fi.8250233412100000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          3
+        ],
+        "subjectID": "subject.data"
+      }
+    ],
+    "fi.82600l0000000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "notSpecified",
+        "grades": [],
+        "subjectID": "subject.science"
+      }
+    ],
+    "fi.8260250000000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          5
+        ],
+        "subjectID": "subject.science"
+      }
+    ],
+    "fi.8260253000000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          5
+        ],
+        "subjectID": "subject.science"
+      }
+    ],
+    "fi.8260253100000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          5
+        ],
+        "subjectID": "subject.science"
+      }
+    ],
+    "fi.8260253120000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          5
+        ],
+        "subjectID": "subject.science"
+      }
+    ],
+    "fi.8260253121000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          5
+        ],
+        "subjectID": "subject.science"
+      }
+    ],
+    "fi.8260253121100000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          5
+        ],
+        "subjectID": "subject.science"
+      }
+    ],
+    "fi.8260253122000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          5
+        ],
+        "subjectID": "subject.science"
+      }
+    ],
+    "fi.82602l0000000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "notSpecified",
+        "grades": [],
+        "subjectID": "subject.science"
+      }
+    ],
+    "fi.8280000000000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "notSpecified",
+        "grades": [],
+        "subjectID": "subject.music"
+      }
+    ],
+    "fi.8280200000000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "notSpecified",
+        "grades": [],
+        "subjectID": "subject.music"
+      }
+    ],
+    "fi.82802d0000000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          5,
+          6
+        ],
+        "subjectID": "subject.music"
+      }
+    ],
+    "fi.82802d3000000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          5,
+          6
+        ],
+        "subjectID": "subject.music"
+      }
+    ],
+    "fi.82802d3100000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          5,
+          6
+        ],
+        "subjectID": "subject.music"
+      }
+    ],
+    "fi.82802d3120000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          5,
+          6
+        ],
+        "subjectID": "subject.music"
+      }
+    ],
+    "fi.82802d3123000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          5,
+          6
+        ],
+        "subjectID": "subject.music"
+      }
+    ],
+    "fi.82802d3123300000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          5,
+          6
+        ],
+        "subjectID": "subject.music"
+      }
+    ],
+    "fi.82h00d0000000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          5,
+          6
+        ],
+        "subjectID": "subject.language"
+      }
+    ],
+    "fi.82h02d0000000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          5,
+          6
+        ],
+        "subjectID": "subject.language"
+      }
+    ],
+    "fi.82h12d0000000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          5,
+          6
+        ],
+        "subjectID": "subject.language",
+        "courseID": "course.language"
+      }
+    ],
+    "fi.82h12d2000000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          5,
+          6
+        ],
+        "subjectID": "subject.language",
+        "courseID": "course.language"
+      }
+    ],
+    "fi.82h12d2100000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          5,
+          6
+        ],
+        "subjectID": "subject.language",
+        "courseID": "course.language"
+      }
+    ],
+    "fi.82h12d2110000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          5,
+          6
+        ],
+        "subjectID": "subject.language",
+        "courseID": "course.language"
+      }
+    ],
+    "fi.82h12d2500000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          5,
+          6
+        ],
+        "subjectID": "subject.language",
+        "courseID": "course.language"
+      }
+    ],
+    "fi.82h12d2520000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          5,
+          6
+        ],
+        "subjectID": "subject.language",
+        "courseID": "course.language"
+      }
+    ],
+    "fi.82k0000000000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "notSpecified",
+        "grades": [],
+        "subjectID": "subject.ethics"
+      }
+    ],
+    "fi.82k0400000000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "notSpecified",
+        "grades": [],
+        "subjectID": "subject.ethics"
+      }
+    ],
+    "fi.82k0400200000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "notSpecified",
+        "grades": [],
+        "subjectID": "subject.ethics"
+      }
+    ],
+    "fi.82k0400210000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "notSpecified",
+        "grades": [],
+        "subjectID": "subject.ethics"
+      }
+    ],
+    "fi.82k04d0213000000": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          5,
+          6
+        ],
+        "subjectID": "subject.ethics"
+      }
+    ],
+    "fi.8320000000000000": [
+      {
+        "stage": "lowerSecondary",
+        "gradeStatus": "notSpecified",
+        "grades": [],
+        "subjectID": "subject.history"
+      }
+    ],
+    "fi.8320200000000000": [
+      {
+        "stage": "lowerSecondary",
+        "gradeStatus": "notSpecified",
+        "grades": [],
+        "subjectID": "subject.history"
+      }
+    ],
+    "fi.8322200000000000": [
+      {
+        "stage": "lowerSecondary",
+        "gradeStatus": "notSpecified",
+        "grades": [],
+        "subjectID": "subject.history",
+        "courseID": "course.history"
+      }
+    ],
+    "fi.8322203000000000": [
+      {
+        "stage": "lowerSecondary",
+        "gradeStatus": "notSpecified",
+        "grades": [],
+        "subjectID": "subject.history",
+        "courseID": "course.history"
+      }
+    ],
+    "fi.8322203100000000": [
+      {
+        "stage": "lowerSecondary",
+        "gradeStatus": "notSpecified",
+        "grades": [],
+        "subjectID": "subject.history",
+        "courseID": "course.history"
+      }
+    ],
+    "fi.8322203120000000": [
+      {
+        "stage": "lowerSecondary",
+        "gradeStatus": "notSpecified",
+        "grades": [],
+        "subjectID": "subject.history",
+        "courseID": "course.history"
+      }
+    ],
+    "fi.8322203122000000": [
+      {
+        "stage": "lowerSecondary",
+        "gradeStatus": "notSpecified",
+        "grades": [],
+        "subjectID": "subject.history",
+        "courseID": "course.history"
+      }
+    ],
+    "fi.8322203122100000": [
+      {
+        "stage": "lowerSecondary",
+        "gradeStatus": "notSpecified",
+        "grades": [],
+        "subjectID": "subject.history",
+        "courseID": "course.history"
+      }
+    ],
+    "fi.84i0000000000000": [
+      {
+        "stage": "upperSecondary",
+        "gradeStatus": "notSpecified",
+        "grades": [],
+        "subjectID": "subject.information"
+      }
+    ],
+    "fi.84i0500000000000": [
+      {
+        "stage": "upperSecondary",
+        "gradeStatus": "notSpecified",
+        "grades": [],
+        "subjectID": "subject.information"
+      }
+    ],
+    "fi.84i1500000000000": [
+      {
+        "stage": "upperSecondary",
+        "gradeStatus": "notSpecified",
+        "grades": [],
+        "subjectID": "subject.information",
+        "courseID": "course.information"
+      }
+    ],
+    "fi.84i1503000000000": [
+      {
+        "stage": "upperSecondary",
+        "gradeStatus": "notSpecified",
+        "grades": [],
+        "subjectID": "subject.information",
+        "courseID": "course.information"
+      }
+    ],
+    "fi.84i1503300000000": [
+      {
+        "stage": "upperSecondary",
+        "gradeStatus": "notSpecified",
+        "grades": [],
+        "subjectID": "subject.information",
+        "courseID": "course.information"
+      }
+    ],
+    "fi.84i1503320000000": [
+      {
+        "stage": "upperSecondary",
+        "gradeStatus": "notSpecified",
+        "grades": [],
+        "subjectID": "subject.information",
+        "courseID": "course.information"
+      }
+    ],
+    "fi.84i1503322000000": [
+      {
+        "stage": "upperSecondary",
+        "gradeStatus": "notSpecified",
+        "grades": [],
+        "subjectID": "subject.information",
+        "courseID": "course.information"
+      }
+    ],
+    "sm.algorithm-process": [
+      {
+        "stage": "upperSecondary",
+        "gradeStatus": "notSpecified",
+        "grades": [],
+        "subjectID": "subject.information",
+        "courseID": "course.information"
+      }
+    ],
+    "sm.character-reading": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          1,
+          2
+        ],
+        "subjectID": "subject.japanese"
+      },
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          3,
+          4
+        ],
+        "subjectID": "subject.japanese"
+      }
+    ],
+    "sm.consideration": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          5,
+          6
+        ],
+        "subjectID": "subject.ethics"
+      }
+    ],
+    "sm.control-conditions": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          5
+        ],
+        "subjectID": "subject.science"
+      }
+    ],
+    "sm.data-organization": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          3
+        ],
+        "subjectID": "subject.data"
+      }
+    ],
+    "sm.ensemble": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          5,
+          6
+        ],
+        "subjectID": "subject.music"
+      }
+    ],
+    "sm.familiar-language": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          5,
+          6
+        ],
+        "subjectID": "subject.language",
+        "courseID": "course.language"
+      }
+    ],
+    "sm.local-history": [
+      {
+        "stage": "lowerSecondary",
+        "gradeStatus": "notSpecified",
+        "grades": [],
+        "subjectID": "subject.history",
+        "courseID": "course.history"
+      }
+    ],
+    "sm.pendulum": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          5
+        ],
+        "subjectID": "subject.science"
+      }
+    ],
+    "goal.cross-ethics": [
+      {
+        "stage": "elementary",
+        "gradeStatus": "specified",
+        "grades": [
+          5,
+          6
+        ],
+        "subjectID": "subject.ethics"
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "key": "evidence.cp.cross-data.text",
+      "target": "cp.cross-data",
+      "field": "text",
+      "codes": [
+        "8250233411100000",
+        "8250233412100000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.cp.cross-data.conditions",
+      "target": "cp.cross-data",
+      "field": "conditions",
+      "codes": [
+        "8250233411100000",
+        "8250233412100000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.note.cp.cross-data.1",
+      "target": "note.cp.cross-data.1",
+      "field": "text",
+      "codes": [
+        "8250233411100000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.note.cp.cross-data.2",
+      "target": "note.cp.cross-data.2",
+      "field": "text",
+      "codes": [
+        "8250233412100000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.cp.cross-history.text",
+      "target": "cp.cross-history",
+      "field": "text",
+      "codes": [
+        "8322203122100000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.cp.cross-history.conditions",
+      "target": "cp.cross-history",
+      "field": "conditions",
+      "codes": [
+        "8322203122100000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.note.cp.cross-history.1",
+      "target": "note.cp.cross-history.1",
+      "field": "text",
+      "codes": [
+        "8322203122100000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.note.cp.cross-history.2",
+      "target": "note.cp.cross-history.2",
+      "field": "text",
+      "codes": [
+        "8322203122100000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.cp.cross-information-build.text",
+      "target": "cp.cross-information-build",
+      "field": "text",
+      "codes": [
+        "84I1503322000000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.cp.cross-information-build.conditions",
+      "target": "cp.cross-information-build",
+      "field": "conditions",
+      "codes": [
+        "84I1503322000000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.note.cp.cross-information-build.1",
+      "target": "note.cp.cross-information-build.1",
+      "field": "text",
+      "codes": [
+        "84I1503322000000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.cp.cross-information-improve.text",
+      "target": "cp.cross-information-improve",
+      "field": "text",
+      "codes": [
+        "84I1503322000000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.cp.cross-information-improve.conditions",
+      "target": "cp.cross-information-improve",
+      "field": "conditions",
+      "codes": [
+        "84I1503322000000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.note.cp.cross-information-improve.1",
+      "target": "note.cp.cross-information-improve.1",
+      "field": "text",
+      "codes": [
+        "84I1503322000000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.cp.cross-japanese-early.text",
+      "target": "cp.cross-japanese-early",
+      "field": "text",
+      "codes": [
+        "82102A3231200000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.cp.cross-japanese-early.conditions",
+      "target": "cp.cross-japanese-early",
+      "field": "conditions",
+      "codes": [
+        "82102A3231200000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.note.cp.cross-japanese-early.1",
+      "target": "note.cp.cross-japanese-early.1",
+      "field": "text",
+      "codes": [
+        "82102A3231200000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.cp.cross-japanese-middle.text",
+      "target": "cp.cross-japanese-middle",
+      "field": "text",
+      "codes": [
+        "82102C3231200000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.cp.cross-japanese-middle.conditions",
+      "target": "cp.cross-japanese-middle",
+      "field": "conditions",
+      "codes": [
+        "82102C3231200000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.note.cp.cross-japanese-middle.1",
+      "target": "note.cp.cross-japanese-middle.1",
+      "field": "text",
+      "codes": [
+        "82102C3231200000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.cp.cross-language-listen.text",
+      "target": "cp.cross-language-listen",
+      "field": "text",
+      "codes": [
+        "82H12D2110000000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.cp.cross-language-listen.conditions",
+      "target": "cp.cross-language-listen",
+      "field": "conditions",
+      "codes": [
+        "82H12D2110000000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.note.cp.cross-language-listen.1",
+      "target": "note.cp.cross-language-listen.1",
+      "field": "text",
+      "codes": [
+        "82H12D2110000000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.cp.cross-language-write.text",
+      "target": "cp.cross-language-write",
+      "field": "text",
+      "codes": [
+        "82H12D2520000000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.cp.cross-language-write.conditions",
+      "target": "cp.cross-language-write",
+      "field": "conditions",
+      "codes": [
+        "82H12D2520000000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.note.cp.cross-language-write.1",
+      "target": "note.cp.cross-language-write.1",
+      "field": "text",
+      "codes": [
+        "82H12D2520000000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.cp.cross-music.text",
+      "target": "cp.cross-music",
+      "field": "text",
+      "codes": [
+        "82802D3123300000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.cp.cross-music.conditions",
+      "target": "cp.cross-music",
+      "field": "conditions",
+      "codes": [
+        "82802D3123000000",
+        "82802D3123300000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.note.cp.cross-music.1",
+      "target": "note.cp.cross-music.1",
+      "field": "text",
+      "codes": [
+        "82802D3123300000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.cp.cross-science-inquiry.text",
+      "target": "cp.cross-science-inquiry",
+      "field": "text",
+      "codes": [
+        "8260253122000000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.cp.cross-science-inquiry.conditions",
+      "target": "cp.cross-science-inquiry",
+      "field": "conditions",
+      "codes": [
+        "8260253120000000",
+        "8260253122000000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.note.cp.cross-science-inquiry.1",
+      "target": "note.cp.cross-science-inquiry.1",
+      "field": "text",
+      "codes": [
+        "8260253122000000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.cp.cross-science-knowledge.text",
+      "target": "cp.cross-science-knowledge",
+      "field": "text",
+      "codes": [
+        "8260253121100000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.cp.cross-science-knowledge.conditions",
+      "target": "cp.cross-science-knowledge",
+      "field": "conditions",
+      "codes": [
+        "8260253120000000",
+        "8260253121100000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.note.cp.cross-science-knowledge.1",
+      "target": "note.cp.cross-science-knowledge.1",
+      "field": "text",
+      "codes": [
+        "8260253121100000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.fi.8210000000000000.text",
+      "target": "fi.8210000000000000",
+      "field": "text",
+      "codes": [
+        "8210000000000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.8210200000000000.text",
+      "target": "fi.8210200000000000",
+      "field": "text",
+      "codes": [
+        "8210200000000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.82102a0000000000.text",
+      "target": "fi.82102a0000000000",
+      "field": "text",
+      "codes": [
+        "82102A0000000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.82102a3000000000.text",
+      "target": "fi.82102a3000000000",
+      "field": "text",
+      "codes": [
+        "82102A3000000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.82102a3200000000.text",
+      "target": "fi.82102a3200000000",
+      "field": "text",
+      "codes": [
+        "82102A3200000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.82102a3230000000.text",
+      "target": "fi.82102a3230000000",
+      "field": "text",
+      "codes": [
+        "82102A3230000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.82102a3231000000.text",
+      "target": "fi.82102a3231000000",
+      "field": "text",
+      "codes": [
+        "82102A3231000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.82102a3231200000.text",
+      "target": "fi.82102a3231200000",
+      "field": "text",
+      "codes": [
+        "82102A3231200000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.82102c0000000000.text",
+      "target": "fi.82102c0000000000",
+      "field": "text",
+      "codes": [
+        "82102C0000000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.82102c3000000000.text",
+      "target": "fi.82102c3000000000",
+      "field": "text",
+      "codes": [
+        "82102C3000000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.82102c3200000000.text",
+      "target": "fi.82102c3200000000",
+      "field": "text",
+      "codes": [
+        "82102C3200000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.82102c3230000000.text",
+      "target": "fi.82102c3230000000",
+      "field": "text",
+      "codes": [
+        "82102C3230000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.82102c3231000000.text",
+      "target": "fi.82102c3231000000",
+      "field": "text",
+      "codes": [
+        "82102C3231000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.82102c3231200000.text",
+      "target": "fi.82102c3231200000",
+      "field": "text",
+      "codes": [
+        "82102C3231200000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.8250000000000000.text",
+      "target": "fi.8250000000000000",
+      "field": "text",
+      "codes": [
+        "8250000000000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.8250200000000000.text",
+      "target": "fi.8250200000000000",
+      "field": "text",
+      "codes": [
+        "8250200000000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.8250230000000000.text",
+      "target": "fi.8250230000000000",
+      "field": "text",
+      "codes": [
+        "8250230000000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.8250233000000000.text",
+      "target": "fi.8250233000000000",
+      "field": "text",
+      "codes": [
+        "8250233000000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.8250233400000000.text",
+      "target": "fi.8250233400000000",
+      "field": "text",
+      "codes": [
+        "8250233400000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.8250233410000000.text",
+      "target": "fi.8250233410000000",
+      "field": "text",
+      "codes": [
+        "8250233410000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.8250233411000000.text",
+      "target": "fi.8250233411000000",
+      "field": "text",
+      "codes": [
+        "8250233411000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.8250233411100000.text",
+      "target": "fi.8250233411100000",
+      "field": "text",
+      "codes": [
+        "8250233411100000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.8250233412000000.text",
+      "target": "fi.8250233412000000",
+      "field": "text",
+      "codes": [
+        "8250233412000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.8250233412100000.text",
+      "target": "fi.8250233412100000",
+      "field": "text",
+      "codes": [
+        "8250233412100000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.82600l0000000000.text",
+      "target": "fi.82600l0000000000",
+      "field": "text",
+      "codes": [
+        "82600L0000000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.8260250000000000.text",
+      "target": "fi.8260250000000000",
+      "field": "text",
+      "codes": [
+        "8260250000000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.8260253000000000.text",
+      "target": "fi.8260253000000000",
+      "field": "text",
+      "codes": [
+        "8260253000000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.8260253100000000.text",
+      "target": "fi.8260253100000000",
+      "field": "text",
+      "codes": [
+        "8260253100000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.8260253120000000.text",
+      "target": "fi.8260253120000000",
+      "field": "text",
+      "codes": [
+        "8260253120000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.8260253121000000.text",
+      "target": "fi.8260253121000000",
+      "field": "text",
+      "codes": [
+        "8260253121000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.8260253121100000.text",
+      "target": "fi.8260253121100000",
+      "field": "text",
+      "codes": [
+        "8260253121100000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.8260253122000000.text",
+      "target": "fi.8260253122000000",
+      "field": "text",
+      "codes": [
+        "8260253122000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.82602l0000000000.text",
+      "target": "fi.82602l0000000000",
+      "field": "text",
+      "codes": [
+        "82602L0000000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.8280000000000000.text",
+      "target": "fi.8280000000000000",
+      "field": "text",
+      "codes": [
+        "8280000000000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.8280200000000000.text",
+      "target": "fi.8280200000000000",
+      "field": "text",
+      "codes": [
+        "8280200000000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.82802d0000000000.text",
+      "target": "fi.82802d0000000000",
+      "field": "text",
+      "codes": [
+        "82802D0000000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.82802d3000000000.text",
+      "target": "fi.82802d3000000000",
+      "field": "text",
+      "codes": [
+        "82802D3000000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.82802d3100000000.text",
+      "target": "fi.82802d3100000000",
+      "field": "text",
+      "codes": [
+        "82802D3100000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.82802d3120000000.text",
+      "target": "fi.82802d3120000000",
+      "field": "text",
+      "codes": [
+        "82802D3120000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.82802d3123000000.text",
+      "target": "fi.82802d3123000000",
+      "field": "text",
+      "codes": [
+        "82802D3123000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.82802d3123300000.text",
+      "target": "fi.82802d3123300000",
+      "field": "text",
+      "codes": [
+        "82802D3123300000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.82h00d0000000000.text",
+      "target": "fi.82h00d0000000000",
+      "field": "text",
+      "codes": [
+        "82H00D0000000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.82h02d0000000000.text",
+      "target": "fi.82h02d0000000000",
+      "field": "text",
+      "codes": [
+        "82H02D0000000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.82h12d0000000000.text",
+      "target": "fi.82h12d0000000000",
+      "field": "text",
+      "codes": [
+        "82H12D0000000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.82h12d2000000000.text",
+      "target": "fi.82h12d2000000000",
+      "field": "text",
+      "codes": [
+        "82H12D2000000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.82h12d2100000000.text",
+      "target": "fi.82h12d2100000000",
+      "field": "text",
+      "codes": [
+        "82H12D2100000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.82h12d2110000000.text",
+      "target": "fi.82h12d2110000000",
+      "field": "text",
+      "codes": [
+        "82H12D2110000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.82h12d2500000000.text",
+      "target": "fi.82h12d2500000000",
+      "field": "text",
+      "codes": [
+        "82H12D2500000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.82h12d2520000000.text",
+      "target": "fi.82h12d2520000000",
+      "field": "text",
+      "codes": [
+        "82H12D2520000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.82k0000000000000.text",
+      "target": "fi.82k0000000000000",
+      "field": "text",
+      "codes": [
+        "82K0000000000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.82k0400000000000.text",
+      "target": "fi.82k0400000000000",
+      "field": "text",
+      "codes": [
+        "82K0400000000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.82k0400200000000.text",
+      "target": "fi.82k0400200000000",
+      "field": "text",
+      "codes": [
+        "82K0400200000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.82k0400210000000.text",
+      "target": "fi.82k0400210000000",
+      "field": "text",
+      "codes": [
+        "82K0400210000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.82k04d0213000000.text",
+      "target": "fi.82k04d0213000000",
+      "field": "text",
+      "codes": [
+        "82K04D0213000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.8320000000000000.text",
+      "target": "fi.8320000000000000",
+      "field": "text",
+      "codes": [
+        "8320000000000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.8320200000000000.text",
+      "target": "fi.8320200000000000",
+      "field": "text",
+      "codes": [
+        "8320200000000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.8322200000000000.text",
+      "target": "fi.8322200000000000",
+      "field": "text",
+      "codes": [
+        "8322200000000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.8322203000000000.text",
+      "target": "fi.8322203000000000",
+      "field": "text",
+      "codes": [
+        "8322203000000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.8322203100000000.text",
+      "target": "fi.8322203100000000",
+      "field": "text",
+      "codes": [
+        "8322203100000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.8322203120000000.text",
+      "target": "fi.8322203120000000",
+      "field": "text",
+      "codes": [
+        "8322203120000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.8322203122000000.text",
+      "target": "fi.8322203122000000",
+      "field": "text",
+      "codes": [
+        "8322203122000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.8322203122100000.text",
+      "target": "fi.8322203122100000",
+      "field": "text",
+      "codes": [
+        "8322203122100000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.84i0000000000000.text",
+      "target": "fi.84i0000000000000",
+      "field": "text",
+      "codes": [
+        "84I0000000000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.84i0500000000000.text",
+      "target": "fi.84i0500000000000",
+      "field": "text",
+      "codes": [
+        "84I0500000000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.84i1500000000000.text",
+      "target": "fi.84i1500000000000",
+      "field": "text",
+      "codes": [
+        "84I1500000000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.84i1503000000000.text",
+      "target": "fi.84i1503000000000",
+      "field": "text",
+      "codes": [
+        "84I1503000000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.84i1503300000000.text",
+      "target": "fi.84i1503300000000",
+      "field": "text",
+      "codes": [
+        "84I1503300000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.84i1503320000000.text",
+      "target": "fi.84i1503320000000",
+      "field": "text",
+      "codes": [
+        "84I1503320000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.fi.84i1503322000000.text",
+      "target": "fi.84i1503322000000",
+      "field": "text",
+      "codes": [
+        "84I1503322000000"
+      ],
+      "quotation": true
+    },
+    {
+      "key": "evidence.sm.algorithm-process.text",
+      "target": "sm.algorithm-process",
+      "field": "text",
+      "codes": [
+        "84I1503322000000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.sm.character-reading.text",
+      "target": "sm.character-reading",
+      "field": "text",
+      "codes": [
+        "82102A3231200000",
+        "82102C3231200000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.sm.consideration.text",
+      "target": "sm.consideration",
+      "field": "text",
+      "codes": [
+        "82K04D0213000000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.sm.control-conditions.text",
+      "target": "sm.control-conditions",
+      "field": "text",
+      "codes": [
+        "8260253120000000",
+        "8260253122000000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.sm.data-organization.text",
+      "target": "sm.data-organization",
+      "field": "text",
+      "codes": [
+        "8250233411100000",
+        "8250233412100000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.sm.ensemble.text",
+      "target": "sm.ensemble",
+      "field": "text",
+      "codes": [
+        "82802D3123300000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.sm.familiar-language.text",
+      "target": "sm.familiar-language",
+      "field": "text",
+      "codes": [
+        "82H12D2110000000",
+        "82H12D2520000000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.sm.local-history.text",
+      "target": "sm.local-history",
+      "field": "text",
+      "codes": [
+        "8322203122100000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.sm.pendulum.text",
+      "target": "sm.pendulum",
+      "field": "text",
+      "codes": [
+        "8260253120000000",
+        "8260253121100000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.goal.cross-ethics.text",
+      "target": "goal.cross-ethics",
+      "field": "text",
+      "codes": [
+        "82K04D0213000000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.al.cross-data-0.coverage",
+      "target": "al.cross-data-0",
+      "field": "coverage",
+      "codes": [
+        "8250233411100000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.al.cross-data-1.coverage",
+      "target": "al.cross-data-1",
+      "field": "coverage",
+      "codes": [
+        "8250233412100000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.al.cross-ethics-target.coverage",
+      "target": "al.cross-ethics-target",
+      "field": "coverage",
+      "codes": [
+        "82K04D0213000000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.al.cross-history-0.coverage",
+      "target": "al.cross-history-0",
+      "field": "coverage",
+      "codes": [
+        "8322203122100000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.al.cross-information-build-0.coverage",
+      "target": "al.cross-information-build-0",
+      "field": "coverage",
+      "codes": [
+        "84I1503322000000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.al.cross-information-improve-0.coverage",
+      "target": "al.cross-information-improve-0",
+      "field": "coverage",
+      "codes": [
+        "84I1503322000000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.al.cross-japanese-early-0.coverage",
+      "target": "al.cross-japanese-early-0",
+      "field": "coverage",
+      "codes": [
+        "82102A3231200000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.al.cross-japanese-middle-0.coverage",
+      "target": "al.cross-japanese-middle-0",
+      "field": "coverage",
+      "codes": [
+        "82102C3231200000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.al.cross-language-listen-0.coverage",
+      "target": "al.cross-language-listen-0",
+      "field": "coverage",
+      "codes": [
+        "82H12D2110000000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.al.cross-language-write-0.coverage",
+      "target": "al.cross-language-write-0",
+      "field": "coverage",
+      "codes": [
+        "82H12D2520000000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.al.cross-music-0.coverage",
+      "target": "al.cross-music-0",
+      "field": "coverage",
+      "codes": [
+        "82802D3123300000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.al.cross-science-inquiry-0.coverage",
+      "target": "al.cross-science-inquiry-0",
+      "field": "coverage",
+      "codes": [
+        "8260253122000000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.al.cross-science-knowledge-0.coverage",
+      "target": "al.cross-science-knowledge-0",
+      "field": "coverage",
+      "codes": [
+        "8260253121100000"
+      ],
+      "quotation": false
+    },
+    {
+      "key": "evidence.al.cross-ethics-goal.coverage",
+      "target": "al.cross-ethics-goal",
+      "field": "coverage",
+      "codes": [
+        "82K04D0213000000"
+      ],
+      "quotation": false
+    }
+  ]
+}

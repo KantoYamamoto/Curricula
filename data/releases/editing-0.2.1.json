@@ -1,0 +1,374 @@
+{
+  "aliases" : {
+    "change.edit" : "ecdcdc0c-95a5-492e-992d-f6a27a40311e",
+    "ctx.editing" : "3b42e26f-73f3-493d-8722-5e3347ea76c0",
+    "goal.editing.a" : "01fc0585-825c-43e3-8cd7-538290aa8773",
+    "goal.editing.b" : "0c0edb71-df5d-4b15-89eb-8550efebd3cd",
+    "goal.editing.c" : "56850819-ba95-46ba-94c4-05b70b48a01e",
+    "goal.editing.combined" : "c77e0c17-168c-491a-bd83-7af1ad045ed1",
+    "goal.editing.left" : "20038238-77de-40bc-b856-738d7bd2d692",
+    "goal.editing.right" : "9d46eef9-76f6-484e-8c4d-e0242608ab54",
+    "goal.editing.target" : "29479c9a-fdc4-4630-82bb-53c41200e5e0",
+    "reading.editing" : "5a4f2e48-c60f-4d4a-acfc-609b5fb9620f",
+    "requirement.alternatives" : "fbaff452-abe4-43ce-a82c-4da22be2b3f3",
+    "section.editing" : "38bcf5ec-b458-42b3-af90-55163c7d5373",
+    "src.book-openstax" : "b5c5e6bd-9bc6-40ac-9179-955cfd786698",
+    "src.synthetic-reference" : "d3a06416-18ec-47be-bbec-0641e7ec21a6",
+    "src.synthetic-syllabus" : "ea423ac9-9f75-4106-bf6e-c42d74c8844f",
+    "subject.editing" : "16e5b3ac-650f-4b34-9e0e-4e19d8457994"
+  },
+  "annotations" : [
+
+  ],
+  "changes" : [
+    {
+      "after" : [
+        {
+          "record" : {
+            "id" : "01fc0585-825c-43e3-8cd7-538290aa8773",
+            "revisionID" : "aca43d11-bc75-4825-8bfe-c6c1453073c0"
+          },
+          "release" : "editing-0.2.1"
+        }
+      ],
+      "before" : [
+        {
+          "record" : {
+            "id" : "01fc0585-825c-43e3-8cd7-538290aa8773",
+            "revisionID" : "7c8dcb32-6491-447c-ae1a-ebba2ea6cc74"
+          },
+          "release" : "editing-0.2.0"
+        }
+      ],
+      "id" : "ecdcdc0c-95a5-492e-992d-f6a27a40311e",
+      "kind" : "edit",
+      "rationale" : "同じ目標の文言修正。IDを維持し編集版を更新。",
+      "revisionID" : "a6c9685e-d17d-4c85-91f4-d64c3ce08fb6"
+    }
+  ],
+  "contexts" : [
+    {
+      "conditions" : "論理式と参照の検証に用いる合成経路。",
+      "education" : [
+
+      ],
+      "id" : "3b42e26f-73f3-493d-8722-5e3347ea76c0",
+      "label" : "AND/ORの操作例",
+      "revisionID" : "626eb984-813f-4719-85d5-ab3c4d977791"
+    }
+  ],
+  "entities" : [
+    {
+      "conditions" : "",
+      "education" : [
+
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "01fc0585-825c-43e3-8cd7-538290aa8773",
+      "kind" : "goal",
+      "label" : "経路A（説明を補足）",
+      "lifecycle" : "active",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "目標の編集、分割、統合、前提の論理式を確認するための入力。"
+      },
+      "revisionID" : "aca43d11-bc75-4825-8bfe-c6c1453073c0",
+      "successorIDs" : [
+
+      ],
+      "targetIDs" : [
+
+      ],
+      "text" : "経路Aを満たす。注記の文言を編集した例。"
+    },
+    {
+      "conditions" : "",
+      "education" : [
+
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "0c0edb71-df5d-4b15-89eb-8550efebd3cd",
+      "kind" : "goal",
+      "label" : "経路Bの前半",
+      "lifecycle" : "active",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "目標の編集、分割、統合、前提の論理式を確認するための入力。"
+      },
+      "revisionID" : "ef1ff118-0dbc-4e4d-9d54-82622e354da0",
+      "successorIDs" : [
+
+      ],
+      "targetIDs" : [
+
+      ],
+      "text" : "経路Bの前半"
+    },
+    {
+      "conditions" : "",
+      "education" : [
+
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "20038238-77de-40bc-b856-738d7bd2d692",
+      "kind" : "goal",
+      "label" : "資料を読む",
+      "lifecycle" : "active",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "目標の編集、分割、統合、前提の論理式を確認するための入力。"
+      },
+      "revisionID" : "b28e2cab-3345-4479-a955-b39e7179cd75",
+      "successorIDs" : [
+
+      ],
+      "targetIDs" : [
+
+      ],
+      "text" : "資料を読む"
+    },
+    {
+      "conditions" : "",
+      "education" : [
+
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "29479c9a-fdc4-4630-82bb-53c41200e5e0",
+      "kind" : "goal",
+      "label" : "二つの経路で到達する目標",
+      "lifecycle" : "active",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "目標の編集、分割、統合、前提の論理式を確認するための入力。"
+      },
+      "revisionID" : "4ff7bea0-f4c1-4647-b06b-1aff82d711b2",
+      "successorIDs" : [
+
+      ],
+      "targetIDs" : [
+
+      ],
+      "text" : "二つの経路で到達する目標"
+    },
+    {
+      "conditions" : "",
+      "education" : [
+
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "56850819-ba95-46ba-94c4-05b70b48a01e",
+      "kind" : "goal",
+      "label" : "経路Bの後半",
+      "lifecycle" : "active",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "目標の編集、分割、統合、前提の論理式を確認するための入力。"
+      },
+      "revisionID" : "d0064515-5f3f-4e21-96b1-f6ea0c3c218d",
+      "successorIDs" : [
+
+      ],
+      "targetIDs" : [
+
+      ],
+      "text" : "経路Bの後半"
+    },
+    {
+      "conditions" : "",
+      "education" : [
+
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "9d46eef9-76f6-484e-8c4d-e0242608ab54",
+      "kind" : "goal",
+      "label" : "資料を比較する",
+      "lifecycle" : "active",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "目標の編集、分割、統合、前提の論理式を確認するための入力。"
+      },
+      "revisionID" : "fff32493-929e-4f2d-8bbc-d1942e672df8",
+      "successorIDs" : [
+
+      ],
+      "targetIDs" : [
+
+      ],
+      "text" : "資料を比較する"
+    },
+    {
+      "conditions" : "",
+      "education" : [
+
+      ],
+      "externalIDs" : {
+
+      },
+      "id" : "c77e0c17-168c-491a-bd83-7af1ad045ed1",
+      "kind" : "goal",
+      "label" : "説明と図示を行う",
+      "lifecycle" : "active",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "目標の編集、分割、統合、前提の論理式を確認するための入力。"
+      },
+      "revisionID" : "ac38749b-8a57-4f4c-b486-000d2c8de835",
+      "successorIDs" : [
+
+      ],
+      "targetIDs" : [
+
+      ],
+      "text" : "説明と図示を行う"
+    }
+  ],
+  "evidence" : [
+
+  ],
+  "frameworks" : [
+
+  ],
+  "limitations" : [
+    "合成した操作例。A06の資料種別とA13のAND/ORを正式なスキーマで扱う。"
+  ],
+  "prerequisites" : [
+    {
+      "contextID" : "3b42e26f-73f3-493d-8722-5e3347ea76c0",
+      "expression" : {
+        "op" : "anyOf",
+        "operands" : [
+          {
+            "goalID" : "01fc0585-825c-43e3-8cd7-538290aa8773",
+            "op" : "goal",
+            "operands" : [
+
+            ]
+          },
+          {
+            "op" : "allOf",
+            "operands" : [
+              {
+                "goalID" : "0c0edb71-df5d-4b15-89eb-8550efebd3cd",
+                "op" : "goal",
+                "operands" : [
+
+                ]
+              },
+              {
+                "goalID" : "56850819-ba95-46ba-94c4-05b70b48a01e",
+                "op" : "goal",
+                "operands" : [
+
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "id" : "fbaff452-abe4-43ce-a82c-4da22be2b3f3",
+      "provenance" : {
+        "origin" : "synthetic",
+        "rationale" : "A、またはBとCの両方。辺を三本に分解せず選択肢のまとまりを保つ。"
+      },
+      "revisionID" : "ddb066c3-e508-4a72-aef6-70a38f97e2ef",
+      "strength" : "required",
+      "targetGoalID" : "29479c9a-fdc4-4630-82bb-53c41200e5e0"
+    }
+  ],
+  "readingOutlines" : [
+    {
+      "id" : "5a4f2e48-c60f-4d4a-acfc-609b5fb9620f",
+      "label" : "編集と前提経路の操作例",
+      "revisionID" : "8f218343-090e-45c4-8f5e-08e4190a1ddf",
+      "sections" : [
+        {
+          "entityIDs" : [
+            "01fc0585-825c-43e3-8cd7-538290aa8773",
+            "0c0edb71-df5d-4b15-89eb-8550efebd3cd",
+            "56850819-ba95-46ba-94c4-05b70b48a01e",
+            "29479c9a-fdc4-4630-82bb-53c41200e5e0",
+            "c77e0c17-168c-491a-bd83-7af1ad045ed1",
+            "20038238-77de-40bc-b856-738d7bd2d692",
+            "9d46eef9-76f6-484e-8c4d-e0242608ab54"
+          ],
+          "id" : "38bcf5ec-b458-42b3-af90-55163c7d5373",
+          "label" : "目標とAND/OR経路",
+          "revisionID" : "d5928850-845f-40d9-a370-1c5ecc89e410"
+        }
+      ]
+    }
+  ],
+  "relations" : [
+
+  ],
+  "release" : "editing-0.2.1",
+  "schemaVersion" : "0.2.0",
+  "sources" : [
+    {
+      "creators" : [
+
+      ],
+      "id" : "b5c5e6bd-9bc6-40ac-9179-955cfd786698",
+      "identifiers" : {
+
+      },
+      "kind" : "book",
+      "origin" : "original",
+      "publisher" : "OpenStax / Rice University",
+      "revisionID" : "e3eeef6d-504e-4bc4-85c2-3fd820c0f0b1",
+      "scope" : "§2.1 Molecular Model of an Ideal Gas。書誌参照の例。",
+      "title" : "University Physics Volume 2",
+      "url" : "https://openstax.org/books/university-physics-volume-2/pages/2-1-molecular-model-of-an-ideal-gas"
+    },
+    {
+      "creators" : [
+
+      ],
+      "id" : "d3a06416-18ec-47be-bbec-0641e7ec21a6",
+      "identifiers" : {
+
+      },
+      "kind" : "referenceStandard",
+      "origin" : "synthetic",
+      "publisher" : "架空の発行者",
+      "revisionID" : "c7888ed2-42bc-45ca-9d79-c329d082c911",
+      "scope" : "教養教育の検討に使う助言。",
+      "title" : "架空学会の参照基準"
+    },
+    {
+      "creators" : [
+
+      ],
+      "id" : "ea423ac9-9f75-4106-bf6e-c42d74c8844f",
+      "identifiers" : {
+
+      },
+      "kind" : "syllabus",
+      "origin" : "synthetic",
+      "publisher" : "架空の発行者",
+      "revisionID" : "619bb079-bd45-4382-9cbe-3ce8375a338f",
+      "scope" : "2027年度の特定授業。",
+      "title" : "架空大学の授業シラバス"
+    }
+  ],
+  "taxons" : [
+    {
+      "id" : "16e5b3ac-650f-4b34-9e0e-4e19d8457994",
+      "kind" : "subject",
+      "label" : "編集操作の例",
+      "revisionID" : "be1b5d19-e574-4780-bb78-d411fc7d0b2a"
+    }
+  ]
+}

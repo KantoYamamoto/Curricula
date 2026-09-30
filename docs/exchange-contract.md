@@ -1,5 +1,7 @@
 # 交換契約 0.1.0
 
+> 2026-09-29：学年・教科、構造化根拠、目標と注釈、UUIDと改訂、AND/OR・資料種別は[契約0.2.0](exchange-contract-0.2.md)で実装。以下の0.1.0時点の検証・計画は履歴として残す。
+
 2026-09-28。設計資料v0.3を使った初回実装の契約。現物例は [cross-subject-0.1.0.json](../data/releases/cross-subject-0.1.0.json)。初回版 [pilot-0.1.0.json](../data/releases/pilot-0.1.0.json) も保存する。JSONの正式なキーは [Model.swift](../Sources/Curricula/Model.swift) の公開値型に対応し、互換性を意図せず変更しない。JSON Schemaによる網羅的な構文検証は未導入。
 
 ## 版と正規形

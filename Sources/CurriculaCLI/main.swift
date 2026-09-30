@@ -4,8 +4,22 @@ import CurriculaPilot
 
 func run() throws {
     let args = Array(CommandLine.arguments.dropFirst())
-    guard args == ["validate"] || (args.count == 2 && ["export", "export-examples", "export-cross-subjects"].contains(args[0])) else {
-        throw CLIError.message("Usage: curricula validate | curricula export <output.json> | curricula export-examples <directory> | curricula export-cross-subjects <output.json>")
+    guard args == ["validate"] || (args.count == 2 && ["export", "export-examples", "export-cross-subjects", "export-v2"].contains(args[0])) else {
+        throw CLIError.message("Usage: curricula validate | curricula export <output.json> | curricula export-examples <directory> | curricula export-cross-subjects <output.json> | curricula export-v2 <directory>")
+    }
+    if args.first == "export-v2" || args == ["validate"] {
+        let datasets = [try StructuredSamples.make()] + (try EditingSamples.revisions())
+        for dataset in datasets {
+            let issues = ValidatorV2.validate(dataset, history: datasets.filter { $0.release != dataset.release })
+            guard issues.isEmpty else { throw CLIError.message(issues.map(\.description).joined(separator: "\n")) }
+        }
+        if args.first == "export-v2" {
+            for dataset in datasets {
+                try dataset.canonicalJSON().write(to: URL(fileURLWithPath: args[1]).appendingPathComponent(dataset.release + ".json"), options: .atomic)
+            }
+            return
+        }
+        for dataset in datasets { print("Valid: \(dataset.release), schema \(dataset.schemaVersion), \(dataset.entities.count) entities.") }
     }
     if args == ["validate"] {
         for dataset in [try Pilot.make(), try StructureSamples.make(), try StructureSamples.make(revised: true), try CrossSubjectSamples.make()] {

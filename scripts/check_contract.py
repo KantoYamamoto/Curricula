@@ -76,3 +76,19 @@ for relation in cross['relations']:
     assert relation['from'] in entities and relation['to'] in entities
     assert bool(relation['excluded']) == (relation['coverage'] == 'partial')
 print('Cross-subject contract verified: 8 subjects, 11 cases, 69 verbatim rows, 89 entities, 13 alignments.')
+
+# New contract has separate goal annotations and version-pinned evidence.
+from uuid import UUID
+v2 = json.loads((ROOT / 'data/releases/cross-subject-0.2.0.json').read_text())
+v2_entities = {e['id']: e for e in v2['entities']}
+assert len(v2_entities) == 90 and len(v2['annotations']) == 13 and len(v2['evidence']) == 128
+for old in cross['entities']:
+    new = v2_entities[v2['aliases'][old['id']]]
+    assert str(UUID(new['id'])) == new['id']
+    assert new['id'] != new['revisionID']
+    assert old['text'] == new['text'] and old['externalIDs'] == new['externalIDs']
+    notes = sorted((a for a in v2['annotations'] if a['goal']['id'] == new['id']),key=lambda a:a['position'])
+    assert old['criteria'] == [a['text'] for a in notes]
+    assert all(a['goal']['revisionID'] == new['revisionID'] for a in notes)
+    assert new['kind'] == ('goal' if old['kind'] == 'competency' else old['kind'])
+print('Schema 0.2.0 migration verified: original records preserved, criteria moved to 13 pinned annotations.')

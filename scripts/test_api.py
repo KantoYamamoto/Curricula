@@ -148,3 +148,19 @@ class APITests(unittest.TestCase):
         self.assertEqual(self.get('/api/v1/releases/pilot-0.1.0/entities/sm.proportion')[0], 200)
         _, releases = self.get('/api/v1/releases')
         self.assertIn('cross-subject-0.1.0', {r['release'] for r in releases['releases']})
+
+    def test_schema_v2_over_http_with_grade_search(self):
+        status, body = self.get('/api/v1/releases/cross-subject-0.2.0/entities?stage=elementary&grade=3&subjectId=subject.japanese&kind=goal')
+        self.assertEqual(status, 200)
+        self.assertEqual(body['schemaVersion'], '0.2.0')
+        self.assertEqual(len(body['entities']), 1)
+        self.assertEqual(body['entities'][0]['education'][0]['grades'], [3, 4])
+        _, details = self.get('/api/v1/releases/cross-subject-0.2.0/entities/' + body['entities'][0]['id'])
+        self.assertTrue(details['annotations'] and details['evidence'])
+
+    def test_schema_v2_rejects_bad_queries_and_keeps_read_only_routes(self):
+        base = '/api/v1/releases/cross-subject-0.2.0/'
+        self.assertEqual(self.get(base+'entities?grade=3')[0], 400)
+        self.assertEqual(self.get(base+'entities?subjectId=absent')[0], 404)
+        self.assertEqual(self.get(base+'entities/cp.cross-language-write','PATCH')[0], 405)
+        self.assertEqual(self.get(base+'resolve/cp.cross-language-write')[0], 200)
