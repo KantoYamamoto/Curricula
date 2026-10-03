@@ -4,6 +4,17 @@ import CurriculaPilot
 
 func run() throws {
     let args = Array(CommandLine.arguments.dropFirst())
+    if args == ["check-json"] {
+        struct Request: Decodable { let dataset: V2.Dataset; let history: [V2.Dataset] }
+        let request = try JSONDecoder().decode(Request.self, from: FileHandle.standardInput.readDataToEndOfFile())
+        let issues = ValidatorV2.validate(request.dataset, history: request.history)
+        let output: [String: Any] = [
+            "canonical": String(decoding: try request.dataset.canonicalJSON(), as: UTF8.self),
+            "issues": issues.map { ["code": $0.code, "path": $0.path, "message": $0.message] }
+        ]
+        FileHandle.standardOutput.write(try JSONSerialization.data(withJSONObject: output, options: [.sortedKeys]))
+        return
+    }
     guard args == ["validate"] || (args.count == 2 && ["export", "export-examples", "export-cross-subjects", "export-v2"].contains(args[0])) else {
         throw CLIError.message("Usage: curricula validate | curricula export <output.json> | curricula export-examples <directory> | curricula export-cross-subjects <output.json> | curricula export-v2 <directory>")
     }

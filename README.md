@@ -13,7 +13,7 @@ make serve   # 同梱JSONでローカルAPIと画面を起動
 
 [読む](http://127.0.0.1:8000/read) / [構造を見る](http://127.0.0.1:8000/structure)。終了はCtrl+C。別ポートは `python3 scripts/serve.py --port 8001`。
 
-データを編集したら `make export` でJSONを生成し、サーバーを再起動します。通常の生成・テスト・起動時に原典サイトへアクセスしません。公開済みデータの更新は新しいデータ版として追加します。
+Swift小標本のデータを編集したら `make export` でJSONを生成し、サーバーを再起動します。通常の生成・テスト・起動時に原典サイトへアクセスしません。公開済みデータの更新は新しいデータ版として追加します。
 
 ## 今回の検証範囲
 
@@ -30,9 +30,15 @@ make serve   # 同梱JSONでローカルAPIと画面を起動
 
 ## wiki編集とDB移行
 
-将来は**DBを編集の正本にし、不変の版付きJSONを公開する**構成を想定します。コードはモデル・検証・API・画面を担い、DBには文言・条件・観点・関係・編集履歴を置きます。原典と独自編集、安定IDと編集版、下書きと公開版を分け、編集競合と公開時の一貫性を管理します。
+**SQLiteに下書きを保存するローカル編集**を実装しました。独自の本文・条件・判定観点の編集と追加、根拠の引き継ぎ、差分・履歴確認、新しいデータ版の作成ができます。
 
-[DB移行方針](docs/database-editing-plan.md)に段階的な移行と受入条件を記録しています。DB製品・導入時期は未決定で、今回はDB実装を含みません。
+```sh
+make serve-edit
+```
+
+[編集する](http://127.0.0.1:8000/edit)。下書きは `.local/curricula.sqlite3` に保存され、再起動後も残ります。元の公開版は保持し、確認済みの下書きから不変の新しい版を作ります。編集競合や未確認の根拠を検出します。
+
+[操作・保存・バックアップ](docs/local-editing.md)、[検証記録](docs/reviews/local-editing.md)、[DB移行方針](docs/database-editing-plan.md)。編集起動時はDBが保存元となり、Swift小標本と同梱JSONは初期投入・回帰確認用です。通常の `make serve` は閲覧専用で起動します。
 
 ## 構成と開発
 
@@ -43,6 +49,7 @@ make serve   # 同梱JSONでローカルAPIと画面を起動
 | `Sources/CurriculaCLI` | 検証・書き出しコマンド |
 | `data/releases` | 版付きの交換データ |
 | `scripts/serve.py` / `web` | 読み取りAPIと閲覧画面 |
+| `scripts/editing_db.py` / `editing_api.py` / `web/edit.js` | SQLite、ローカル編集APIと画面 |
 | `Tests` / `scripts/test_api.py` | モデル・APIの受入テスト |
 
 [交換契約とAPI 0.2.0](docs/exchange-contract-0.2.md)、[IDと編集操作](docs/identity-editing.md)。原典の再取得は既存ファイルを上書きせず、候補のハッシュ・差分を確認して採用します。

@@ -1,4 +1,4 @@
-.PHONY: test export check serve
+.PHONY: test export check serve serve-edit
 export:
 	swift run curricula export data/releases/pilot-0.1.0.json
 	swift run curricula export-examples data/releases
@@ -6,6 +6,7 @@ export:
 	swift run curricula export-v2 data/releases
 
 test:
+	swift build
 	swift test
 	python3 -m unittest discover -s scripts -p 'test_*.py' -v
 	python3 scripts/check_contract.py
@@ -21,3 +22,7 @@ check: test
 
 serve:
 	python3 scripts/serve.py
+
+serve-edit:
+	swift build
+	python3 scripts/serve.py --edit-db .local/curricula.sqlite3

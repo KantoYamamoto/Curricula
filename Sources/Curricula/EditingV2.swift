@@ -1,6 +1,6 @@
 import Foundation
 
-/// A local editing primitive. Persistence/authorization belong to a future editing API.
+/// A local editing primitive. Persistence and authorization belong to the editing API.
 public enum EditorV2 {
     public enum EditError: Error, Equatable { case conflict(String), invalidChange(String), invalidDataset([ValidationIssue]) }
     public static func apply(to original: V2.Dataset, nextRelease: String, kind: V2.ChangeKind, expected: [V2.Ref],

@@ -160,10 +160,16 @@ async function start() {
     if (!schema) throw new Error(`指定されたデータ版は存在しません: ${release}`);
     $('#release').innerHTML = releases.map(r=>`<option ${r.release===release?'selected':''}>${esc(r.release)}</option>`).join('');
     $('#release').onchange = e => { location.search = new URLSearchParams({release:e.target.value}); };
+    if ((await json('/api/v1/capabilities')).localEditing) {
+      const edit = document.createElement('a');
+      edit.href = '/edit?' + new URLSearchParams({baseRelease:release});
+      edit.textContent = '編集する';
+      $('nav').append(edit);
+    }
     overview = await api('overview');
     const firstOutline = overview.readingOutlines[0];
-    const isExample = release.startsWith('examples-') || release.startsWith('editing-');
-    const isCross = release.startsWith('cross-subject-');
+    const isCross = release.startsWith('cross-subject-') || (overview.taxons?.filter(t=>t.kind==='subject').length > 1 && overview.frameworks.some(f=>f.origin==='original'));
+    const isExample = release.startsWith('examples-') || release.startsWith('editing-') || (!isCross && overview.frameworks.every(f=>f.origin==='synthetic'));
     $('.hero h1').textContent = firstOutline?.label || '学びをたどる';
     document.title = `Curricula — ${firstOutline?.label || release}`;
     $('.hero .eyebrow').textContent = isCross ? 'CURRICULUM / CROSS SUBJECTS' : isExample ? 'STRUCTURE / SYNTHETIC SAMPLES' : 'MATHEMATICS / PILOT 01';

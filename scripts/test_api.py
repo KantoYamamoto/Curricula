@@ -73,6 +73,8 @@ class APITests(unittest.TestCase):
 
     def test_read_only_and_no_filesystem_exposure(self):
         self.assertEqual(self.get('/api/v1/releases', 'POST')[0], 405)
+        self.assertFalse(self.get('/api/v1/capabilities')[1]['localEditing'])
+        self.assertEqual(self.get('/api/edit/session')[0], 404)
         for path in ['/Package.swift', '/.env', '/%2e%2e/README.md', '/data/releases/pilot-0.1.0.json']:
             self.assertEqual(self.get(path)[0], 404)
 
