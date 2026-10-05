@@ -145,6 +145,8 @@ def handler_for(store, editing=None):
                 return self.respond(403, {'error': {'code': 'invalid_host'}})
             url = urlsplit(self.path)
             path = unquote(url.path)
+            if path == '/api/preview/lessons' and not url.query:
+                return self.respond(200, json.loads((ROOT / 'data/learning-preview/lessons.json').read_text()))
             if path.startswith('/api/'):
                 if path.startswith('/api/edit/') and editing:
                     try:
@@ -155,7 +157,8 @@ def handler_for(store, editing=None):
                 return self.respond(status, payload)
             assets = {'/': ('index.html', 'text/html'), '/read': ('index.html', 'text/html'),
                       '/structure': ('index.html', 'text/html'), '/app.js': ('app.js', 'text/javascript'), '/style.css': ('style.css', 'text/css'),
-                      '/coverage': ('coverage.html', 'text/html'), '/coverage.js': ('coverage.js', 'text/javascript')}
+                      '/coverage': ('coverage.html', 'text/html'), '/coverage.js': ('coverage.js', 'text/javascript'),
+                      '/learn': ('learn.html', 'text/html'), '/learn.js': ('learn.js', 'text/javascript'), '/learn.css': ('learn.css', 'text/css')}
             if editing:
                 assets.update({'/edit': ('edit.html', 'text/html'), '/edit.js': ('edit.js', 'text/javascript'), '/authoring.js': ('authoring.js','text/javascript')})
             if path not in assets:

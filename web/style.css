@@ -24,3 +24,4 @@
 .work-items { max-height: 380px; overflow: auto; padding: 12px; margin: 16px 0; background: var(--soft); }
 .work-items .check-label { margin-bottom: 12px; }
 .derived-learning { margin: 18px 0; border-left: 2px solid var(--accent); padding-left: 16px; }
+nav { flex-wrap: wrap; }
