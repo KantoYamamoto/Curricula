@@ -1,4 +1,7 @@
-.PHONY: test export check serve serve-edit
+.PHONY: test export export-curriculum check serve serve-edit
+export-curriculum:
+	swift build
+	python3 scripts/build_curriculum.py
 export:
 	swift run curricula export data/releases/pilot-0.1.0.json
 	swift run curricula export-examples data/releases
@@ -12,6 +15,7 @@ test:
 	python3 scripts/check_contract.py
 
 check: test
+	@tmp=$$(mktemp -d); python3 scripts/build_curriculum.py --output $$tmp --progress $$tmp/coverage.json && cmp $$tmp/curriculum-0.3.0.json data/catalog/curriculum-0.3.0.json && cmp $$tmp/coverage.json data/coverage.json; status=$$?; rm -f $$tmp/*.json; rmdir $$tmp; exit $$status
 	@tmp=$$(mktemp); swift run curricula export $$tmp && cmp $$tmp data/releases/pilot-0.1.0.json; status=$$?; rm -f $$tmp; exit $$status
 
 	@tmp=$$(mktemp -d); swift run curricula export-examples $$tmp && cmp $$tmp/examples-0.1.0.json data/releases/examples-0.1.0.json && cmp $$tmp/examples-0.2.0.json data/releases/examples-0.2.0.json; status=$$?; rm -f $$tmp/examples-0.1.0.json $$tmp/examples-0.2.0.json; rmdir $$tmp; exit $$status

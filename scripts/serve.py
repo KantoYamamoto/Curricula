@@ -14,11 +14,15 @@ from editing_db import Database, EditError
 ROOT = Path(__file__).resolve().parents[1]
 
 class Store:
-    def __init__(self, directory, database=None):
+    def __init__(self, directory, database=None, catalog_directory=None, coverage_path=None):
         self.database = database
+        self.coverage = json.loads(Path(coverage_path).read_text()) if coverage_path else None
         self.releases = {}
         self.indexes = {}
-        for path in sorted(Path(directory).glob('*.json')):
+        paths = list(Path(directory).glob('*.json'))
+        if catalog_directory:
+            paths.extend(Path(catalog_directory).glob('*.json'))
+        for path in sorted(paths):
             data = json.loads(path.read_text(encoding='utf-8'))
             if data['schemaVersion'] not in ('0.1.0', '0.2.0') or data['release'] != path.stem:
                 raise ValueError(f'Invalid schema or release identity: {path.name}')
@@ -35,13 +39,24 @@ class Store:
     def get(self, path, query):
         if path == '/api/v1/capabilities' and not query:
             return 200, {'localEditing': self.database is not None}
+        if path == '/api/v1/coverage' and not query:
+            return (200, self.coverage) if self.coverage else (404, {'error': {'code': 'coverage_not_found'}})
         if self.database:
-            # Each request sees one consistent DB read transaction, including new local releases.
+            # Published snapshots are immutable. Cache their indexes, while querying the
+            # manifest for newly published releases instead of rereading every large graph.
+            if path == '/api/v1/releases' and not query:
+                old = [{'release': d['release'], 'schemaVersion': d['schemaVersion']} for d in self.releases.values() if d['schemaVersion'] == '0.1.0']
+                return 200, {'releases': old + self.database.published_manifest()}
+            parts = path.strip('/').split('/')
+            if len(parts) >= 4 and parts[:3] == ['api', 'v1', 'releases'] and parts[3] not in self.releases:
+                for data in self.database.published(parts[3]):
+                    self.indexes[data['release']] = Index(data)
+                    self.releases[data['release']] = data
             current = object.__new__(Store)
             current.database = None
-            current.releases = {k: d for k, d in self.releases.items() if d['schemaVersion'] == '0.1.0'}
-            current.releases.update({d['release']: d for d in self.database.published()})
-            current.indexes = {k: Index(d) for k, d in current.releases.items() if d['schemaVersion'] == '0.2.0'}
+            current.coverage = self.coverage
+            current.releases = self.releases
+            current.indexes = self.indexes
             return current.get(path, query)
         if path == '/api/v1/releases':
             return 200, {'releases': [{'release': d['release'], 'schemaVersion': d['schemaVersion']} for d in self.releases.values()]}
@@ -123,7 +138,8 @@ def handler_for(store, editing=None):
                 status, payload = store.get(path, parse_qs(url.query, keep_blank_values=True))
                 return self.respond(status, payload)
             assets = {'/': ('index.html', 'text/html'), '/read': ('index.html', 'text/html'),
-                      '/structure': ('index.html', 'text/html'), '/app.js': ('app.js', 'text/javascript'), '/style.css': ('style.css', 'text/css')}
+                      '/structure': ('index.html', 'text/html'), '/app.js': ('app.js', 'text/javascript'), '/style.css': ('style.css', 'text/css'),
+                      '/coverage': ('coverage.html', 'text/html'), '/coverage.js': ('coverage.js', 'text/javascript')}
             if editing:
                 assets.update({'/edit': ('edit.html', 'text/html'), '/edit.js': ('edit.js', 'text/javascript')})
             if path not in assets:
@@ -169,13 +185,16 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--port', type=int, default=8000)
     parser.add_argument('--data-dir', type=Path, default=ROOT / 'data/releases')
+    parser.add_argument('--catalog-dir', type=Path, default=ROOT / 'data/catalog')
+    parser.add_argument('--coverage', type=Path, default=ROOT / 'data/coverage.json')
     parser.add_argument('--edit-db', type=Path, help='Enable the local wiki editor with this SQLite database')
     args = parser.parse_args()
     database = Database(args.edit_db) if args.edit_db else None
     if database:
         database.seed(args.data_dir)
+        database.seed(args.catalog_dir)
     editing = EditingAPI(database, secrets.token_urlsafe(32)) if database else None
-    server = ThreadingHTTPServer(('127.0.0.1', args.port), handler_for(Store(args.data_dir, database), editing))
+    server = ThreadingHTTPServer(('127.0.0.1', args.port), handler_for(Store(args.data_dir, database, args.catalog_dir, args.coverage), editing))
     print(f'Curricula: http://127.0.0.1:{server.server_port}', flush=True)
     try:
         server.serve_forever()

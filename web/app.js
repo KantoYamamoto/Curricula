@@ -19,6 +19,11 @@ async function api(path) {
   const expectedRelease = release, expectedSchema = schema;
   const body = await json(`/api/v1/releases/${encodeURIComponent(expectedRelease)}/${path}`);
   if (body.release !== expectedRelease || body.schemaVersion !== expectedSchema) throw new Error('データ版が一致しません。再読み込みしてください。');
+  adaptEntity(body);
+  for (const entry of body.entities || []) if (entry.data) adaptEntity(entry);
+  return body;
+}
+function adaptEntity(body) {
   if (schema === '0.2.0' && body.data?.kind && body.data.targetIDs) {
     body.data.annotations = body.annotations || [];
     body.data.evidence = body.evidence || [];
@@ -27,7 +32,6 @@ async function api(path) {
     body.data.criteria = [];
     body.data.provenance.sourceIDs = [...new Set(body.data.evidence.flatMap(e=>e.citations.map(c=>c.source.id)))];
   }
-  return body;
 }
 const stages = {elementary:'小学校',lowerSecondary:'中学校',upperSecondary:'高校',higherEducation:'大学等',other:'その他'};
 function educationText(scopes = []) {
@@ -76,11 +80,20 @@ async function sourceDetails(entities, token) {
   }
 }
 function tree(items, parent = undefined, visited = new Set()) {
-  return `<ul class="tree">${items.filter(e=>e.parentID===parent).map(e=>{
-    if (visited.has(e.id)) return '';
-    const next = new Set(visited).add(e.id);
-    return `<li>${link(e.id,e.label)}${items.some(c=>c.parentID===e.id)?tree(items,e.id,next):''}</li>`;
-  }).join('')}</ul>`;
+  const children = new Map();
+  const ordered = [...items].sort((a,b)=>{
+    const an = a.sourceLocator?.match(/No\.(\d+)/), bn = b.sourceLocator?.match(/No\.(\d+)/);
+    return an && bn ? Number(an[1])-Number(bn[1]) : 0;
+  });
+  for (const e of ordered) { if (!children.has(e.parentID)) children.set(e.parentID,[]); children.get(e.parentID).push(e); }
+  function branch(parent, visited) {
+    return `<ul class="tree">${(children.get(parent)||[]).map(e=>{
+      if (visited.has(e.id)) return '';
+      const next = new Set(visited).add(e.id);
+      return `<li>${link(e.id,e.label)}${children.has(e.id)?branch(e.id,next):''}</li>`;
+    }).join('')}</ul>`;
+  }
+  return branch(parent,visited);
 }
 async function render() {
   const token = ++generation;
@@ -92,7 +105,7 @@ async function render() {
     $('#version').textContent = `${release} / schema ${schema}`;
     let displayed = [];
     if (view === 'read') {
-      const outlineID = params.get('outline') || overview.readingOutlines[0]?.id;
+      const outlineID = params.get('outline') || (release.startsWith('curriculum-') ? overview.readingOutlines.find(o=>o.label.startsWith('小学校'))?.id : null) || overview.readingOutlines[0]?.id;
       if (!outlineID) throw new Error('このデータ版には目次がありません。');
       const outline = (await api(`reading-outlines/${encodeURIComponent(outlineID)}`)).data;
       let sectionID = params.get('section') || outline.sections[0].id;
@@ -100,7 +113,7 @@ async function render() {
       const index = outline.sections.findIndex(s=>s.id===sectionID);
       if (index < 0) throw new Error('指定された節が存在しません。');
       const section = outline.sections[index];
-      displayed = await Promise.all(section.entityIDs.map(id=>api(`entities/${encodeURIComponent(id)}`).then(x=>x.data)));
+      displayed = schema==='0.2.0' ? (await api(`reading-sections/${encodeURIComponent(section.id)}`)).entities.map(x=>x.data) : await Promise.all(section.entityIDs.map(id=>api(`entities/${encodeURIComponent(id)}`).then(x=>x.data)));
       const targets = [...new Set(displayed.flatMap(e=>[...e.targetIDs,...(e.successorIDs||[])]))];
       for (const target of await Promise.all(targets.map(id=>api(`entities/${encodeURIComponent(id)}`).then(x=>x.data)))) entityLabels.set(target.id,target.label);
       if (token !== generation) return;
@@ -135,7 +148,7 @@ async function render() {
           $('#main').innerHTML = `<h2>学年・教科から探す</h2>${filterHTML(params)}<p>${body.entities.length}件。学年を指定した場合は、その学年が明記された項目を表示します。</p>${body.entities.map(e=>`<article class="card"><span class="badge">${esc(kinds[e.kind])}</span><h3>${link(e.id,e.label)}</h3><p class="meta">${esc(educationText(e.education))}</p></article>`).join('')}`;
         } else {
         if (token !== generation) return;
-        $('#main').innerHTML = `<div class="eyebrow">FRAMEWORK</div><h2>${esc(body.data.label)}</h2><p class="meta">${esc(body.data.issuer)} / ${esc(body.data.version)} / ${esc(origins[body.data.origin])}</p><div class="notice">収録した項目の抜粋です。原典全体の階層と収録範囲を表すものではありません。</div>${schema==='0.2.0'?filterHTML(params):''}${tree(body.items)}<details open><summary>この版の確認範囲と限界</summary><ul>${overview.limitations.map(l=>`<li>${esc(l)}</li>`).join('')}</ul></details>`;
+        $('#main').innerHTML = `<div class="eyebrow">FRAMEWORK</div><h2>${esc(body.data.label)}</h2><p class="meta">${esc(body.data.issuer)} / ${esc(body.data.version)} / ${esc(origins[body.data.origin])}</p>${release.startsWith('curriculum-')?'<p><a href="/coverage">全範囲の収録状況・目標の整理状況を見る →</a></p>':'<div class="notice">収録した項目の抜粋です。原典全体の階層と収録範囲を表すものではありません。</div>'}${schema==='0.2.0'?filterHTML(params):''}${tree(body.items)}${overview.limitations.length?`<details open><summary>この版の確認範囲</summary><ul>${overview.limitations.map(l=>`<li>${esc(l)}</li>`).join('')}</ul></details>`:''}`;
         }
         const form = $('#scope-filter');
         if (form) {
@@ -155,7 +168,7 @@ async function start() {
   try {
     const releases = (await json('/api/v1/releases')).releases;
     if (!releases.length) throw new Error('利用できるデータ版がありません。');
-    release = new URLSearchParams(location.search).get('release') || (releases.find(r=>r.release==='cross-subject-0.2.0') || releases[0]).release;
+    release = new URLSearchParams(location.search).get('release') || (releases.find(r=>r.release==='curriculum-0.3.0') || releases.find(r=>r.release==='cross-subject-0.2.0') || releases[0]).release;
     schema = releases.find(r=>r.release===release)?.schemaVersion;
     if (!schema) throw new Error(`指定されたデータ版は存在しません: ${release}`);
     $('#release').innerHTML = releases.map(r=>`<option ${r.release===release?'selected':''}>${esc(r.release)}</option>`).join('');
@@ -169,12 +182,13 @@ async function start() {
     overview = await api('overview');
     const firstOutline = overview.readingOutlines[0];
     const isCross = release.startsWith('cross-subject-') || (overview.taxons?.filter(t=>t.kind==='subject').length > 1 && overview.frameworks.some(f=>f.origin==='original'));
+    const isCatalog = release.startsWith('curriculum-');
     const isExample = release.startsWith('examples-') || release.startsWith('editing-') || (!isCross && overview.frameworks.every(f=>f.origin==='synthetic'));
-    $('.hero h1').textContent = firstOutline?.label || '学びをたどる';
+    $('.hero h1').textContent = isCatalog ? '小学校から中学校までの指導要領' : firstOutline?.label || '学びをたどる';
     document.title = `Curricula — ${firstOutline?.label || release}`;
-    $('.hero .eyebrow').textContent = isCross ? 'CURRICULUM / CROSS SUBJECTS' : isExample ? 'STRUCTURE / SYNTHETIC SAMPLES' : 'MATHEMATICS / PILOT 01';
-    $('.hero p').textContent = isCross ? '国語・理科・社会・外国語・音楽・道徳・算数・情報。学習指導要領の原文から、学ぶ対象とできることをたどる。' : isExample ? '学校段階・機関・定義・学習経路の違いを、小さな合成例で確かめる。' : '数量の関係から、表・式・グラフへ。学ぶ対象とできることを、指導要領につなぐ。';
-    $('.hero-meta').innerHTML = `<span>${isCross?'小学校・中学校・高校':isExample?'構造検証用の合成例':'小6 → 中1'}</span><span>全${firstOutline?.sections.length || 0}節</span>`;
+    $('.hero .eyebrow').textContent = isCatalog ? 'CURRICULUM / ELEMENTARY & LOWER SECONDARY' : isCross ? 'CURRICULUM / CROSS SUBJECTS' : isExample ? 'STRUCTURE / SYNTHETIC SAMPLES' : 'MATHEMATICS / PILOT 01';
+    $('.hero p').textContent = isCatalog ? '前文・総則から各教科、道徳、活動まで。原文を読み、学年と教科からたどる。' : isCross ? '国語・理科・社会・外国語・音楽・道徳・算数・情報。学習指導要領の原文から、学ぶ対象とできることをたどる。' : isExample ? '学校段階・機関・定義・学習経路の違いを、小さな合成例で確かめる。' : '数量の関係から、表・式・グラフへ。学ぶ対象とできることを、指導要領につなぐ。';
+    $('.hero-meta').innerHTML = `<span>${isCatalog?'小学校・中学校':isCross?'小学校・中学校・高校':isExample?'構造検証用の合成例':'小6 → 中1'}</span><span>全${isCatalog?overview.readingOutlines.reduce((n,o)=>n+o.sections.length,0):firstOutline?.sections.length || 0}節</span>`;
     await render();
   } catch (error) {
     $('#main').innerHTML = `<div class="status error"><h2>データを取得できません</h2><p>${esc(error.message)}</p><button id="retry">再試行</button></div>`;

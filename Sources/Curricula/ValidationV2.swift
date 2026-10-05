@@ -8,6 +8,10 @@ public enum ValidatorV2 {
         let all = d.recordRefs
         let refs = Dictionary(all.map { ($0.id, $0.revisionID) }, uniquingKeysWith: { a, _ in a })
         let entities = Dictionary(d.entities.map { ($0.id, $0) }, uniquingKeysWith: { a, _ in a })
+        let entityIDs = Set(entities.keys)
+        let quotations = d.evidence.filter { $0.field == .text && $0.role == .quotation }
+        let quotedRefs = Set(quotations.filter { !$0.citations.isEmpty }.map(\.target))
+        let quotationByTarget = Dictionary(quotations.map { ($0.target, $0) }, uniquingKeysWith: { a, _ in a })
         let sources = Dictionary(d.sources.map { ($0.id, $0) }, uniquingKeysWith: { a, _ in a })
         let taxons = Dictionary(d.taxons.map { ($0.id, $0) }, uniquingKeysWith: { a, _ in a })
         let contexts = Set(d.contexts.map(\.id)), frameworks = Set(d.frameworks.map(\.id))
@@ -71,7 +75,7 @@ public enum ValidatorV2 {
             for target in e.targetIDs { if entities[target]?.kind != .subjectMatter { fail("invalidTarget", e.id, target) } }
             for successor in e.successorIDs { if entities[successor] == nil || successor == e.id { fail("invalidSuccessor", e.id, successor) } }
             if e.lifecycle == .active && !e.successorIDs.isEmpty { fail("invalidSuccessor", e.id, "Active record cannot have successors") }
-            if e.kind == .frameworkItem && e.provenance.origin == .original && !d.evidence.contains(where: { $0.target == e.ref && $0.field == .text && $0.role == .quotation && !$0.citations.isEmpty }) {
+            if e.kind == .frameworkItem && e.provenance.origin == .original && !quotedRefs.contains(e.ref) {
                 fail("missingEvidence", e.id, "Original framework text requires a pinned quotation citation")
             }
         }
@@ -115,7 +119,7 @@ public enum ValidatorV2 {
                 if let item = c.item {
                     pinned(item, e.id)
                     if entities[item.id]?.kind != .frameworkItem { fail("invalidCitationItem", e.id, item.id) }
-                    let original = d.evidence.first { $0.target == item && $0.field == .text && $0.role == .quotation }
+                    let original = quotationByTarget[item]
                     if !((original?.citations ?? []).contains { $0.source == c.source && $0.locator == c.locator }) {
                         fail("citationSourceMismatch", e.id, "Cited item and captured source location disagree")
                     }
@@ -169,7 +173,7 @@ public enum ValidatorV2 {
         for outline in d.readingOutlines {
             if outline.label.isEmpty { fail("emptyOutline", outline.id, "Outline label required") }
             for section in outline.sections {
-                for id in section.entityIDs { reference(id, Set(entities.keys), section.id) }
+                for id in section.entityIDs { reference(id, entityIDs, section.id) }
             }
         }
         let snapshots = Dictionary((history + [d]).map { ($0.release, $0) }, uniquingKeysWith: { _, b in b })

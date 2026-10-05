@@ -46,6 +46,12 @@ class Index:
     def get(self, resource, identifier, query):
         def error(status, code):
             return status, {'error': {'code': code}}
+        if resource == 'reading-sections' and identifier and not query:
+            resolved = self.resolve(identifier)
+            section = self.records.get(resolved)
+            if self.kinds.get(resolved) != 'sections':
+                return error(404, 'id_not_found')
+            return 200, {'data': section, 'entities': [dict(data=self.records[i], **self.details(self.records[i])) for i in section['entityIDs']]}
         if resource == 'resolve' and identifier and not query:
             record_id = self.resolve(identifier)
             record = self.records.get(record_id)

@@ -195,8 +195,16 @@ class Database:
                 else:
                     self._insert(db, data, 'seed', checked['canonical'])
 
-    def published(self):
+    def published_manifest(self):
         with self.connection() as db:
+            return [dict(release=r['release'], schemaVersion=json.loads(r['header'])['schemaVersion'])
+                    for r in db.execute("SELECT release,header FROM snapshots WHERE kind IN ('seed','published') ORDER BY release")]
+
+    def published(self, release=None):
+        with self.connection() as db:
+            if release is not None:
+                row = db.execute("SELECT id FROM snapshots WHERE release=? AND kind IN ('seed','published')", (release,)).fetchone()
+                return [self._dataset(db, row['id'])] if row else []
             return self._history(db)
 
     def export(self, release):

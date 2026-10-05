@@ -11,15 +11,23 @@ make check   # モデル・HTTP API・交換契約・出力の再現性を検証
 make serve   # 同梱JSONでローカルAPIと画面を起動
 ```
 
-[読む](http://127.0.0.1:8000/read) / [構造を見る](http://127.0.0.1:8000/structure)。終了はCtrl+C。別ポートは `python3 scripts/serve.py --port 8001`。
+[読む](http://127.0.0.1:8000/read) / [構造を見る](http://127.0.0.1:8000/structure) / [収録状況](http://127.0.0.1:8000/coverage)。終了はCtrl+C。別ポートは `python3 scripts/serve.py --port 8001`。
 
 Swift小標本のデータを編集したら `make export` でJSONを生成し、サーバーを再起動します。通常の生成・テスト・起動時に原典サイトへアクセスしません。公開済みデータの更新は新しいデータ版として追加します。
 
-## 今回の検証範囲
+## 小学校・中学校の全範囲収録
+
+**小中の原文を先に揃える区切りを完了しました。** `curriculum-0.3.0` に小学校82V12の3,747項目、中学校83V11の2,190項目、両校の前文を収録しています。総則、全教科、道徳、活動、学年別漢字配当表を含む5,939項目です。初期表示はこの原文版です。
+
+教科・学年・分野で138の区切りに分け、[収録状況](http://127.0.0.1:8000/coverage)と [`data/coverage.json`](data/coverage.json) で原文収録と目標整理の進捗を別々に追えます。目標の整理は未着手で、次は小学校国語の第1・2学年です。原文中の「目標」の掲載と独自の学ぶ対象・目標・注釈の整理を区別します。
+
+[`make export-curriculum`](docs/curriculum-coverage.md) で固定入力から再生成できます。[範囲・区切り・次の作業・台帳更新・出典と階層](docs/curriculum-coverage.md)に詳細を記録しています。
+
+## 小標本による構造検証
 
 **国語・理科・社会・外国語・音楽・道徳・算数・情報の8教科、11例**を実際の学習指導要領から選びました。比例に限定せず、学年帯、実験の条件制御、資料に基づく考察、合奏、態度目標、プログラミングの評価・改善を扱います。
 
-- `cross-subject-0.2.0`：初期表示。原典69項目、学ぶ対象9件、目標12件、判定注釈13件、構造化した根拠128件。学年・教科・科目の検索に対応。
+- `cross-subject-0.2.0`：原典69項目、学ぶ対象9件、目標12件、判定注釈13件、構造化した根拠128件。学年・教科・科目の検索に対応。
 - `editing-0.2.0`〜`editing-0.2.3`：UUIDを維持した編集、分割・統合と後継追跡、AND/OR前提、複数種類の出典。
 - `examples-0.1.0` / `examples-0.2.0`：機関別経路、同名の定義、項目分割、改訂、未対応入力の補助標本。
 - `pilot-0.1.0`：最初の比例の小標本。公開時の内容を保存。
@@ -48,6 +56,7 @@ make serve-edit
 | `Sources/CurriculaPilot` | 小標本の編集記述と版固定した原典入力 |
 | `Sources/CurriculaCLI` | 検証・書き出しコマンド |
 | `data/releases` | 版付きの交換データ |
+| `data/catalog` / `data/sources/mext` / `data/coverage.json` | 全範囲の原文版、固定原典、作業台帳 |
 | `scripts/serve.py` / `web` | 読み取りAPIと閲覧画面 |
 | `scripts/editing_db.py` / `editing_api.py` / `web/edit.js` | SQLite、ローカル編集APIと画面 |
 | `Tests` / `scripts/test_api.py` | モデル・APIの受入テスト |

@@ -16,6 +16,17 @@
 
 抽出結果は `Sources/CurriculaPilot/Resources/mext-sample.json` と `cross-subjects.json`、配布用データは `data/releases` に含みます。各出典のURL、配布版、取得日、元CSV全体のSHA-256、引用位置を保持しています。
 
-学習指導要領LODと出版社資料は調査時の参照先です。同梱データへ、それらのデータセットや教科書本文を取り込んでいません。大学・歴史の合成例は独自に作成した構造検証用の例であり、実在する機関の到達目標ではありません。
+2026-10-05の全範囲収録では、現行一覧に記載された[小学校82V12](https://www.mext.go.jp/content/20230901-mxt_syoto01-000010374_27.csv)・[中学校83V11](https://www.mext.go.jp/content/20230901-mxt_syoto01-000010374_09.csv)を配布時のバイトで `data/sources/mext` に保存しています。以前の取得URLと内容のハッシュは一致しています。CSV全5,937項目と、[小学校本文PDF](https://www.mext.go.jp/content/20230120-mxt_kyoiku02-100002604_01.pdf)・[中学校本文PDF](https://www.mext.go.jp/content/20230120-mxt_kyoiku02-100002604_02.pdf)の前文を交換データへ変換しました。前文は柱・ページ番号・ルビを除き段落内の改行を接続しました。本文、原典の位置、取得日、元ファイルのSHA-256を保持しています。
+
+## 学習指導要領LODの補助メタデータ
+
+出典：教育データプラス研究会「[学習指導要領LOD](https://jp-cos.github.io/)」。データの利用条件は [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)。取得日：2026-10-05。
+
+- [学習指導要領細目 20220830](https://jp-cos.github.io/cs-items-20220830.ttl.gz)
+- [階層 20240704](https://jp-cos.github.io/section-hierarchy-20240704.ttl)
+
+小学校・中学校の全コードに対応する学年・分野・親子関係を抽出し、`data/sources/mext/metadata.json` に同梱しています。章をまたぐ親関係9件を公式PDF目次に基づき変更しました。変更箇所、取得した元データのURL・SHA-256を同ファイルに記録しています。本文は文科省CSVから取得しており、LOD由来の本文は同梱しません。
+
+出版社の教科書本文は取り込んでいません。大学・歴史の合成例は独自に作成した構造検証用の例であり、実在する機関の到達目標ではありません。
 
 OpenStaxとNicholsonの教科書は概念の根拠として参照し、本文の転載・データセットの取り込みは行っていません。対応する概念とURLは[教科横断の検証記録](docs/cross-subject-validation.md#根拠の扱い)に記載しています。
