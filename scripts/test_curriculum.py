@@ -116,6 +116,14 @@ class CurriculumTests(unittest.TestCase):
             db.seed(ROOT/'data/catalog')
             self.assertEqual(len(db.published(RELEASE)),1)
             self.assertEqual(len(db.published_manifest()),6)
+            # A starter file cannot change the already stored immutable publication.
+            altered=json.loads((ROOT/'data/catalog'/f'{RELEASE}.json').read_text())
+            altered['entities'][0]['label']='Changed starter file'
+            starter=Path(directory)/'starter'
+            starter.mkdir()
+            (starter/f'{RELEASE}.json').write_text(json.dumps(altered,ensure_ascii=False))
+            db_store=Store(starter,db)
+            self.assertEqual(db_store.releases[RELEASE],self.data)
             store=Store(ROOT/'data/releases',db,catalog_directory=ROOT/'data/catalog',coverage_path=ROOT/'data/coverage.json')
             # The reader never loads all graphs for a request to a single entity.
             db.published=lambda *args: (_ for _ in ()).throw(AssertionError('unexpected graph reload'))

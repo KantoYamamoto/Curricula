@@ -33,6 +33,12 @@ class Store:
             self.releases[data['release']] = data
             if data['schemaVersion'] == '0.2.0':
                 self.indexes[data['release']] = Index(data)
+        if database:
+            # Starter files never override the authoring database. Capture its immutable
+            # published snapshots once, then load new releases on demand below.
+            self.releases = {k: d for k, d in self.releases.items() if d['schemaVersion'] == '0.1.0'}
+            self.releases.update({d['release']: d for d in database.published()})
+            self.indexes = {k: Index(d) for k, d in self.releases.items() if d['schemaVersion'] == '0.2.0'}
         if not self.releases:
             raise ValueError('No releases found. Run make export first.')
 
