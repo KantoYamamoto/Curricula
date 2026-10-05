@@ -17,9 +17,9 @@ Swift小標本のデータを編集したら `make export` でJSONを生成し�
 
 ## 小学校・中学校の全範囲収録
 
-**小中の原文を先に揃える区切りを完了しました。** `curriculum-0.3.0` に小学校82V12の3,747項目、中学校83V11の2,190項目、両校の前文を収録しています。総則、全教科、道徳、活動、学年別漢字配当表を含む5,939項目です。初期表示はこの原文版です。
+**小中の原文を先に揃える区切りを完了しました。** `curriculum-0.3.0` に小学校82V12の3,747項目、中学校83V11の2,190項目、両校の前文を収録しています。総則、全教科、道徳、活動、学年別漢字配当表を含む5,939項目です。原文版を保持し、現在の初期表示は整理を始めた `reading-0.3.1` です。
 
-教科・学年・分野で138の区切りに分け、[収録状況](http://127.0.0.1:8000/coverage)と [`data/coverage.json`](data/coverage.json) で原文収録と目標整理の進捗を別々に追えます。目標の整理は未着手で、次は小学校国語の第1・2学年です。原文中の「目標」の掲載と独自の学ぶ対象・目標・注釈の整理を区別します。
+教科・学年・分野で138の区切りに分け、[収録状況](http://127.0.0.1:8000/coverage)と [`data/coverage.json`](data/coverage.json) で原文収録と目標整理の進捗を別々に追えます。小学校国語第1・2学年の「読むこと」を整理し、学ぶ対象6件・目標6件・判定注釈6件を `reading-0.3.1` に保存しました。「読むこと」の原文12項目は確認済みで、第1・2学年全体は62項目中12項目の整理中です。次は「話すこと・聞くこと」です。原文中の「目標」の掲載と独自の学ぶ対象・目標・注釈の整理を区別します。
 
 [`make export-curriculum`](docs/curriculum-coverage.md) で固定入力から再生成できます。[範囲・区切り・次の作業・台帳更新・出典と階層](docs/curriculum-coverage.md)に詳細を記録しています。
 
@@ -38,7 +38,7 @@ Swift小標本のデータを編集したら `make export` でJSONを生成し�
 
 ## wiki編集とDB移行
 
-**SQLiteに下書きを保存するローカル編集**を実装しました。独自の本文・条件・判定観点の編集と追加、根拠の引き継ぎ、差分・履歴確認、新しいデータ版の作成ができます。
+**SQLiteに下書きを保存するローカル編集**を実装しました。学ぶ対象・目標の新規作成、本文・条件・判定観点の編集、原文への根拠追加・引き継ぎ、差分・履歴確認、新しいデータ版の作成、確認した原文単位での進捗記録ができます。
 
 ```sh
 make serve-edit
@@ -56,7 +56,8 @@ make serve-edit
 | `Sources/CurriculaPilot` | 小標本の編集記述と版固定した原典入力 |
 | `Sources/CurriculaCLI` | 検証・書き出しコマンド |
 | `data/releases` | 版付きの交換データ |
-| `data/catalog` / `data/sources/mext` / `data/coverage.json` | 全範囲の原文版、固定原典、作業台帳 |
+| `data/catalog` / `data/sources/mext` / `data/coverage.json` | 全範囲の原文版、固定原典、原文の作業台帳 |
+| `data/authoring` / `data/work-reviews` | DBから書き出した整理済みの版と進捗記録 |
 | `scripts/serve.py` / `web` | 読み取りAPIと閲覧画面 |
 | `scripts/editing_db.py` / `editing_api.py` / `web/edit.js` | SQLite、ローカル編集APIと画面 |
 | `Tests` / `scripts/test_api.py` | モデル・APIの受入テスト |

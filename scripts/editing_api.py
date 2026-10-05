@@ -13,6 +13,9 @@ class EditingAPI:
             return {'token': self.token, 'actor': 'local-user'}
         if path == '/api/edit/drafts':
             return {'drafts': self.database.list_drafts()}
+        if path == '/api/edit/work':
+            from authoring_work import work_records
+            return {'work': work_records(self.database)}
         parts = path.strip('/').split('/')
         if len(parts) == 4 and parts[:3] == ['api', 'edit', 'drafts']:
             return self.database.detail(parts[3])
@@ -32,6 +35,8 @@ class EditingAPI:
     def post(self, path, payload):
         if not isinstance(payload, dict):
             raise EditError(400, 'invalid_request')
+        if path == '/api/edit/work':
+            return self.database.record_work(payload)
         if path == '/api/edit/drafts' and set(payload) == {'baseRelease', 'title'}:
             if not isinstance(payload['baseRelease'], str):
                 raise EditError(400, 'invalid_request')
@@ -41,6 +46,10 @@ class EditingAPI:
             raise EditError(404, 'route_not_found')
         if parts[4] == 'save':
             return self.database.save(parts[3], payload)
+        if parts[4] == 'entities':
+            return self.database.add_entity(parts[3], payload)
+        if parts[4] == 'evidence':
+            return self.database.add_evidence(parts[3], payload)
         if parts[4] == 'review' and set(payload) == {'expectedHead', 'note'}:
             if not isinstance(payload['expectedHead'], str):
                 raise EditError(400, 'invalid_request')

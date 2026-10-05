@@ -30,8 +30,15 @@ class Index:
         for annotations in self.annotations.values():
             annotations.sort(key=lambda a: a['position'])
         self.evidence = {}
+        self.derived = {}
         for evidence in data['evidence']:
             self.evidence.setdefault(evidence['target']['id'], []).append(evidence)
+            target = self.collections['entities'].get(evidence['target']['id'])
+            if target and target['kind'] != 'frameworkItem' and evidence['field'] in ('text', 'conditions'):
+                for citation in evidence['citations']:
+                    original = citation.get('item', {}).get('id')
+                    if original:
+                        self.derived.setdefault(original, {})[target['id']] = target
 
     def resolve(self, value):
         return self.aliases.get(value, value)
@@ -39,7 +46,7 @@ class Index:
     def details(self, entity):
         annotations = self.annotations.get(entity['id'], [])
         evidence = self.evidence.get(entity['id'], []) + [e for a in annotations for e in self.evidence.get(a['id'], [])]
-        return dict(annotations=annotations, evidence=evidence,
+        return dict(annotations=annotations, evidence=evidence, derivedEntities=list(self.derived.get(entity['id'], {}).values()),
                     prerequisites=[p for p in self.data['prerequisites'] if p['targetGoalID'] == entity['id']],
                     changes=[c for c in self.data['changes'] if any(e['record']['id'] == entity['id'] for e in c['before'] + c['after'])])
 
@@ -113,7 +120,8 @@ class Index:
             if entry is None:
                 return error(404, 'id_not_found')
             payload = {'data': entry}
-            if resource == 'entities': payload.update(self.details(entry))
+            if resource == 'entities':
+                payload.update(self.details(entry))
             elif resource == 'frameworks': payload['items'] = [e for e in self.data['entities'] if e.get('frameworkID') == entry['id']]
             return 200, payload
         return error(400 if query else 404, 'unknown_query' if query else 'route_not_found')

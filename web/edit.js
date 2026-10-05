@@ -1,8 +1,12 @@
+import {creationHTML,bindCreation,linkHTML,bindLink,workHTML,bindWork} from '/authoring.js';
 const $ = s => document.querySelector(s);
 const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const params = new URLSearchParams(location.search);
 let token, detail, busy = false, dirty = false;
 const errors = {
+  work_conflict:'別の画面で進捗が更新されました。再読み込みして確認してください。',
+  invalid_creation:'種類・見出し・本文を確認してください。', education_source_required:'学年・教科の設定元となる原文を選んでください。',
+  invalid_work_scope:'確認した原文を作業の区切りから選んでください。', work_goal_without_source:'目標と確認した原文の根拠を結び付けてください。', source_required:'根拠となる原文を選んでください。', conditions_required:'条件・適用範囲の本文を先に記入してください。',
   edit_conflict:'別のタブで下書きが更新されました。入力を控えてから最新の下書きを読み込んでください。',
   draft_already_published:'この下書きは版として保存済みです。編集を続けるには、その版から新しい下書きを作ってください。',
   reason_required:'変更・確認の理由を記入してください。', title_required:'下書きの名前を記入してください。',
@@ -74,15 +78,20 @@ function renderDraft() {
   const fields={text:'本文・観点',conditions:'条件',education:'学年・教科',coverage:'対応範囲',expression:'前提経路'};
   const sources=new Map(dataset.sources.map(s=>[s.id,s]));
   $('#main').innerHTML=`<div class="eyebrow">${published?'SAVED RELEASE':'DRAFT'}</div><h2>${esc(draft.title)}</h2><p class="meta">元の版：${esc(detail.base.release)} · ${published?'版として保存済み':'下書きは閲覧用の版に反映されません'}</p><div id="message" role="status" hidden></div>${issueHTML(issues)}
+  ${published?'':creationHTML(detail,params.get('source')||'')}
   ${entity?`<label class="editor-field">編集する項目<select id="entity-choice">${entities.map(e=>`<option value="${esc(e.id)}" ${entity.id===e.id?'selected':''}>${esc(e.label)} · ${e.kind==='goal'?'目標':'学ぶ対象'}</option>`).join('')}</select></label>
   <form id="edit-form"><fieldset ${published?'disabled':''}><legend>文言と観点</legend><label class="editor-field">見出し<input name="label" required maxlength="20000" value="${esc(entity.label)}"></label><label class="editor-field">本文<textarea name="text" rows="4" required maxlength="20000">${esc(entity.text)}</textarea></label><label class="editor-field">条件・適用範囲<textarea name="conditions" rows="2" maxlength="20000">${esc(entity.conditions)}</textarea></label>
   ${notes.map((a,i)=>`<div class="note-editor"><label class="editor-field">観点 ${i+1}<textarea data-annotation="${esc(a.id)}" rows="2" required maxlength="20000">${esc(a.text)}</textarea></label><label class="check-label"><input type="checkbox" name="confirmAnnotation" value="${esc(a.id)}"> この観点を編集後の目標に引き継ぐ</label>${a.goal.revisionID!==entity.revisionID?'<span class="badge draft">以前の目標の版を参照中</span>':''}</div>`).join('')}
   ${entity.kind==='goal'?'<label class="editor-field">新しい観点・注釈（任意）<textarea name="newAnnotation" rows="2" maxlength="20000" placeholder="目標の達成を見取るための観点を自然言語で記入"></textarea></label>':''}
   ${evidence.length?`<details class="evidence-editor" open><summary>根拠の確認（${evidence.length}件）</summary><p class="meta">編集後にも同じ出典・箇所が根拠として使えるものを選択してください。</p>${evidence.map(e=>`<div class="evidence-row"><label class="check-label"><input type="checkbox" name="confirmEvidence" value="${esc(e.id)}"> ${esc(e.target.id===entity.id?fields[e.field]:'観点 '+(notes.findIndex(a=>a.id===e.target.id)+1))}の根拠を引き継ぐ</label><p>${esc(e.rationale)}</p>${e.citations.map(c=>`<p>${esc(sources.get(c.source.id)?.title)} · ${esc(c.locator)} ${c.item?refLink(c.item.id,'原典の該当項目'):''}</p>`).join('')}</div>`).join('')}</details>`:''}
   <label class="editor-field">変更・引き継ぎの理由<textarea name="reason" rows="2" required maxlength="4000"></textarea></label><button type="submit" data-busy>下書きに保存</button> <button type="button" class="subtle" id="reset-inputs" data-busy>入力を戻す</button></fieldset></form>`:'<p>編集できる独自項目がありません。</p>'}
+  ${entity&&!published?linkHTML():''}
   <details class="draft-differences" open><summary>元の版からの差分</summary>${diffHTML()}</details>
   <details><summary>編集履歴（${detail.events.length}件）</summary>${detail.events.map(e=>`<p>${esc(e.reason)}<br><span class="meta">${esc(new Date(e.created_at).toLocaleString('ja-JP'))} · ${esc(e.actor)}</span> <button type="button" class="subtle" data-history="${esc(e.after_id)}" data-busy>この時点の内容を見る</button></p>`).join('')}</details><div id="history-preview"></div>
   ${published?`<p class="status">${esc(draft.published_release)} として保存済みです。 ${refLink(entity?.id,'保存した版を読む',draft.published_release)} · <a href="${esc('/edit?'+new URLSearchParams({baseRelease:draft.published_release}))}">この版から下書きを作る</a> · <a href="${esc('/api/edit/releases/'+encodeURIComponent(draft.published_release)+'/export')}" download="${esc(draft.published_release)}.json">JSONを書き出す</a></p>`:`<section class="publication"><h3>差分を確認して版にまとめる</h3>${review?'<p class="badge">この編集版の確認記録があります</p>':'<p class="meta">差分・注釈・根拠を確認し、その内容を記録してください。保存後に編集すると確認記録は再取得が必要です。</p>'}<form id="review-form"><label class="editor-field">確認した内容<textarea name="note" required rows="2" maxlength="4000"></textarea></label><button type="submit" data-busy ${issues.length?'disabled':''}>確認記録を保存</button></form><form id="publish-form"><label class="editor-field">新しいデータ版名<input name="release" required pattern="[a-z][a-z0-9.\\-]{0,79}" placeholder="local-0.3.0"></label><button type="submit" ${issues.length||!review?'disabled':''}>新しい版を保存</button></form></section>`}`;
+  const ctx={detail,api,action,message,dirty:()=>{dirty=true;},updated:(result,entityID)=>{detail=result;if(entityID){params.set('entity',entityID);history.replaceState(null,'','/edit?'+params);}renderDraft();}};
+  if(!published){bindCreation(ctx);if(entity)bindLink(ctx,entity);}
+  else {document.querySelector('#main').insertAdjacentHTML('beforeend',workHTML());bindWork(ctx);}
   $('#entity-choice')?.addEventListener('change', e=>{
     if(dirty) { e.target.value=entity.id; message('編集中の内容を保存してから項目を切り替えてください。',true); return; }
     params.set('entity',e.target.value); history.replaceState(null,'','/edit?'+params); renderDraft();
@@ -120,11 +129,11 @@ async function start() {
     $('#sidebar').innerHTML=drafts.map(d=>`<a class="${params.get('draft')===d.id?'active':''}" href="${esc('/edit?'+new URLSearchParams({draft:d.id}))}">${esc(d.title)}${d.published_id?' · 保存済み':''}</a>`).join('')||'<p class="meta">まだ下書きがありません。</p>';
     if(params.has('draft')) { detail=await api('drafts/'+encodeURIComponent(params.get('draft'))); renderDraft(); return; }
     const response=await fetch('/api/v1/releases');const releases=(await response.json()).releases.filter(r=>r.schemaVersion==='0.2.0');
-    const base=params.get('baseRelease')||'cross-subject-0.2.0';
+    const base=params.get('baseRelease')||'reading-0.3.1';
     $('#main').innerHTML=`<h2>下書きを作る</h2><div id="message" role="status" hidden></div><form id="create-form"><label class="editor-field">元にするデータ版<select name="baseRelease">${releases.map(r=>`<option ${r.release===base?'selected':''}>${esc(r.release)}</option>`).join('')}</select></label><label class="editor-field">下書きの名前<input name="title" required maxlength="200" placeholder="例：国語の目標と観点を見直す"></label><button type="submit" data-busy>下書きを作成</button></form>`;
     $('#create-form').onsubmit=e=>{e.preventDefault();action(async()=>{
       const result=await api('drafts',{baseRelease:e.target.elements.baseRelease.value,title:e.target.elements.title.value});
-      location.href='/edit?'+new URLSearchParams({draft:result.draft.id,...(params.has('entity')?{entity:params.get('entity')}:{})});
+      location.href='/edit?'+new URLSearchParams({draft:result.draft.id,...(params.has('entity')?{entity:params.get('entity')}:{}),...(params.has('source')?{source:params.get('source')}:{})});
     });};
   } catch(error) { $('#main').innerHTML=`<div class="status error"><h2>編集データを読み込めません</h2><p>${esc(error.message)}</p><a href="/edit">再読み込み</a></div>`; }
 }

@@ -91,7 +91,7 @@ URLの `/api/v1` は維持し、応答の `schemaVersion` で契約を識別す�
 
 | 取得 | 追加した動作 |
 |---|---|
-| `/entities/{UUIDまたは別名}` | 原レコードと `annotations, evidence, prerequisites, changes` を返す |
+| `/entities/{UUIDまたは別名}` | 原レコードと `annotations, evidence, prerequisites, changes, derivedEntities` を返す |
 | `/entities?stage=elementary&grade=3&subjectId=subject.japanese&kind=goal` | 属性の組合せで検索。gradeにはstageを要する。指定学年を明示した範囲だけ一致させる |
 | `/entities?courseId=course.information` | 科目・分野で検索 |
 | `/resolve/{別名}` | UUID・編集版・コレクションを返す |
@@ -105,3 +105,7 @@ URLの `/api/v1` は維持し、応答の `schemaVersion` で契約を識別す�
 ## 設計の参照資料
 
 UUIDの生成は [RFC 9562](https://www.rfc-editor.org/rfc/rfc9562.html) のUUIDv4を使う。IDを意味から独立させる方針に適する。名称や表記と識別子の分離は [W3C SKOS Reference](https://www.w3.org/TR/skos-reference/) を、版・改訂・派生の区別は [W3C PROV-O](https://www.w3.org/TR/prov-o/) を設計の参考にした。今回のJSONをそれらの規格への完全準拠形式とはしていない。
+
+## 2026-10-05 閲覧APIの原文逆引き
+
+`derivedEntities` は、その原文を本文または条件の根拠として参照する学ぶ対象・目標を返す派生情報。学年・教科の設定元だけの参照は含めない。項目取得と `/reading-sections/{ID}` の各項目詳細に同じ逆引きを返す。公開JSONには新しいレコードを加えず、既存の版固定されたevidenceから索引を作る。新規作成・根拠追加・部分進捗は[ローカル編集API](local-editing.md)で扱う。

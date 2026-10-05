@@ -88,6 +88,12 @@ CREATE TABLE IF NOT EXISTS events (
 CREATE TABLE IF NOT EXISTS reviews (
     id TEXT PRIMARY KEY, draft_id TEXT NOT NULL REFERENCES drafts(id), head_id TEXT NOT NULL REFERENCES snapshots(id),
     actor TEXT NOT NULL, note TEXT NOT NULL, created_at TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS work_reviews (
+    id TEXT PRIMARY KEY, chunk_id TEXT NOT NULL, snapshot_id TEXT NOT NULL REFERENCES snapshots(id),
+    payload TEXT NOT NULL, created_at TEXT NOT NULL);
+CREATE INDEX IF NOT EXISTS work_chunk ON work_reviews(chunk_id);
+CREATE TRIGGER IF NOT EXISTS immutable_work_update BEFORE UPDATE ON work_reviews BEGIN SELECT RAISE(ABORT,'immutable work review'); END;
+CREATE TRIGGER IF NOT EXISTS immutable_work_delete BEFORE DELETE ON work_reviews BEGIN SELECT RAISE(ABORT,'immutable work review'); END;
 CREATE TRIGGER IF NOT EXISTS immutable_revision_update BEFORE UPDATE ON revisions BEGIN SELECT RAISE(ABORT,'immutable revision'); END;
 CREATE TRIGGER IF NOT EXISTS immutable_revision_delete BEFORE DELETE ON revisions BEGIN SELECT RAISE(ABORT,'immutable revision'); END;
 CREATE TRIGGER IF NOT EXISTS immutable_snapshot_update BEFORE UPDATE ON snapshots BEGIN SELECT RAISE(ABORT,'immutable snapshot'); END;
@@ -102,7 +108,7 @@ CREATE TRIGGER IF NOT EXISTS immutable_event_update BEFORE UPDATE ON events BEGI
 CREATE TRIGGER IF NOT EXISTS immutable_event_delete BEFORE DELETE ON events BEGIN SELECT RAISE(ABORT,'immutable event'); END;
 CREATE TRIGGER IF NOT EXISTS immutable_review_update BEFORE UPDATE ON reviews BEGIN SELECT RAISE(ABORT,'immutable review'); END;
 CREATE TRIGGER IF NOT EXISTS immutable_review_delete BEFORE DELETE ON reviews BEGIN SELECT RAISE(ABORT,'immutable review'); END;
-PRAGMA user_version=1;
+PRAGMA user_version=2;
 """
 
 
@@ -113,7 +119,7 @@ class Database:
         self.path.parent.mkdir(parents=True, exist_ok=True)
         with self.connection() as db:
             version = db.execute('PRAGMA user_version').fetchone()[0]
-            if version not in (0, 1):
+            if version not in (0, 1, 2):
                 raise ValueError('Unsupported editing database version')
             db.executescript(SCHEMA)
 
@@ -148,6 +154,8 @@ class Database:
         return [self._dataset(db, r['id']) for r in db.execute("SELECT id FROM snapshots WHERE kind IN ('seed','published') ORDER BY release")]
 
     def _insert(self, db, dataset, kind, canonical):
+        # Snapshot positions use exchange order; authored order inside outlines is retained.
+        dataset = json.loads(canonical)
         Index(dataset)
         snapshot_id = new_id()
         header = {k: v for k, v in dataset.items() if k not in COLLECTIONS and k != 'aliases'}
@@ -190,7 +198,11 @@ class Database:
                     raise EditError(422, 'seed_roundtrip_failed', release=data['release'], issues=checked['issues'])
                 row = db.execute('SELECT id FROM snapshots WHERE release=?', (data['release'],)).fetchone()
                 if row:
-                    if self._dataset(db, row['id']) != data:
+                    existing = self._dataset(db, row['id'])
+                    # Older DB snapshots may retain pre-export top-level insertion order.
+                    for collection in COLLECTIONS:
+                        existing[collection].sort(key=lambda record: record['id'])
+                    if existing != data:
                         raise EditError(409, 'seed_changed', release=data['release'])
                 else:
                     self._insert(db, data, 'seed', checked['canonical'])
@@ -261,6 +273,26 @@ class Database:
         if not isinstance(value, str) or not value.strip() or len(value) > 4000:
             raise EditError(400, 'reason_required')
         return value.strip()
+
+    def add_entity(self, identifier, payload):
+        from authoring import add_entity
+        return add_entity(self, identifier, payload)
+
+    def add_evidence(self, identifier, payload):
+        from authoring import add_evidence
+        return add_evidence(self, identifier, payload)
+
+    def record_work(self, payload):
+        from authoring_work import record_work
+        return record_work(self, payload)
+
+    def coverage(self, manifest):
+        from authoring_work import coverage
+        return coverage(self, manifest)
+
+    def seed_work(self, directory):
+        from authoring_work import seed_work
+        return seed_work(self, directory)
 
     def save(self, identifier, payload):
         allowed = {'expectedHead', 'entityID', 'entity', 'annotations', 'newAnnotation', 'confirmAnnotationIDs', 'confirmEvidenceIDs', 'reason'}
@@ -362,7 +394,7 @@ class Database:
             old = {e['id']: e for e in base['entities']}
             events = db.execute('SELECT reason,details FROM events WHERE draft_id=? ORDER BY rowid', (identifier,)).fetchall()
             for entity in data['entities']:
-                if entity['revisionID'] != old[entity['id']]['revisionID']:
+                if entity['id'] in old and entity['revisionID'] != old[entity['id']]['revisionID']:
                     ref = lambda e: dict(id=e['id'], revisionID=e['revisionID'])
                     reasons = [e['reason'] for e in events if json.loads(e['details'])['entityID'] == entity['id']]
                     data['changes'].append(dict(id=new_id(), revisionID=new_id(), kind='edit',
@@ -385,6 +417,7 @@ class Database:
                 source.backup(target)
 
     def verify(self):
+        from authoring_work import validate, FIELDS
         with self.connection() as db:
             if db.execute('PRAGMA integrity_check').fetchone()[0] != 'ok' or db.execute('PRAGMA foreign_key_check').fetchall():
                 raise EditError(422, 'database_integrity_failed')
@@ -394,3 +427,8 @@ class Database:
                 allowed = {'staleRevision'} if row['kind'] == 'draft' else set()
                 if any(i['code'] not in allowed for i in checked['issues']) or hashlib.sha256(checked['canonical'].encode()).hexdigest() != row['sha256']:
                     raise EditError(422, 'snapshot_integrity_failed', release=row['release'])
+            for row in db.execute('SELECT * FROM work_reviews'):
+                record = json.loads(row['payload'])
+                snapshot = validate(self, db, {k: record[k] for k in FIELDS})
+                if snapshot != row['snapshot_id'] or record['id'] != row['id'] or record['chunkID'] != row['chunk_id'] or record['createdAt'] != row['created_at']:
+                    raise EditError(422, 'work_integrity_failed')

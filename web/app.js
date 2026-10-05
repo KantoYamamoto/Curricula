@@ -29,6 +29,7 @@ function adaptEntity(body) {
     body.data.evidence = body.evidence || [];
     body.data.prerequisites = body.prerequisites || [];
     body.data.changes = body.changes || [];
+    body.data.derivedEntities = body.derivedEntities || [];
     body.data.criteria = [];
     body.data.provenance.sourceIDs = [...new Set(body.data.evidence.flatMap(e=>e.citations.map(c=>c.source.id)))];
   }
@@ -63,7 +64,7 @@ function details(e) {
   return `<details><summary>出典・識別子・編集上の根拠</summary><dl><dt>ID</dt><dd>${esc(e.id)}</dd>${e.revisionID?`<dt>編集版</dt><dd>${esc(e.revisionID)}</dd>`:''}<dt>根拠</dt><dd>${esc(e.provenance.rationale)}</dd>${e.sourceLocator ? `<dt>原典の位置</dt><dd>${esc(e.sourceLocator)}</dd>`:''}${Object.entries(e.externalIDs).map(([k,v])=>`<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('')}</dl>${evidenceHTML(e)}<div class="sources" data-source-entity="${esc(e.id)}"></div></details>`;
 }
 function card(e) {
-  return `<article class="card" id="${esc(e.id)}"><div class="badges"><span class="badge">${esc(kinds[e.kind])}</span><span class="badge">${esc(origins[e.provenance.origin])}</span></div><h3>${esc(e.label)}</h3>${e.education?.length?`<p class="meta">${esc(educationText(e.education))}</p>`:''}${e.lifecycle==='retired'?`<p class="notice">分割・統合前の目標です。後継：${e.successorIDs.map(id=>link(id)).join('、')}</p>`:''}${e.text !== e.label ? `<p>${esc(e.text)}</p>`:''}${e.conditions ? `<div class="conditions"><span class="small-label">条件・適用範囲</span>${esc(e.conditions)}</div>`:''}${e.criteria.length ? `<span class="small-label">達成を確認する観点</span><ul>${e.criteria.map(c=>`<li>${esc(c)}</li>`).join('')}</ul>`:''}${annotationsHTML(e)}${e.prerequisiteStatus ? `<p class="meta">${esc(states[e.prerequisiteStatus])}</p>`:''}<div class="links">${e.parentID?link(e.parentID,'上位の原典項目を読む →'):''}${e.targetIDs.map(id=>link(id)).join('')}${link(e.id,'対応・前提・出典をたどる →')}</div>${details(e)}</article>`;
+  return `<article class="card" id="${esc(e.id)}"><div class="badges"><span class="badge">${esc(kinds[e.kind])}</span><span class="badge">${esc(origins[e.provenance.origin])}</span></div><h3>${esc(e.label)}</h3>${e.education?.length?`<p class="meta">${esc(educationText(e.education))}</p>`:''}${e.lifecycle==='retired'?`<p class="notice">分割・統合前の目標です。後継：${e.successorIDs.map(id=>link(id)).join('、')}</p>`:''}${e.text !== e.label ? `<p>${esc(e.text)}</p>`:''}${e.conditions ? `<div class="conditions"><span class="small-label">条件・適用範囲</span>${esc(e.conditions)}</div>`:''}${e.criteria.length ? `<span class="small-label">達成を確認する観点</span><ul>${e.criteria.map(c=>`<li>${esc(c)}</li>`).join('')}</ul>`:''}${annotationsHTML(e)}${e.prerequisiteStatus ? `<p class="meta">${esc(states[e.prerequisiteStatus])}</p>`:''}<div class="links">${e.parentID?link(e.parentID,'上位の原典項目を読む →'):''}${e.targetIDs.map(id=>link(id)).join('')}${link(e.id,'対応・前提・出典をたどる →')}</div>${e.derivedEntities?.length?`<div class="derived-learning"><span class="small-label">この原文から整理した学び</span><ul>${e.derivedEntities.map(d=>`<li>${link(d.id,d.label)}</li>`).join('')}</ul></div>`:''}${e.kind==='frameworkItem'&&document.querySelector('nav a[href^="/edit"]')?`<p><a href="${esc('/edit?'+new URLSearchParams({baseRelease:release,source:e.id}))}">この原文から学ぶ対象・目標を作る →</a></p>`:''}${details(e)}</article>`;
 }
 async function sourceDetails(entities, token) {
   const ids = [...new Set(entities.flatMap(e=>e.provenance.sourceIDs))];
@@ -105,7 +106,7 @@ async function render() {
     $('#version').textContent = `${release} / schema ${schema}`;
     let displayed = [];
     if (view === 'read') {
-      const outlineID = params.get('outline') || (release.startsWith('curriculum-') ? overview.readingOutlines.find(o=>o.label.startsWith('小学校'))?.id : null) || overview.readingOutlines[0]?.id;
+      const outlineID = params.get('outline') || overview.readingOutlines.find(o=>o.label==='整理した学ぶ対象と目標')?.id || (release.startsWith('curriculum-') ? overview.readingOutlines.find(o=>o.label.startsWith('小学校'))?.id : null) || overview.readingOutlines[0]?.id;
       if (!outlineID) throw new Error('このデータ版には目次がありません。');
       const outline = (await api(`reading-outlines/${encodeURIComponent(outlineID)}`)).data;
       let sectionID = params.get('section') || outline.sections[0].id;
@@ -148,7 +149,7 @@ async function render() {
           $('#main').innerHTML = `<h2>学年・教科から探す</h2>${filterHTML(params)}<p>${body.entities.length}件。学年を指定した場合は、その学年が明記された項目を表示します。</p>${body.entities.map(e=>`<article class="card"><span class="badge">${esc(kinds[e.kind])}</span><h3>${link(e.id,e.label)}</h3><p class="meta">${esc(educationText(e.education))}</p></article>`).join('')}`;
         } else {
         if (token !== generation) return;
-        $('#main').innerHTML = `<div class="eyebrow">FRAMEWORK</div><h2>${esc(body.data.label)}</h2><p class="meta">${esc(body.data.issuer)} / ${esc(body.data.version)} / ${esc(origins[body.data.origin])}</p>${release.startsWith('curriculum-')?'<p><a href="/coverage">全範囲の収録状況・目標の整理状況を見る →</a></p>':'<div class="notice">収録した項目の抜粋です。原典全体の階層と収録範囲を表すものではありません。</div>'}${schema==='0.2.0'?filterHTML(params):''}${tree(body.items)}${overview.limitations.length?`<details open><summary>この版の確認範囲</summary><ul>${overview.limitations.map(l=>`<li>${esc(l)}</li>`).join('')}</ul></details>`:''}`;
+        $('#main').innerHTML = `<div class="eyebrow">FRAMEWORK</div><h2>${esc(body.data.label)}</h2><p class="meta">${esc(body.data.issuer)} / ${esc(body.data.version)} / ${esc(origins[body.data.origin])}</p>${overview.frameworks.some(f=>f.label.endsWith('学習指導要領 全文'))?'<p><a href="/coverage">全範囲の収録状況・目標の整理状況を見る →</a></p>':'<div class="notice">収録した項目の抜粋です。原典全体の階層と収録範囲を表すものではありません。</div>'}${schema==='0.2.0'?filterHTML(params):''}${tree(body.items)}${overview.limitations.length?`<details open><summary>この版の確認範囲</summary><ul>${overview.limitations.map(l=>`<li>${esc(l)}</li>`).join('')}</ul></details>`:''}`;
         }
         const form = $('#scope-filter');
         if (form) {
@@ -168,7 +169,7 @@ async function start() {
   try {
     const releases = (await json('/api/v1/releases')).releases;
     if (!releases.length) throw new Error('利用できるデータ版がありません。');
-    release = new URLSearchParams(location.search).get('release') || (releases.find(r=>r.release==='curriculum-0.3.0') || releases.find(r=>r.release==='cross-subject-0.2.0') || releases[0]).release;
+    release = new URLSearchParams(location.search).get('release') || (releases.find(r=>r.release==='reading-0.3.1') || releases.find(r=>r.release==='curriculum-0.3.0') || releases.find(r=>r.release==='cross-subject-0.2.0') || releases[0]).release;
     schema = releases.find(r=>r.release===release)?.schemaVersion;
     if (!schema) throw new Error(`指定されたデータ版は存在しません: ${release}`);
     $('#release').innerHTML = releases.map(r=>`<option ${r.release===release?'selected':''}>${esc(r.release)}</option>`).join('');
@@ -180,15 +181,16 @@ async function start() {
       $('nav').append(edit);
     }
     overview = await api('overview');
-    const firstOutline = overview.readingOutlines[0];
+    const firstOutline = overview.readingOutlines.find(o=>o.id===new URLSearchParams(location.search).get('outline')) || overview.readingOutlines.find(o=>o.label==='整理した学ぶ対象と目標') || overview.readingOutlines[0];
+    const isAuthored = firstOutline?.label==='整理した学ぶ対象と目標';
     const isCross = release.startsWith('cross-subject-') || (overview.taxons?.filter(t=>t.kind==='subject').length > 1 && overview.frameworks.some(f=>f.origin==='original'));
-    const isCatalog = release.startsWith('curriculum-');
+    const isCatalog = overview.frameworks.some(f=>f.label.endsWith('学習指導要領 全文'));
     const isExample = release.startsWith('examples-') || release.startsWith('editing-') || (!isCross && overview.frameworks.every(f=>f.origin==='synthetic'));
-    $('.hero h1').textContent = isCatalog ? '小学校から中学校までの指導要領' : firstOutline?.label || '学びをたどる';
+    $('.hero h1').textContent = isAuthored ? '整理した学ぶ対象と目標' : isCatalog ? '小学校から中学校までの指導要領' : firstOutline?.label || '学びをたどる';
     document.title = `Curricula — ${firstOutline?.label || release}`;
     $('.hero .eyebrow').textContent = isCatalog ? 'CURRICULUM / ELEMENTARY & LOWER SECONDARY' : isCross ? 'CURRICULUM / CROSS SUBJECTS' : isExample ? 'STRUCTURE / SYNTHETIC SAMPLES' : 'MATHEMATICS / PILOT 01';
-    $('.hero p').textContent = isCatalog ? '前文・総則から各教科、道徳、活動まで。原文を読み、学年と教科からたどる。' : isCross ? '国語・理科・社会・外国語・音楽・道徳・算数・情報。学習指導要領の原文から、学ぶ対象とできることをたどる。' : isExample ? '学校段階・機関・定義・学習経路の違いを、小さな合成例で確かめる。' : '数量の関係から、表・式・グラフへ。学ぶ対象とできることを、指導要領につなぐ。';
-    $('.hero-meta').innerHTML = `<span>${isCatalog?'小学校・中学校':isCross?'小学校・中学校・高校':isExample?'構造検証用の合成例':'小6 → 中1'}</span><span>全${isCatalog?overview.readingOutlines.reduce((n,o)=>n+o.sections.length,0):firstOutline?.sections.length || 0}節</span>`;
+    $('.hero p').textContent = isAuthored ? '目標と判定の観点を読み、根拠の原文をたどる。' : isCatalog ? '前文・総則から各教科、道徳、活動まで。原文を読み、学年と教科からたどる。' : isCross ? '国語・理科・社会・外国語・音楽・道徳・算数・情報。学習指導要領の原文から、学ぶ対象とできることをたどる。' : isExample ? '学校段階・機関・定義・学習経路の違いを、小さな合成例で確かめる。' : '数量の関係から、表・式・グラフへ。学ぶ対象とできることを、指導要領につなぐ。';
+    $('.hero-meta').innerHTML = `<span>${isCatalog?'小学校・中学校':isCross?'小学校・中学校・高校':isExample?'構造検証用の合成例':'小6 → 中1'}</span><span>全${isCatalog&&!isAuthored?overview.readingOutlines.reduce((n,o)=>n+o.sections.length,0):firstOutline?.sections.length || 0}節</span>`;
     await render();
   } catch (error) {
     $('#main').innerHTML = `<div class="status error"><h2>データを取得できません</h2><p>${esc(error.message)}</p><button id="retry">再試行</button></div>`;

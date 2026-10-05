@@ -14,14 +14,17 @@ from editing_db import Database, EditError
 ROOT = Path(__file__).resolve().parents[1]
 
 class Store:
-    def __init__(self, directory, database=None, catalog_directory=None, coverage_path=None):
+    def __init__(self, directory, database=None, catalog_directory=None, coverage_path=None, authoring_directory=None, work_directory=None):
         self.database = database
         self.coverage = json.loads(Path(coverage_path).read_text()) if coverage_path else None
+        self.work_directory = work_directory
         self.releases = {}
         self.indexes = {}
         paths = list(Path(directory).glob('*.json'))
         if catalog_directory:
             paths.extend(Path(catalog_directory).glob('*.json'))
+        if authoring_directory:
+            paths.extend(Path(authoring_directory).glob('*.json'))
         for path in sorted(paths):
             data = json.loads(path.read_text(encoding='utf-8'))
             if data['schemaVersion'] not in ('0.1.0', '0.2.0') or data['release'] != path.stem:
@@ -46,6 +49,12 @@ class Store:
         if path == '/api/v1/capabilities' and not query:
             return 200, {'localEditing': self.database is not None}
         if path == '/api/v1/coverage' and not query:
+            if self.coverage:
+                if self.database:
+                    return 200, self.database.coverage(self.coverage)
+                if self.work_directory:
+                    from authoring_work import offline_coverage
+                    return 200, offline_coverage(self.coverage, self.work_directory)
             return (200, self.coverage) if self.coverage else (404, {'error': {'code': 'coverage_not_found'}})
         if self.database:
             # Published snapshots are immutable. Cache their indexes, while querying the
@@ -61,6 +70,7 @@ class Store:
             current = object.__new__(Store)
             current.database = None
             current.coverage = self.coverage
+            current.work_directory = self.work_directory
             current.releases = self.releases
             current.indexes = self.indexes
             return current.get(path, query)
@@ -147,7 +157,7 @@ def handler_for(store, editing=None):
                       '/structure': ('index.html', 'text/html'), '/app.js': ('app.js', 'text/javascript'), '/style.css': ('style.css', 'text/css'),
                       '/coverage': ('coverage.html', 'text/html'), '/coverage.js': ('coverage.js', 'text/javascript')}
             if editing:
-                assets.update({'/edit': ('edit.html', 'text/html'), '/edit.js': ('edit.js', 'text/javascript')})
+                assets.update({'/edit': ('edit.html', 'text/html'), '/edit.js': ('edit.js', 'text/javascript'), '/authoring.js': ('authoring.js','text/javascript')})
             if path not in assets:
                 return self.respond(404, {'error': {'code': 'route_not_found'}})
             file, content_type = assets[path]
@@ -193,14 +203,18 @@ if __name__ == '__main__':
     parser.add_argument('--data-dir', type=Path, default=ROOT / 'data/releases')
     parser.add_argument('--catalog-dir', type=Path, default=ROOT / 'data/catalog')
     parser.add_argument('--coverage', type=Path, default=ROOT / 'data/coverage.json')
+    parser.add_argument('--authoring-dir', type=Path, default=ROOT / 'data/authoring')
+    parser.add_argument('--work-dir', type=Path, default=ROOT / 'data/work-reviews')
     parser.add_argument('--edit-db', type=Path, help='Enable the local wiki editor with this SQLite database')
     args = parser.parse_args()
     database = Database(args.edit_db) if args.edit_db else None
     if database:
         database.seed(args.data_dir)
         database.seed(args.catalog_dir)
+        database.seed(args.authoring_dir)
+        database.seed_work(args.work_dir)
     editing = EditingAPI(database, secrets.token_urlsafe(32)) if database else None
-    server = ThreadingHTTPServer(('127.0.0.1', args.port), handler_for(Store(args.data_dir, database, args.catalog_dir, args.coverage), editing))
+    server = ThreadingHTTPServer(('127.0.0.1', args.port), handler_for(Store(args.data_dir, database, args.catalog_dir, args.coverage, args.authoring_dir, args.work_dir), editing))
     print(f'Curricula: http://127.0.0.1:{server.server_port}', flush=True)
     try:
         server.serve_forever()

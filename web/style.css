@@ -19,3 +19,8 @@
 .coverage-group th, .coverage-group td { text-align: left; padding: 14px 10px; border-top: 1px solid #e1e6df; }
 .coverage-group th { color: #5d6b61; }
 @media (max-width: 700px) { .coverage-stats { grid-template-columns: 1fr; gap: 10px; } .coverage-stats div { padding: 16px; } .coverage-main { padding: 24px 16px; } .coverage-group summary span { display:block; float:none; margin-top:8px; } }
+.creation { padding: 20px 0; border-top: 1px solid var(--line); margin: 20px 0; }
+.creation summary { cursor: pointer; font-size: 18px; }
+.work-items { max-height: 380px; overflow: auto; padding: 12px; margin: 16px 0; background: var(--soft); }
+.work-items .check-label { margin-bottom: 12px; }
+.derived-learning { margin: 18px 0; border-left: 2px solid var(--accent); padding-left: 16px; }
