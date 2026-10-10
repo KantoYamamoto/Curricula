@@ -1,6 +1,6 @@
 # 交換契約 0.1.0
 
-> 2026-09-29：学年・教科、構造化根拠、目標と注釈、UUIDと改訂、AND/OR・資料種別は[契約0.2.0](exchange-contract-0.2.md)で実装。以下の0.1.0時点の検証・計画は履歴として残す。
+> 旧版の読み取り互換性のために維持する契約です。以下の未対応事項は0.1.0に対するものです。新しい整理・編集には[契約0.2.0](exchange-contract-0.2.md)を使用します。現行のルート全体は[HTTP API](viewer-api.md)を参照してください。
 
 2026-09-28。設計資料v0.3を使った初回実装の契約。現物例は [cross-subject-0.1.0.json](../data/releases/cross-subject-0.1.0.json)。初回版 [pilot-0.1.0.json](../data/releases/pilot-0.1.0.json) も保存する。JSONの正式なキーは [Model.swift](../Sources/Curricula/Model.swift) の公開値型に対応し、互換性を意図せず変更しない。JSON Schemaによる網羅的な構文検証は未導入。
 
@@ -11,7 +11,7 @@
 - レコード集合はID順、オブジェクトキーは辞書順。対象参照・出典参照・対象外範囲は集合として整列する。目次の節・節内の対象・達成観点の順序は保持する。
 - 内部IDは `[a-z][a-z0-9.-]*`、リリース全体で一意。ラベルや並び順から生成しない。外部コードは `externalIDs` に名前空間付きのキーで保存する。
 - 任意フィールドは省略。空配列は「登録なし」。調査完了の意味を与えない。能力の `prerequisiteStatus` で `uninvestigated / scopedBoundary / investigated` を明示する。
-- 同一入力の再出力を `make check` で照合。既存リリース公開後の意味変更は新しいファイルと版にする。分割・統合の移行表は未実装。
+- 同一入力の再出力を `make check` で照合。既存リリース公開後の意味変更は新しいファイルと版にする。この旧契約に正式な分割・統合の変更レコードはない。
 
 ## レコードと関係
 
@@ -58,4 +58,4 @@ contextId指定時は完全一致。省略時は文脈を保持して全件を�
 
 cross-subject-0.1.0 / examples-0.1.0 / examples-0.2.0は同じ契約を使う別データ版。既存pilot-0.1.0の内容を変更しない。読み取り画面は版のoverviewに含まれる目次を選び、`outline`クエリで目次IDを指定できる。版の切替時は対象・節・文脈の選択をリセットする。
 
-`Tests/CurriculaTests/Fixtures/unsupported.json`の資料種別・改訂対応・AND/ORは契約外の候補であり、現行JSON/APIが保持・取得できるという意味ではない。[入力と期待結果](sample-catalog.md)を参照。DB移行ではこのようなフィールドの欠落を検出する読込境界を用意する。
+`Tests/CurriculaTests/Fixtures/unsupported.json`の資料種別・改訂対応・AND/ORは契約外の候補であり、契約0.1.0のJSON/APIが保持・取得できるという意味ではない。[入力と期待結果](sample-catalog.md)を参照。DB移行ではこのようなフィールドの欠落を検出する読込境界を用意する。

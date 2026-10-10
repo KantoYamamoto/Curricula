@@ -1,6 +1,6 @@
 # ローカルwiki編集とSQLite
 
-2026-10-05更新（初回実装2026-10-04）。ユーザー指定のローカル編集を実装。交換契約は0.2.0を維持する。
+確認日：2026-10-11。SQLiteに下書きを保存し、対象・目標・根拠を編集して確認後に新しい版を作るための手順と仕様。交換契約は0.2.0。ここでの版作成はローカル閲覧への登録であり、インターネットへの公開ではない。
 
 ## 起動と操作
 
@@ -47,7 +47,7 @@ DBの保存スキーマは `user_version=2`。既存の版1からは進捗記録
 
 保存・確認・版作成は、要求時の `expectedHead` と現在の下書き版を `BEGIN IMMEDIATE` 内で照合する。別のタブが先に保存した場合はHTTP 409を返す。画面は入力を残して競合を表示し、黙って上書きしない。複数のレコードと版集合、編集履歴、現在版ポインタは同じトランザクションで保存する。[SQLiteのトランザクション仕様](https://www.sqlite.org/lang_transaction.html)を参照。
 
-確認記録は下書き版UUIDへ固定する。確認後に編集すれば、新しい版では確認記録が必要になる。これはローカルで差分を確認した記録であり、教育内容をソフトウェアが採点・審査した結果ではない。今回の編集者・確認者は `local-user` として記録する。
+確認記録は下書き版UUIDへ固定する。確認後に編集すれば、新しい版では確認記録が必要になる。これはローカルで差分を確認した記録であり、教育内容をソフトウェアが採点・審査した結果ではない。現行の編集者・確認者は `local-user` として記録する。
 
 新しい版の作成時は、確認済みの下書き版を再検証し、その版のレコード集合を固定する。文言修正した対象の交換用 `changes` は、元の公開版と新しい公開版へ結ぶ。中間の下書き履歴はDBのeventsに残す。公開用のJSONが未公開の下書き名へ依存しないようにする。注釈だけの変更はDBの編集履歴で追跡する。以前の編集・分割・統合イベントは保持する。
 
@@ -87,7 +87,7 @@ python3 scripts/manage_db.py export-work 8aaee542-ba06-43e2-9a37-4ebd21779947 /t
 python3 scripts/manage_db.py backup /tmp/curricula-backup.sqlite3
 ```
 
-`--db PATH` で保存先を指定できる。書き出し先・バックアップ先の既存ファイルは上書きしない。バックアップには[Python sqlite3のbackup API](https://docs.python.org/3/library/sqlite3.html#sqlite3.Connection.backup)を使い、稼働中のDBでも一貫したコピーを作る。
+`python3 scripts/manage_db.py --db PATH verify` のように、サブコマンドの前に `--db PATH` を置いて保存先を指定できる。書き出し先・バックアップ先の既存ファイルは上書きしない。バックアップには[Python sqlite3のbackup API](https://docs.python.org/3/library/sqlite3.html#sqlite3.Connection.backup)を使い、稼働中のDBでも一貫したコピーを作る。
 
 復元はサーバーを停止してバックアップを別の保存先へコピーし、`python3 scripts/manage_db.py --db PATH verify` の後、`python3 scripts/serve.py --edit-db PATH` で起動する。現在のDBを残したまま復元先を検証できる。verifyは進捗の参照・公開版対応、DB整合性、外部キー、全公開版の検証とハッシュ、下書き履歴の復元を確認する。旧版を指すchangesを持つJSONを別環境へ渡す場合は、参照先の旧公開版も一緒に渡す。
 

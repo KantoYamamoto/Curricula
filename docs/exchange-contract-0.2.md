@@ -1,6 +1,6 @@
 # 交換契約 0.2.0：属性・根拠・目標・編集履歴
 
-2026-09-29。ユーザーの指示に基づき、学年・教科の属性化、フィールドごとの根拠、目標と判定注釈の分離、UUIDと編集履歴、AND/OR前提、複数種類の出典を実装した。[旧契約0.1.0](exchange-contract.md)と公開済み4版はそのまま読むことができる。
+確認日：2026-10-11。新規の内容整理・ローカル編集が使う交換契約。学年・教科、フィールド別の根拠、目標と判定注釈、UUIDと改訂、AND/OR前提、資料種別を定義する。[旧契約0.1.0](exchange-contract.md)の公開済み4版もそのまま読み取れる。
 
 定義は [SchemaV2.swift](../Sources/Curricula/SchemaV2.swift)、整合性検証は [ValidationV2.swift](../Sources/Curricula/ValidationV2.swift)。教科横断版は `cross-subject-0.2.0`、編集操作例は `editing-0.2.0`〜`editing-0.2.3`。
 
@@ -16,9 +16,9 @@
 | subjectID | `taxons` の教科を参照するUUID |
 | courseID | 科目・分野のUUID。親教科との整合性を検証。任意 |
 
-教科と科目の名称は別の `taxons` に置く。今回の教科8件に加え、英語・歴史的分野・情報Ⅰの3科目・分野を収録。小学校の算数と高校の情報を同一の固定学年体系へ押し込まない。一般の教科見出しに、下位科目の指定を逆流させない。
+教科と科目の名称は別の `taxons` に置く。教科横断標本では8教科に加え、英語・歴史的分野・情報Ⅰの3科目・分野を収録。小学校の算数と高校の情報を同一の固定学年体系へ押し込まない。一般の教科見出しに、下位科目の指定を逆流させない。
 
-小1〜2、小3〜4、小5〜6を原典の学年帯として登録する。中学歴史・高校情報Ⅰの履修年は未指定。大学等では学年が必要ない枠組みに `notApplicable` を選べる。原文からの自動推定はせず、[編集用選定表](../Sources/CurriculaPilot/Resources/v2-authoring.json)で指定する。
+小1〜2、小3〜4、小5〜6を原典の学年帯として登録する。中学歴史・高校情報Ⅰの履修年は未指定。大学等では学年が必要ない枠組みに `notApplicable` を選べる。教科横断標本は[編集用選定表](../Sources/CurriculaPilot/Resources/v2-authoring.json)で指定する。全範囲の原文取り込みでは固定したLODメタデータを使用し、学年未指定を全学年に補わない。[収録仕様](curriculum-coverage.md)を参照。
 
 ## 目標と自然言語の注釈
 
@@ -60,7 +60,7 @@
 
 ## ID・別名・改訂
 
-全レコードにUUIDの `id` と `revisionID` を持つ。名称・学年・教科・並び順・外部コードはIDから独立。`aliases` は読みやすい別名からUUIDへの索引であり、参照の正本はUUID。外部コードは `externalIDs` に名前空間付きで保持する。UUIDはビルドのたびに発行せず、[登録簿](../Sources/CurriculaPilot/Resources/identity-registry.json)へ一度割り当てて保存する。
+全レコードにUUIDの `id` と `revisionID` を持つ。名称・学年・教科・並び順・外部コードはIDから独立。`aliases` は読みやすい別名からUUIDへの索引であり、参照の正本はUUID。外部コードは `externalIDs` に名前空間付きで保持する。Swiftの手動標本はUUID v4を[登録簿](../Sources/CurriculaPilot/Resources/identity-registry.json)へ割り当てて保存し、ビルドごとに再発行しない。SQLiteの新規作成は発行したUUID v4をDBへ保存する。新規の原典自動取り込みは固定名前空間と原典コードからUUID v5を生成し、既存標本と重なる原典には登録済みIDを使う。
 
 編集では対象IDを維持し編集版を更新、分割・統合では新しい対象IDを発行する。旧IDは `retired` と後継 `successorIDs` を持ち、旧版も再現できる。変更レコードは、種類・理由・変更前後のリリース＋ID＋編集版を保持する。別名を一対多の転送先に書き換えず、旧対象から後継一覧へたどる。手順は [IDと編集操作](identity-editing.md)を参照。
 
@@ -100,12 +100,12 @@ URLの `/api/v1` は維持し、応答の `schemaVersion` で契約を識別す�
 | `/changes?entityId={ID}` | 変更前後に対象を含む変更履歴 |
 | `/annotations/{ID}`, `/taxons/{ID}`, `/sources/{ID}` | 独立レコードとして取得 |
 
-属性検索は一つのeducation範囲内で全条件が一致する必要がある。別々の教科・学年範囲の値を組み合わせて誤一致させない。`notSpecified` を任意学年に一致させない。一覧検索はactiveのみ、直接取得ではretiredも返す。APIは引き続き読み取り専用。
+属性検索は一つのeducation範囲内で全条件が一致する必要がある。別々の教科・学年範囲の値を組み合わせて誤一致させない。`notSpecified` を任意学年に一致させない。一覧検索はactiveのみ、直接取得ではretiredも返す。この `/api/v1` は読み取り専用。編集起動時だけ有効な `/api/edit` と、教材試作の `/api/preview` は別の境界とする。[現行のHTTP API](viewer-api.md)を参照。
 
 ## 設計の参照資料
 
-UUIDの生成は [RFC 9562](https://www.rfc-editor.org/rfc/rfc9562.html) のUUIDv4を使う。IDを意味から独立させる方針に適する。名称や表記と識別子の分離は [W3C SKOS Reference](https://www.w3.org/TR/skos-reference/) を、版・改訂・派生の区別は [W3C PROV-O](https://www.w3.org/TR/prov-o/) を設計の参考にした。今回のJSONをそれらの規格への完全準拠形式とはしていない。
+UUIDは [RFC 9562](https://www.rfc-editor.org/rfc/rfc9562.html) のv4とv5を使う。手動編集の同一性と、固定原典からの再生成を用途に応じて分ける。名称や表記と識別子の分離は [W3C SKOS Reference](https://www.w3.org/TR/skos-reference/) を、版・改訂・派生の区別は [W3C PROV-O](https://www.w3.org/TR/prov-o/) を設計の参考にした。今回のJSONをそれらの規格への完全準拠形式とはしていない。
 
-## 2026-10-05 閲覧APIの原文逆引き
+## 閲覧APIの原文逆引き
 
 `derivedEntities` は、その原文を本文または条件の根拠として参照する学ぶ対象・目標を返す派生情報。学年・教科の設定元だけの参照は含めない。項目取得と `/reading-sections/{ID}` の各項目詳細に同じ逆引きを返す。公開JSONには新しいレコードを加えず、既存の版固定されたevidenceから索引を作る。新規作成・根拠追加・部分進捗は[ローカル編集API](local-editing.md)で扱う。
