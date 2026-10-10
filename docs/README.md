@@ -36,7 +36,7 @@
 | 境界例と契約ごとの対応状態を調べる | [構造検証例](architecture-cases.md)、[標本カタログ](sample-catalog.md) |
 | 参照資料と取り込みでの役割を知る | [資料一覧](research.md) |
 
-設計の議論と未決事項は[親Issue #1](https://github.com/KantoYamamoto/Curricula/issues/1)から参照できます。[Issue #2](https://github.com/KantoYamamoto/Curricula/issues/2)の公開範囲・優先順位は提案段階で、最終決定待ちです。
+設計の議論と未決事項は[親Issue #1](https://github.com/KantoYamamoto/Curricula/issues/1)から参照できます。[Issue #2の公開範囲・優先順位は2026-10-11に推奨案を採用](https://github.com/KantoYamamoto/Curricula/issues/2#issuecomment-6099157264)しました。次は[Issue #3](https://github.com/KantoYamamoto/Curricula/issues/3)で構成と責務を整理します。
 
 ## 過去の記録
 

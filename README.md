@@ -2,7 +2,7 @@
 
 学習指導要領の原文、学ぶ対象、学習目標を結び、画面とAPIで利用するデータ基盤です。原文を読み、構造や根拠を確かめ、ローカルで独自の説明・目標・判定観点を編集できます。教科書・問題集の見え方を試す教材も収録しています。
 
-小学校・中学校の原文収録は完了し、目標の整理を進めています。高校・大学教養への拡張は長期目標です。コードと同梱データは[GitHub](https://github.com/KantoYamamoto/Curricula)で公開しています。Webサイト・APIのインターネット配信は未実装で、公開範囲と設計は[Issue #2](https://github.com/KantoYamamoto/Curricula/issues/2)以降で検討中です。
+小学校・中学校の原文収録は完了し、目標の整理を進めています。高校・大学教養への拡張は長期目標です。コードと同梱データは[GitHub](https://github.com/KantoYamamoto/Curricula)で公開しています。Webサイト・APIのインターネット配信は未実装です。[Issue #2の採用決定](https://github.com/KantoYamamoto/Curricula/issues/2#issuecomment-6099157264)に基づき、初回は原文・整理済み目標の閲覧とAPI、既存4単元の教材試作を提供します。具体的な構成・配信は後続Issueで設計します。
 
 ## ローカルで使う
 
